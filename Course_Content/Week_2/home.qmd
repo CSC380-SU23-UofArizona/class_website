@@ -30,7 +30,7 @@
 
 ### Homework
 
-- [x] [Homework 1: Due 5 pm, June 26th,Monday](../../Homework/HW1.qmd)
+- [x] [Homework 1: Due 5 pm, June 26th,Monday](../../Homework/1/HW.qmd)
 
 ### Weekly Checkin : 
 

@@ -879,7 +879,7 @@
     "href": "Course_Content/Week_4/home.html",
     "title": "Week 4 : Data Visualization, Introduction to ML",
     "section": "",
-    "text": "Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nApply data analysis and visualization techniques to derive insights from diverse datasets.\nDevelop proficiency in using data science tools and programming languages.\nExplore the ethical considerations associated with data-driven decision-making.\n\n\n\n\n\nConvert a raw data source into a version appropriate for downstream analysis using Python.\nWrite appropriate visualizations for different sources and types of data.\nExplain why we seek to build machine learning models that generalize rather than memorize their input\nExplain the different uses for training, validation, and testing datasets\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem\nSelect the appropriate evaluation measure for the dataset and task being solved\nDemonstrate awareness of bias and ethics in data science.\n\n\n\n\n\n\nTBD Wednesday onward …\n\n\n\n\n\n\n\nHomework 1: Due 5 pm, June 26th,Monday\n\n\n\n\n\nWeekly Checkin for Week 3 : Due 5 pm, July 2, Sunday\nWeekly Checkin for Week 4 : Due 5 pm, July 9, Sunday"
+    "text": "Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nApply data analysis and visualization techniques to derive insights from diverse datasets.\nDevelop proficiency in using data science tools and programming languages.\nExplore the ethical considerations associated with data-driven decision-making.\n\n\n\n\n\nConvert a raw data source into a version appropriate for downstream analysis using Python.\nWrite appropriate visualizations for different sources and types of data.\nExplain why we seek to build machine learning models that generalize rather than memorize their input\nExplain the different uses for training, validation, and testing datasets\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem\nSelect the appropriate evaluation measure for the dataset and task being solved\nDemonstrate awareness of bias and ethics in data science.\n\n\n\n\n\n\n\n4.1 - cont .. Pandas ..Data Processing\n4.2 - Data Vizualisation\n4.3 - Intro to Machine Learning\n\n\n\n\n\n\n\n\nHomework 2: Due TBD\nBonus Homework: Due TBD\n\n\n\n\n\nWeekly Checkin for Week 3 : Due 5 pm, July 2, Sunday\nWeekly Checkin for Week 4 : Due 5 pm, TBD\n\n\n\n\n\n\n\nStrikethrough text is changes in plan.\nGreen is new items added after planning.\nChecked boxes are completed items.\n\n\n\n\n\n\n\n4.1 - cont .. Pandas ..Data Processing | Tenative date : June 29, Thu\n4.2 - Data Vizualisation | Tenative date : June 30, Fri\n4.3 - Intro to Machine Learning | Tenative date : July 1, Sat\n\n\n\n\n\nHomework 2 released\nBonus Homework (tentative)\n\n\n\n\n\nCheck-in for week 3 is due on 5 pm, July 2, Sunday\nCheck-in for week 4 opens.\n\n\n\n\n\nWeek 4’s assigned reading already published.\nWeek 5’s assigned reading will be announced.\n\n\n\n\n\nContract Finalisation."
   },
   {
     "objectID": "Course_Content/Week_1/1/home.html",
@@ -1145,14 +1145,14 @@
     "href": "Course_Content/Week_4/home.html#lectures",
     "title": "Week 4 : Data Visualization, Introduction to ML",
     "section": "",
-    "text": "TBD Wednesday onward …"
+    "text": "4.1 - cont .. Pandas ..Data Processing\n4.2 - Data Vizualisation\n4.3 - Intro to Machine Learning"
   },
   {
     "objectID": "Course_Content/Week_4/home.html#activities",
     "href": "Course_Content/Week_4/home.html#activities",
     "title": "Week 4 : Data Visualization, Introduction to ML",
     "section": "",
-    "text": "Homework 1: Due 5 pm, June 26th,Monday\n\n\n\n\n\nWeekly Checkin for Week 3 : Due 5 pm, July 2, Sunday\nWeekly Checkin for Week 4 : Due 5 pm, July 9, Sunday"
+    "text": "Homework 2: Due TBD\nBonus Homework: Due TBD\n\n\n\n\n\nWeekly Checkin for Week 3 : Due 5 pm, July 2, Sunday\nWeekly Checkin for Week 4 : Due 5 pm, TBD"
   },
   {
     "objectID": "Course_Content/Week_3/2/home.html#objectives",
@@ -1314,5 +1314,68 @@
     "title": "Week 3 : Data Collection and Data Processing, Exploratory Analysis",
     "section": "",
     "text": "Strikethrough text is changes in plan.\nGreen is new items added after planning.\nChecked boxes are completed items.\n\n\n\n\n\n\n\nTopic: Statistics and Probability - Lecture 4 (Part 2) Will continue in Week 8\nLecture 2.x.1 Binomial Distribution\nTopic: Data processing and exploratory Analysis ( 2 or 3 Lectures ):\n\n3.1 - Introduction to Pandas\n3.2 - Data Collection (Part 1 of 2)\n3.3 - Data Collection (Part 2 of 2) & Data Processing (Part 1)\n\n\n\n\n\n\nHomework 1 due June 25 June 26, 5 pm\n\nHomework 1 Question 3.2 dropped. \n\n\n\n\n\n\nCheck-in for week 2 is due on June 25, 5 pm.\nCheck-in for week 3 opens.\n\n\n\n\n\nWeek 3’s assigned reading will be announced and available on D2L on or before Monday."
+  },
+  {
+    "objectID": "Course_Content/Week_4/home.html#lectures-tenative",
+    "href": "Course_Content/Week_4/home.html#lectures-tenative",
+    "title": "Week 4 : Data Visualization, Introduction to ML",
+    "section": "",
+    "text": "4.1 - cont .. Pandas ..Data Processing\n4.2 - Data Vizualisation\n4.3 - Intro to Machine Learning"
+  },
+  {
+    "objectID": "Course_Content/Week_4/home.html#activities-1",
+    "href": "Course_Content/Week_4/home.html#activities-1",
+    "title": "Week 4 : Data Visualization, Introduction to ML",
+    "section": "",
+    "text": "Homework\n\nHomework 2:\n\nWeekly Checkin\n\nWeekly Checkin for Week 3 : Due 5 pm, July 2, Sunday\nWeekly Checkin for Week 4 :"
+  },
+  {
+    "objectID": "Course_Content/Week_4/home.html#summary-plan-versus-achievements",
+    "href": "Course_Content/Week_4/home.html#summary-plan-versus-achievements",
+    "title": "Week 4 : Data Visualization, Introduction to ML",
+    "section": "",
+    "text": "Strikethrough text is changes in plan.\nGreen is new items added after planning.\nChecked boxes are completed items.\n\n\n\n\n\n\n\n4.1 - cont .. Pandas ..Data Processing | Tenative date : June 29, Thu\n4.2 - Data Vizualisation | Tenative date : June 30, Fri\n4.3 - Intro to Machine Learning | Tenative date : July 1, Sat\n\n\n\n\n\nHomework 2 released\nBonus Homework (tentative)\n\n\n\n\n\nCheck-in for week 3 is due on 5 pm, July 2, Sunday\nCheck-in for week 4 opens.\n\n\n\n\n\nWeek 4’s assigned reading already published.\nWeek 5’s assigned reading will be announced.\n\n\n\n\n\nContract Finalisation."
+  },
+  {
+    "objectID": "Homework/1/HW1.html",
+    "href": "Homework/1/HW1.html",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Explain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)\n\n\n\n\n\nQuestions\nHints"
+  },
+  {
+    "objectID": "Homework/1/HW1.html#tested-learning-outcome",
+    "href": "Homework/1/HW1.html#tested-learning-outcome",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Explain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)"
+  },
+  {
+    "objectID": "Homework/1/HW1.html#attachments",
+    "href": "Homework/1/HW1.html#attachments",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Questions\nHints"
+  },
+  {
+    "objectID": "Homework/1/HW.html",
+    "href": "Homework/1/HW.html",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Explain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)\n\n\n\n\n\nQuestions\nHints"
+  },
+  {
+    "objectID": "Homework/1/HW.html#tested-learning-outcome",
+    "href": "Homework/1/HW.html#tested-learning-outcome",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Explain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)"
+  },
+  {
+    "objectID": "Homework/1/HW.html#attachments",
+    "href": "Homework/1/HW.html#attachments",
+    "title": "Homework 1",
+    "section": "",
+    "text": "Questions\nHints"
   }
 ]

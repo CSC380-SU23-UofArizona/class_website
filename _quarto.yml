@@ -26,7 +26,7 @@ website:
         contents:
 
           - text: "HW1: Probability"
-            file: Homework/HW1.qmd
+            file: Homework/1/HW.qmd
             
       - section: "Ethics Discussions"
         contents:
