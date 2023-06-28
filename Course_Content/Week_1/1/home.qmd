@@ -1,0 +1,21 @@
+# 1.1 Introduction and Logistics
+
+######  Week 1 Course Introduction & Setup
+
+## Class Objectives
+
+* Introduction to the course.
+* Logistics.
+* Expectations and Course Plan.
+
+## Materials
+
+* [Syllabus](../../../Syllabus/Syllabus.qmd)
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UYLald7eYb8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Next Class 
+
+[Introduction to Data Science](../2/home.qmd)

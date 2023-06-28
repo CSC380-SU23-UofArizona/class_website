@@ -1,0 +1,31 @@
+# 3.1 - Introduction to Pandas. 
+
+######  Week 3 - Data Collection and Data Processing, Exploratory Analysis 
+<br>
+
+## Objectives 
+
+Understand how to use pandas to read a dataset and basic functionality.
+
+* Intro to Pandas
+* Series, DataFrames, and Indices
+* Slicing with loc, iloc, and []
+
+<br>
+
+## Materials
+
+* [Spotify Top 50 Playlist Songs | @anxods | Kaggle](https://www.kaggle.com/datasets/anxods/spotify-top-50-playlist-songs-anxods)
+<br>
+
+* [Notes](notes.qmd)
+
+* [Jupyter Notebook](Notebook.ipynb)
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NOTLweYaSOc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Next Class 
+
+[3.2 - Data Collection (Part 1 of 2)](../2/home.qmd)

@@ -1,0 +1,32 @@
+# Week 1 : Course Introduction & Setup
+
+## Objectives
+
+### Course Objectives:
+
+- [ ] Develop proficiency in using data science tools and programming languages.
+
+### Learning Outcomes:
+
+N/A
+
+<br>
+
+## Lectures
+
+[1.1 Welcome & Introduction](1/home.qmd)
+
+[1.2 Introduction to Data Science](2/home.qmd)
+
+<br>
+
+## Activities
+
+### Participation points
+
+- [x] Syllabus Prompts : Easter eggs hidden in the syllabus.
+- [x] Homework0: Setup for Class
+
+### Others : 
+
+- [x] Getting to know : Google Form

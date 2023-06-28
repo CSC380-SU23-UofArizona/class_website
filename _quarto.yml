@@ -1,0 +1,63 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "CSC 380"
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - section: Course Content
+        contents:
+          - text: "Week 1"
+            file: Course_Content/Week_1/home.qmd
+
+          - text: "Week 2"
+            file: Course_Content/Week_2/home.qmd
+
+          - text: "Week 3"
+            file: Course_Content/Week_3/home.qmd
+
+          - text: "Week 4"
+            file: Course_Content/Week_4/home.qmd
+
+      - section: "Homework"
+        contents:
+
+          - text: "HW1: Probability"
+            file: Homework/HW1.qmd
+            
+      - section: "Ethics Discussions"
+        contents:
+
+          - text: "W2: Political Content"
+            file: Ethics/Week_2.qmd
+
+          - text: "W3: Creative Work"
+            file: Ethics/Week_3.qmd
+
+          - text: "W4: Mental Health Support"
+            file: Ethics/Week_4.qmd
+      
+      - section: "Syllabus"
+        contents:
+          - text: "Key Info"
+            file: Syllabus/Key_Info.qmd
+
+          - text: "Official Syllabus"
+            file: Syllabus/Syllabus.qmd
+
+      
+
+
+format:
+  html:
+    theme: 
+      - lux
+      - custom.scss
+    css: styles.css
+    toc: true
+
+
+

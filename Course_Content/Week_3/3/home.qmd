@@ -1,0 +1,31 @@
+# 3.3 - Data Collection (Part 2 of 2) & Data Processing (Part 1)
+
+######  Week 3 - Data Collection and Data Processing, Exploratory Analysis 
+<br>
+
+## Objectives 
+
+Continuing from SQL
+
+*  Data Collection
+    * API:
+        - What is an API?
+        - Requests Library
+    * Scraping
+        - BeautifulSoup Library
+        - Robots.txt
+* Data File Types
+* Data Processing
+    * Libraries
+    * Numpy
+    * Scipy
+    * Restart pandas .. till datetime
+
+## Materials
+
+* [Slides](slides.pdf)
+* [Notebook](Notebook.ipynb)
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_6hVXGYt2UY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

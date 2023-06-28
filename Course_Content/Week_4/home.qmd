@@ -1,0 +1,39 @@
+# Week 4 : Data Visualization, Introduction to ML
+
+## Objectives
+
+### Course Objectives:
+
+- [ ] Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation. 
+- [ ] Apply data analysis and visualization techniques to derive insights from diverse datasets.
+- [ ] Develop proficiency in using data science tools and programming languages.
+- [ ] Explore the ethical considerations associated with data-driven decision-making.
+
+### Learning Outcomes:
+
+- [ ] Convert a raw data source into a version appropriate for downstream analysis using Python.
+- [ ] Write appropriate visualizations for different sources and types of data.
+- [ ] Explain why we seek to build machine learning models that generalize rather than memorize their input
+- [ ] Explain the different uses for training, validation, and testing datasets
+- [ ] Articulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem
+- [ ] Select the appropriate evaluation measure for the dataset and task being solved
+- [ ] Demonstrate awareness of bias and ethics in data science.
+
+<br>
+
+## Lectures
+
+TBD Wednesday onward ...
+
+<br>
+
+## Activities
+
+### Homework
+
+- [x] [Homework 1: Due 5 pm, June 26th,Monday](../../Homework/HW1.qmd)
+
+### Weekly Checkin : 
+
+- [x] Weekly Checkin for Week 3 : Due 5 pm, July 2, Sunday
+- [ ] Weekly Checkin for Week 4 : Due 5 pm, July 9, Sunday

@@ -1,0 +1,11 @@
+# Homework 1
+
+## Tested Learning Outcome 
+
+- [ ] Explain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)
+
+## Attachments
+
+* [Questions](Homework_1.pdf)
+
+* [Hints](Homework_1_Hints.pdf)

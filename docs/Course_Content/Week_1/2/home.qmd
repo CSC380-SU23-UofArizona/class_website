@@ -1,0 +1,17 @@
+# 1.2 Introduction to Data Science
+
+######  Week 1 Welcome & Introduction
+<br>
+
+## Objectives 
+
+N/A
+
+<br>
+
+## Materials
+
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BpZPxJwIg7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -1,0 +1,25 @@
+---
+title: "Principles Of Data Science"
+---
+
+::: {.callout-note}
+Latest Lectures: 
+[Lecture 3.2](Course_Content/Week_3/2/home.qmd)
+[Lecture 3.3](Course_Content/Week_3/3/home.qmd) 
+:::
+
+::: {.callout-note}
+Close to Week 3, there was a major course plan and related logistics update. Lectures during and before week 3 may refer to elements and notation before the update.
+:::
+
+## CheckList
+
+### Due Dates
+
+- [ ] Weekly Checkin for Week 3 | Due 5 pm , July 2, Sunday
+
+Previously:
+
+- [x] Weekly Checkin for Week 2 | Due 5 pm , June 25, Sunday
+- [x] Homework One | Due 5 pm, June 26, Monday
+

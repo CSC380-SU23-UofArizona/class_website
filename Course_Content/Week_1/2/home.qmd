@@ -1,0 +1,22 @@
+# 1.2 Introduction to Data Science
+
+######  Week 1 Course Introduction & Setup
+<br>
+
+## Class Objectives 
+
+Introduce the field of data science and introductory topics around them.
+
+<br>
+
+## Materials
+
+N/A
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BpZPxJwIg7M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Next Lecture 
+
+[Week 2](../../Week_2/home.qmd)

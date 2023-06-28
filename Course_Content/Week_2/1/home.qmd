@@ -1,0 +1,28 @@
+# 2.1 Random Events and Probability
+
+######  Week 2 : Applied Probability and Statistics ( Part One )
+
+## Class Objectives
+
+* Random Events
+* What is Probability?
+    * Probability Axioms
+    * Lemma
+* Operations
+* Random Variable
+* Probability Distribution:
+* Probability Mass Function and Probability Density Function.
+* Joint, Marginal and Conditional Probability
+
+
+## Materials
+
+* N/A
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/95tUlXNx1jg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Next Class 
+
+[Moments and Independence](../2/home.qmd)

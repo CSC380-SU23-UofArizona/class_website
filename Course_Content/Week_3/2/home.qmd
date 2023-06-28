@@ -1,0 +1,26 @@
+# 3.2 - Data Collection (Part 1 of 2)
+
+######  Week 3 - Data Collection and Data Processing, Exploratory Analysis 
+<br>
+
+## Objectives 
+
+* Research Design for Statistical Analysis
+    * Causation versus Correlation
+    * Sampling
+* Revisit the Data Science Process
+* Data Collection
+    * Till SQL 
+
+## Materials
+
+* [Slides](slides.pdf)
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/REXskf0mej4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Next Class 
+
+[3.3 - Data Collection (Part 2 of 2) & Data Processing (Part 1)](../3/home.qmd)
+

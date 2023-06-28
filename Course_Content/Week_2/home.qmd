@@ -1,0 +1,37 @@
+# Week 2 : Applied Probability and Statistics ( Part One )
+
+## Objectives
+
+### Course Objectives:
+
+- [ ] Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.
+- [ ] Explore the ethical considerations associated with data-driven decision-making.
+
+### Learning Outcomes:
+
+- [ ] Explain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)
+- [ ] Demonstrate awareness of bias and ethics in data science.
+
+<br>
+
+## Lectures
+
+[2.1 - Random Events and Probability](1/home.qmd)
+
+[2.2 - Moments and Independence](2/home.qmd)
+
+[2.3 - Statistics & Bayesian Probability ](3/home.qmd)
+
+[2.x.1 - Binomial Probability](https://youtu.be/d2pmDCK1J-U)
+
+<br>
+
+## Activities
+
+### Homework
+
+- [x] [Homework 1: Due 5 pm, June 26th,Monday](../../Homework/HW1.qmd)
+
+### Weekly Checkin : 
+
+- [x] Weekly Checkin for Week 2 : Due 5 pm, June 25th, Sunday.
