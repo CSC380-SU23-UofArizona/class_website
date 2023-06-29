@@ -11,7 +11,7 @@ The auspicious occasion of Queen Razia's birthday arrived, filling the grand pal
 
 The Queen was captivated by the talent displayed before her, and her heart swelled with pride and delight. She could not help but marvel at the synchronized movements and the sheer passion that emanated from each and every member of the dance group. As the performance reached its crescendo, Queen Razia's decision was made in an instant—this remarkable group deserved a gift to commemorate their extraordinary dedication.
 
-<div class="Secret"> <span class="Razia"> </span> </div>
+<div class="Secret"> <Razia> </div>
 
 However, there were only a limited number of gift available to give out right now. She presented Sonam with two choices, each with its own intriguing possibilities. The first option was straightforward : 660 randomly chosen dancers would receive a gift. This meant that a select few would be rewarded, leaving the remaining members without a token of appreciation.
 
