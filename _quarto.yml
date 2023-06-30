@@ -27,6 +27,9 @@ website:
 
           - text: "HW1: Probability"
             file: Homework/1/HW.qmd
+
+          - text: "HW2: Data Collection"
+            file: Homework/2/HW.qmd
             
       - section: "Ethics Discussions"
         contents:
@@ -40,6 +43,12 @@ website:
           - text: "W4: Mental Health Support"
             file: Ethics/Week_4.qmd
       
+      - section: "Bonus Questions"
+        contents:
+
+          - text: "Sonam's Dilemma: A Gift for Few or a Chance for All"
+            file: Bonus/1.qmd
+
       - section: "Syllabus"
         contents:
           - text: "Key Info"

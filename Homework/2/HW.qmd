@@ -1,0 +1,11 @@
+# Homework 2
+
+## Tested Learning Outcome 
+
+- [ ] (Partially) Convert a raw data source into a version appropriate for downstream analysis using Python.
+
+## Attachments
+
+* [Questions](Homework_2_Questions.pdf)
+
+* [Bonus Question](../Bonus/1.qmd)

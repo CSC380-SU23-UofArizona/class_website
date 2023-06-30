@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>CSC 380 - Homework 2 [ 30 points]</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      CSC 380
+      </li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../../">CSC 380</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Course Content</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Course_Content/Week_1/home.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Course_Content/Week_2/home.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Course_Content/Week_3/home.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Course_Content/Week_4/home.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Homework</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Homework/1/HW.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW1: Probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Homework/2/HW.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW2: Data Collection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Ethics Discussions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W2: Political Content</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W3: Creative Work</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W4: Mental Health Support</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Bonus Questions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Homework/Bonus/1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Razia’s Gift Options</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">Syllabus</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Syllabus/Key_Info.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Key Info</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Syllabus/Syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Official Syllabus</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Homework 2 [ 30 points]</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Secret code [ 4 points ] 26 points left</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> requests.get(<span class="st">"https://csc380.beingenfa.com/Homework/2/Bonus.html"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>r.status_code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>200</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>r.text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>'&lt;!DOCTYPE html&gt;\n&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"&gt;&lt;head&gt;\n\n&lt;meta charset="utf-8"&gt;\n&lt;meta name="generator" content="quarto-1.3.361"&gt;\n\n&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"&gt;\n\n\n&lt;title&gt;CSC 380 – bonus&lt;/title&gt;\n&lt;style&gt;\ncode{white-space: pre-wrap;}\nspan.smallcaps{font-variant: small-caps;}\ndiv.columns{display: flex; gap: min(4vw, 1.5em);}\ndiv.column{flex: auto; overflow-x: auto;}\ndiv.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}\nul.task-list{list-style: none;}\nul.task-list li input[type="checkbox"] {\n  width: 0.8em;\n  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ \n  vertical-align: middle;\n}\n&lt;/style&gt;\n\n\n&lt;script src="../../site_libs/quarto-nav/quarto-nav.js"&gt;&lt;/script&gt;\n&lt;script src="../../site_libs/quarto-nav/headroom.min.js"&gt;&lt;/script&gt;\n&lt;script src="../../site_libs/clipboard/clipboard.min.js"&gt;&lt;/script&gt;\n&lt;script src="../../site_libs/quarto-search/autocomplete.umd.js"&gt;&lt;/script&gt;\n&lt;script src="../../site_libs/quarto-search/fuse.min.js"&gt;&lt;/script&gt;\n&lt;script src="../../site_libs/quarto-search/quarto-search.js"&gt;&lt;/script&gt;\n&lt;meta name="quarto:offset" content="../../"&gt;\n&lt;script src="../../site_libs/quarto-html/quarto.js"&gt;&lt;/script&gt;\n&lt;script src="../../site_libs/quarto-html/popper.min.js"&gt;&lt;/script&gt;\n&lt;script src="../../site_libs/quarto-html/tippy.umd.min.js"&gt;&lt;/script&gt;\n&lt;script src="../../site_libs/quarto-html/anchor.min.js"&gt;&lt;/script&gt;\n&lt;link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet"&gt;\n&lt;link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"&gt;\n&lt;script src="../../site_libs/bootstrap/bootstrap.min.js"&gt;&lt;/script&gt;\n&lt;link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"&gt;\n&lt;link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light"&gt;\n&lt;script id="quarto-search-options" type="application/json"&gt;{\n  "location": "sidebar",\n  "copy-button": false,\n  "collapse-after": 3,\n  "panel-placement": "start",\n  "type": "textbox",\n  "limit": 20,\n  "language": {\n    "search-no-results-text": "No results",\n    "search-matching-documents-text": "matching documents",\n    "search-copy-link-title": "Copy link to search",\n    "search-hide-matches-text": "Hide additional matches",\n    "search-more-match-text": "more match in this document",\n    "search-more-matches-text": "more matches in this document",\n    "search-clear-button-title": "Clear",\n    "search-detached-cancel-button-title": "Cancel",\n    "search-submit-button-title": "Submit",\n    "search-label": "Search"\n  }\n}&lt;/script&gt;\n\n\n&lt;link rel="stylesheet" href="../../styles.css"&gt;\n&lt;/head&gt;\n\n&lt;body class="nav-sidebar docked"&gt;\n\n&lt;div id="quarto-search-results"&gt;&lt;/div&gt;\n  &lt;header id="quarto-header" class="headroom fixed-top"&gt;\n  &lt;nav class="quarto-secondary-nav"&gt;\n    &lt;div class="container-fluid d-flex"&gt;\n      &lt;button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"&gt;\n        &lt;i class="bi bi-layout-text-sidebar-reverse"&gt;&lt;/i&gt;\n      &lt;/button&gt;\n      &lt;nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"&gt;&lt;ol class="breadcrumb"&gt;&lt;li class="breadcrumb-item"&gt;\n      CSC 380\n      &lt;/li&gt;&lt;/ol&gt;&lt;/nav&gt;\n      &lt;a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"&gt;      \n      &lt;/a&gt;\n      &lt;button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();"&gt;\n        &lt;i class="bi bi-search"&gt;&lt;/i&gt;\n      &lt;/button&gt;\n    &lt;/div&gt;\n  &lt;/nav&gt;\n&lt;/header&gt;\n&lt;!-- content --&gt;\n&lt;div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article"&gt;\n&lt;!-- sidebar --&gt;\n  &lt;nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto"&gt;\n    &lt;div class="pt-lg-2 mt-2 text-left sidebar-header"&gt;\n    &lt;div class="sidebar-title mb-0 py-0"&gt;\n      &lt;a href="../../"&gt;CSC 380&lt;/a&gt; \n    &lt;/div&gt;\n      &lt;/div&gt;\n        &lt;div class="mt-2 flex-shrink-0 align-items-center"&gt;\n        &lt;div class="sidebar-search"&gt;\n        &lt;div id="quarto-search" class="" title="Search"&gt;&lt;/div&gt;\n        &lt;/div&gt;\n        &lt;/div&gt;\n    &lt;div class="sidebar-menu-container"&gt; \n    &lt;ul class="list-unstyled mt-1"&gt;\n        &lt;li class="sidebar-item sidebar-item-section"&gt;\n      &lt;div class="sidebar-item-container"&gt; \n            &lt;a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true"&gt;\n &lt;span class="menu-text"&gt;Course Content&lt;/span&gt;&lt;/a&gt;\n          &lt;a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section"&gt;\n            &lt;i class="bi bi-chevron-right ms-2"&gt;&lt;/i&gt;\n          &lt;/a&gt; \n      &lt;/div&gt;\n      &lt;ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show"&gt;  \n          &lt;li class="sidebar-item"&gt;\n  &lt;div class="sidebar-item-container"&gt; \n  &lt;a href="../../Course_Content/Week_1/home.html" class="sidebar-item-text sidebar-link"&gt;\n &lt;span class="menu-text"&gt;Week 1&lt;/span&gt;&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/li&gt;\n          &lt;li class="sidebar-item"&gt;\n  &lt;div class="sidebar-item-container"&gt; \n  &lt;a href="../../Course_Content/Week_2/home.html" class="sidebar-item-text sidebar-link"&gt;\n &lt;span class="menu-text"&gt;Week 2&lt;/span&gt;&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/li&gt;\n          &lt;li class="sidebar-item"&gt;\n  &lt;div class="sidebar-item-container"&gt; \n  &lt;a href="../../Course_Content/Week_3/home.html" class="sidebar-item-text sidebar-link"&gt;\n &lt;span class="menu-text"&gt;Week 3&lt;/span&gt;&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/li&gt;\n          &lt;li class="sidebar-item"&gt;\n  &lt;div class="sidebar-item-container"&gt; \n  &lt;a href="../../Course_Content/Week_4/home.html" class="sidebar-item-text sidebar-link"&gt;\n &lt;span class="menu-text"&gt;Week 4&lt;/span&gt;&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/li&gt;\n      &lt;/ul&gt;\n  &lt;/li&gt;\n        &lt;li class="sidebar-item sidebar-item-section"&gt;\n      &lt;div class="sidebar-item-container"&gt; \n            &lt;a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true"&gt;\n &lt;span class="menu-text"&gt;Homework&lt;/span&gt;&lt;/a&gt;\n          &lt;a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section"&gt;\n            &lt;i class="bi bi-chevron-right ms-2"&gt;&lt;/i&gt;\n          &lt;/a&gt; \n      &lt;/div&gt;\n      &lt;ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show"&gt;  \n          &lt;li class="sidebar-item"&gt;\n  &lt;div class="sidebar-item-container"&gt; \n  &lt;a href="../../Homework/1/HW.html" class="sidebar-item-text sidebar-link"&gt;\n &lt;span class="menu-text"&gt;HW1: Probability&lt;/span&gt;&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/li&gt;\n      &lt;/ul&gt;\n  &lt;/li&gt;\n        &lt;li class="sidebar-item sidebar-item-section"&gt;\n      &lt;div class="sidebar-item-container"&gt; \n            &lt;a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true"&gt;\n &lt;span class="menu-text"&gt;Ethics Discussions&lt;/span&gt;&lt;/a&gt;\n          &lt;a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section"&gt;\n            &lt;i class="bi bi-chevron-right ms-2"&gt;&lt;/i&gt;\n          &lt;/a&gt; \n      &lt;/div&gt;\n      &lt;ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show"&gt;  \n          &lt;li class="sidebar-item"&gt;\n  &lt;div class="sidebar-item-container"&gt; \n  &lt;a href="../../Ethics/Week_2.html" class="sidebar-item-text sidebar-link"&gt;\n &lt;span class="menu-text"&gt;W2: Political Content&lt;/span&gt;&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/li&gt;\n          &lt;li class="sidebar-item"&gt;\n  &lt;div class="sidebar-item-container"&gt; \n  &lt;a href="../../Ethics/Week_3.html" class="sidebar-item-text sidebar-link"&gt;\n &lt;span class="menu-text"&gt;W3: Creative Work&lt;/span&gt;&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/li&gt;\n          &lt;li class="sidebar-item"&gt;\n  &lt;div class="sidebar-item-container"&gt; \n  &lt;a href="../../Ethics/Week_4.html" class="sidebar-item-text sidebar-link"&gt;\n &lt;span class="menu-text"&gt;W4: Mental Health Support&lt;/span&gt;&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/li&gt;\n      &lt;/ul&gt;\n  &lt;/li&gt;\n        &lt;li class="sidebar-item sidebar-item-section"&gt;\n      &lt;div class="sidebar-item-container"&gt; \n            &lt;a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true"&gt;\n &lt;span class="menu-text"&gt;Syllabus&lt;/span&gt;&lt;/a&gt;\n          &lt;a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section"&gt;\n            &lt;i class="bi bi-chevron-right ms-2"&gt;&lt;/i&gt;\n          &lt;/a&gt; \n      &lt;/div&gt;\n      &lt;ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show"&gt;  \n          &lt;li class="sidebar-item"&gt;\n  &lt;div class="sidebar-item-container"&gt; \n  &lt;a href="../../Syllabus/Key_Info.html" class="sidebar-item-text sidebar-link"&gt;\n &lt;span class="menu-text"&gt;Key Info&lt;/span&gt;&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/li&gt;\n          &lt;li class="sidebar-item"&gt;\n  &lt;div class="sidebar-item-container"&gt; \n  &lt;a href="../../Syllabus/Syllabus.html" class="sidebar-item-text sidebar-link"&gt;\n &lt;span class="menu-text"&gt;Official Syllabus&lt;/span&gt;&lt;/a&gt;\n  &lt;/div&gt;\n&lt;/li&gt;\n      &lt;/ul&gt;\n  &lt;/li&gt;\n    &lt;/ul&gt;\n    &lt;/div&gt;\n&lt;/nav&gt;\n&lt;div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"&gt;&lt;/div&gt;\n&lt;!-- margin-sidebar --&gt;\n    &lt;div id="quarto-margin-sidebar" class="sidebar margin-sidebar"&gt;\n        &lt;nav id="TOC" role="doc-toc" class="toc-active"&gt;\n    &lt;h2 id="toc-title"&gt;On this page&lt;/h2&gt;\n   \n  &lt;ul&gt;\n  &lt;li&gt;&lt;a href="#sonams-choice" id="toc-sonams-choice" class="nav-link active" data-scroll-target="#sonams-choice"&gt;Sonam’s Choice&lt;/a&gt;\n  &lt;ul class="collapse"&gt;\n  &lt;li&gt;&lt;a href="#bonus-question-1-point" id="toc-bonus-question-1-point" class="nav-link" data-scroll-target="#bonus-question-1-point"&gt;Bonus Question : 1 point&lt;/a&gt;&lt;/li&gt;\n  &lt;/ul&gt;&lt;/li&gt;\n  &lt;/ul&gt;\n&lt;/nav&gt;\n    &lt;/div&gt;\n&lt;!-- main --&gt;\n&lt;main class="content" id="quarto-document-content"&gt;\n\n\n\n&lt;section id="sonams-choice" class="level2"&gt;\n&lt;h2 class="anchored" data-anchor-id="sonams-choice"&gt;Sonam’s Choice&lt;/h2&gt;\n&lt;section id="bonus-question-1-point" class="level3"&gt;\n&lt;h3 class="anchored" data-anchor-id="bonus-question-1-point"&gt;Bonus Question : 1 point&lt;/h3&gt;\n&lt;p&gt;&lt;em&gt;Source : Story I made up, text improved by ChatGPT, and then edited by myself.&lt;/em&gt;&lt;/p&gt;\n&lt;p&gt;Once upon a time, in the grand kingdom of Razia, there existed a mesmerizing lead dancer named Sonam. She possesed a combination of charm, extraordinary talent, and intelligence that made her stand out amongst her peers. Sonam’s passion for dance was matched only by her love for her dance group,with 2000 other talented dances, who all shared an unbreakable bond and admired their noble Queen above all.&lt;/p&gt;\n&lt;p&gt;One fine day, as Sonam’s heart overflowed with gratitude for their benevolent ruler, she decided to express her deep admiration through the power of music. She crafted a beautiful song that portrayed the love and adoration her dance group held for Queen Razia. With eager anticipation, Sonam’s troupe dedicated themselves to perfecting their dance moves to match the rhythm and emotion of her heartfelt composition.&lt;/p&gt;\n&lt;p&gt;The auspicious occasion of Queen Razia’s birthday arrived, filling the grand palace with a sense of joy and celebration. The Queen, known for her discerning taste and appreciation for the arts, eagerly awaited the performance of Sonam’s dance group. As the music began to play and the dancers gracefully glided across the grand ballroom, a spell was cast upon all those in attendance.&lt;/p&gt;\n&lt;p&gt;The Queen was captivated by the talent displayed before her, and her heart swelled with pride and delight. She could not help but marvel at the synchronized movements and the sheer passion that emanated from each and every member of the dance group. As the performance reached its crescendo, Queen Razia’s decision was made in an instant—this remarkable group deserved a gift to commemorate their extraordinary dedication.&lt;/p&gt;\n&lt;div class="Secret"&gt;\n&lt;razia&gt;\n&lt;/razia&gt;&lt;/div&gt;\n&lt;p&gt;However, there were only a limited number of gift available to give out right now. She presented Sonam with two choices, each with its own intriguing possibilities. The first option was straightforward : 660 randomly chosen dancers would receive a gift. This meant that a select few would be rewarded, leaving the remaining members without a token of appreciation.&lt;/p&gt;\n&lt;p&gt;The second choice, however, offered a twist. Queen Shah proposed distributing the available gifts among all dancers, but with a twist of uncertainty. Each dancer would have a 33% chance of receiving a gift and a 66% chance of going without.&lt;/p&gt;\n&lt;p&gt;Now faced with this dilemma, Sonam’s sharp mind began to evaluate the situation. Which option should Sonam pick? Why? Why not the other?&lt;/p&gt;\n\n\n&lt;/section&gt;\n&lt;/section&gt;\n\n&lt;/main&gt; &lt;!-- /main --&gt;\n&lt;script id="quarto-html-after-body" type="application/javascript"&gt;\nwindow.document.addEventListener("DOMContentLoaded", function (event) {\n  const toggleBodyColorMode = (bsSheetEl) =&gt; {\n    const mode = bsSheetEl.getAttribute("data-mode");\n    const bodyEl = window.document.querySelector("body");\n    if (mode === "dark") {\n      bodyEl.classList.add("quarto-dark");\n      bodyEl.classList.remove("quarto-light");\n    } else {\n      bodyEl.classList.add("quarto-light");\n      bodyEl.classList.remove("quarto-dark");\n    }\n  }\n  const toggleBodyColorPrimary = () =&gt; {\n    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");\n    if (bsSheetEl) {\n      toggleBodyColorMode(bsSheetEl);\n    }\n  }\n  toggleBodyColorPrimary();  \n  const icon = "\ue9cb";\n  const anchorJS = new window.AnchorJS();\n  anchorJS.options = {\n    placement: \'right\',\n    icon: icon\n  };\n  anchorJS.add(\'.anchored\');\n  const isCodeAnnotation = (el) =&gt; {\n    for (const clz of el.classList) {\n      if (clz.startsWith(\'code-annotation-\')) {                     \n        return true;\n      }\n    }\n    return false;\n  }\n  const clipboard = new window.ClipboardJS(\'.code-copy-button\', {\n    text: function(trigger) {\n      const codeEl = trigger.previousElementSibling.cloneNode(true);\n      for (const childEl of codeEl.children) {\n        if (isCodeAnnotation(childEl)) {\n          childEl.remove();\n        }\n      }\n      return codeEl.innerText;\n    }\n  });\n  clipboard.on(\'success\', function(e) {\n    // button target\n    const button = e.trigger;\n    // don\'t keep focus\n    button.blur();\n    // flash "checked"\n    button.classList.add(\'code-copy-button-checked\');\n    var currentTitle = button.getAttribute("title");\n    button.setAttribute("title", "Copied!");\n    let tooltip;\n    if (window.bootstrap) {\n      button.setAttribute("data-bs-toggle", "tooltip");\n      button.setAttribute("data-bs-placement", "left");\n      button.setAttribute("data-bs-title", "Copied!");\n      tooltip = new bootstrap.Tooltip(button, \n        { trigger: "manual", \n          customClass: "code-copy-button-tooltip",\n          offset: [0, -8]});\n      tooltip.show();    \n    }\n    setTimeout(function() {\n      if (tooltip) {\n        tooltip.hide();\n        button.removeAttribute("data-bs-title");\n        button.removeAttribute("data-bs-toggle");\n        button.removeAttribute("data-bs-placement");\n      }\n      button.setAttribute("title", currentTitle);\n      button.classList.remove(\'code-copy-button-checked\');\n    }, 1000);\n    // clear code selection\n    e.clearSelection();\n  });\n  function tippyHover(el, contentFn) {\n    const config = {\n      allowHTML: true,\n      content: contentFn,\n      maxWidth: 500,\n      delay: 100,\n      arrow: false,\n      appendTo: function(el) {\n          return el.parentElement;\n      },\n      interactive: true,\n      interactiveBorder: 10,\n      theme: \'quarto\',\n      placement: \'bottom-start\'\n    };\n    window.tippy(el, config); \n  }\n  const noterefs = window.document.querySelectorAll(\'a[role="doc-noteref"]\');\n  for (var i=0; i&lt;noterefs.length; i++) {\n    const ref = noterefs[i];\n    tippyHover(ref, function() {\n      // use id or data attribute instead here\n      let href = ref.getAttribute(\'data-footnote-href\') || ref.getAttribute(\'href\');\n      try { href = new URL(href).hash; } catch {}\n      const id = href.replace(/^#\\/?/, "");\n      const note = window.document.getElementById(id);\n      return note.innerHTML;\n    });\n  }\n      let selectedAnnoteEl;\n      const selectorForAnnotation = ( cell, annotation) =&gt; {\n        let cellAttr = \'data-code-cell="\' + cell + \'"\';\n        let lineAttr = \'data-code-annotation="\' +  annotation + \'"\';\n        const selector = \'span[\' + cellAttr + \'][\' + lineAttr + \']\';\n        return selector;\n      }\n      const selectCodeLines = (annoteEl) =&gt; {\n        const doc = window.document;\n        const targetCell = annoteEl.getAttribute("data-target-cell");\n        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");\n        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));\n        const lines = annoteSpan.getAttribute("data-code-lines").split(",");\n        const lineIds = lines.map((line) =&gt; {\n          return targetCell + "-" + line;\n        })\n        let top = null;\n        let height = null;\n        let parent = null;\n        if (lineIds.length &gt; 0) {\n            //compute the position of the single el (top and bottom and make a div)\n            const el = window.document.getElementById(lineIds[0]);\n            top = el.offsetTop;\n            height = el.offsetHeight;\n            parent = el.parentElement.parentElement;\n          if (lineIds.length &gt; 1) {\n            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);\n            const bottom = lastEl.offsetTop + lastEl.offsetHeight;\n            height = bottom - top;\n          }\n          if (top !== null &amp;&amp; height !== null &amp;&amp; parent !== null) {\n            // cook up a div (if necessary) and position it \n            let div = window.document.getElementById("code-annotation-line-highlight");\n            if (div === null) {\n              div = window.document.createElement("div");\n              div.setAttribute("id", "code-annotation-line-highlight");\n              div.style.position = \'absolute\';\n              parent.appendChild(div);\n            }\n            div.style.top = top - 2 + "px";\n            div.style.height = height + 4 + "px";\n            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");\n            if (gutterDiv === null) {\n              gutterDiv = window.document.createElement("div");\n              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");\n              gutterDiv.style.position = \'absolute\';\n              const codeCell = window.document.getElementById(targetCell);\n              const gutter = codeCell.querySelector(\'.code-annotation-gutter\');\n              gutter.appendChild(gutterDiv);\n            }\n            gutterDiv.style.top = top - 2 + "px";\n            gutterDiv.style.height = height + 4 + "px";\n          }\n          selectedAnnoteEl = annoteEl;\n        }\n      };\n      const unselectCodeLines = () =&gt; {\n        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];\n        elementsIds.forEach((elId) =&gt; {\n          const div = window.document.getElementById(elId);\n          if (div) {\n            div.remove();\n          }\n        });\n        selectedAnnoteEl = undefined;\n      };\n      // Attach click handler to the DT\n      const annoteDls = window.document.querySelectorAll(\'dt[data-target-cell]\');\n      for (const annoteDlNode of annoteDls) {\n        annoteDlNode.addEventListener(\'click\', (event) =&gt; {\n          const clickedEl = event.target;\n          if (clickedEl !== selectedAnnoteEl) {\n            unselectCodeLines();\n            const activeEl = window.document.querySelector(\'dt[data-target-cell].code-annotation-active\');\n            if (activeEl) {\n              activeEl.classList.remove(\'code-annotation-active\');\n            }\n            selectCodeLines(clickedEl);\n            clickedEl.classList.add(\'code-annotation-active\');\n          } else {\n            // Unselect the line\n            unselectCodeLines();\n            clickedEl.classList.remove(\'code-annotation-active\');\n          }\n        });\n      }\n  const findCites = (el) =&gt; {\n    const parentEl = el.parentElement;\n    if (parentEl) {\n      const cites = parentEl.dataset.cites;\n      if (cites) {\n        return {\n          el,\n          cites: cites.split(\' \')\n        };\n      } else {\n        return findCites(el.parentElement)\n      }\n    } else {\n      return undefined;\n    }\n  };\n  var bibliorefs = window.document.querySelectorAll(\'a[role="doc-biblioref"]\');\n  for (var i=0; i&lt;bibliorefs.length; i++) {\n    const ref = bibliorefs[i];\n    const citeInfo = findCites(ref);\n    if (citeInfo) {\n      tippyHover(citeInfo.el, function() {\n        var popup = window.document.createElement(\'div\');\n        citeInfo.cites.forEach(function(cite) {\n          var citeDiv = window.document.createElement(\'div\');\n          citeDiv.classList.add(\'hanging-indent\');\n          citeDiv.classList.add(\'csl-entry\');\n          var biblioDiv = window.document.getElementById(\'ref-\' + cite);\n          if (biblioDiv) {\n            citeDiv.innerHTML = biblioDiv.innerHTML;\n          }\n          popup.appendChild(citeDiv);\n        });\n        return popup.innerHTML;\n      });\n    }\n  }\n});\n&lt;/script&gt;\n&lt;/div&gt; &lt;!-- /content --&gt;\n\n\n\n&lt;/body&gt;&lt;/html&gt;'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>soup <span class="op">=</span> BeautifulSoup(r.text, <span class="st">'html.parser'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>soup</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>&lt;!DOCTYPE html&gt;
+
+&lt;html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;head&gt;
+&lt;meta charset="utf-8"/&gt;
+&lt;meta content="quarto-1.3.361" name="generator"/&gt;
+&lt;meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/&gt;
+&lt;title&gt;CSC 380 – bonus&lt;/title&gt;
+&lt;style&gt;
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+&lt;/style&gt;
+&lt;script src="../../site_libs/quarto-nav/quarto-nav.js"&gt;&lt;/script&gt;
+&lt;script src="../../site_libs/quarto-nav/headroom.min.js"&gt;&lt;/script&gt;
+&lt;script src="../../site_libs/clipboard/clipboard.min.js"&gt;&lt;/script&gt;
+&lt;script src="../../site_libs/quarto-search/autocomplete.umd.js"&gt;&lt;/script&gt;
+&lt;script src="../../site_libs/quarto-search/fuse.min.js"&gt;&lt;/script&gt;
+&lt;script src="../../site_libs/quarto-search/quarto-search.js"&gt;&lt;/script&gt;
+&lt;meta content="../../" name="quarto:offset"/&gt;
+&lt;script src="../../site_libs/quarto-html/quarto.js"&gt;&lt;/script&gt;
+&lt;script src="../../site_libs/quarto-html/popper.min.js"&gt;&lt;/script&gt;
+&lt;script src="../../site_libs/quarto-html/tippy.umd.min.js"&gt;&lt;/script&gt;
+&lt;script src="../../site_libs/quarto-html/anchor.min.js"&gt;&lt;/script&gt;
+&lt;link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet"/&gt;
+&lt;link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" id="quarto-text-highlighting-styles" rel="stylesheet"/&gt;
+&lt;script src="../../site_libs/bootstrap/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet"/&gt;
+&lt;link data-mode="light" href="../../site_libs/bootstrap/bootstrap.min.css" id="quarto-bootstrap" rel="stylesheet"/&gt;
+&lt;script id="quarto-search-options" type="application/json"&gt;{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}&lt;/script&gt;
+&lt;link href="../../styles.css" rel="stylesheet"/&gt;
+&lt;/head&gt;
+&lt;body class="nav-sidebar docked"&gt;
+&lt;div id="quarto-search-results"&gt;&lt;/div&gt;
+&lt;header class="headroom fixed-top" id="quarto-header"&gt;
+&lt;nav class="quarto-secondary-nav"&gt;
+&lt;div class="container-fluid d-flex"&gt;
+&lt;button aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="quarto-btn-toggle btn" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" type="button"&gt;
+&lt;i class="bi bi-layout-text-sidebar-reverse"&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;nav aria-label="breadcrumb" class="quarto-page-breadcrumbs"&gt;&lt;ol class="breadcrumb"&gt;&lt;li class="breadcrumb-item"&gt;
+      CSC 380
+      &lt;/li&gt;&lt;/ol&gt;&lt;/nav&gt;
+&lt;a aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" class="flex-grow-1" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" data-bs-toggle="collapse" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }" role="button"&gt;
+&lt;/a&gt;
+&lt;button aria-label="" class="btn quarto-search-button" onclick="window.quartoOpenSearch();" type="button"&gt;
+&lt;i class="bi bi-search"&gt;&lt;/i&gt;
+&lt;/button&gt;
+&lt;/div&gt;
+&lt;/nav&gt;
+&lt;/header&gt;
+&lt;!-- content --&gt;
+&lt;div class="quarto-container page-columns page-rows-contents page-layout-article" id="quarto-content"&gt;
+&lt;!-- sidebar --&gt;
+&lt;nav class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto" id="quarto-sidebar"&gt;
+&lt;div class="pt-lg-2 mt-2 text-left sidebar-header"&gt;
+&lt;div class="sidebar-title mb-0 py-0"&gt;
+&lt;a href="../../"&gt;CSC 380&lt;/a&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="mt-2 flex-shrink-0 align-items-center"&gt;
+&lt;div class="sidebar-search"&gt;
+&lt;div class="" id="quarto-search" title="Search"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sidebar-menu-container"&gt;
+&lt;ul class="list-unstyled mt-1"&gt;
+&lt;li class="sidebar-item sidebar-item-section"&gt;
+&lt;div class="sidebar-item-container"&gt;
+&lt;a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse"&gt;
+&lt;span class="menu-text"&gt;Course Content&lt;/span&gt;&lt;/a&gt;
+&lt;a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-1" data-bs-toggle="collapse"&gt;
+&lt;i class="bi bi-chevron-right ms-2"&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-1"&gt;
+&lt;li class="sidebar-item"&gt;
+&lt;div class="sidebar-item-container"&gt;
+&lt;a class="sidebar-item-text sidebar-link" href="../../Course_Content/Week_1/home.html"&gt;
+&lt;span class="menu-text"&gt;Week 1&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li class="sidebar-item"&gt;
+&lt;div class="sidebar-item-container"&gt;
+&lt;a class="sidebar-item-text sidebar-link" href="../../Course_Content/Week_2/home.html"&gt;
+&lt;span class="menu-text"&gt;Week 2&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li class="sidebar-item"&gt;
+&lt;div class="sidebar-item-container"&gt;
+&lt;a class="sidebar-item-text sidebar-link" href="../../Course_Content/Week_3/home.html"&gt;
+&lt;span class="menu-text"&gt;Week 3&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li class="sidebar-item"&gt;
+&lt;div class="sidebar-item-container"&gt;
+&lt;a class="sidebar-item-text sidebar-link" href="../../Course_Content/Week_4/home.html"&gt;
+&lt;span class="menu-text"&gt;Week 4&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li class="sidebar-item sidebar-item-section"&gt;
+&lt;div class="sidebar-item-container"&gt;
+&lt;a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-2" data-bs-toggle="collapse"&gt;
+&lt;span class="menu-text"&gt;Homework&lt;/span&gt;&lt;/a&gt;
+&lt;a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-2" data-bs-toggle="collapse"&gt;
+&lt;i class="bi bi-chevron-right ms-2"&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-2"&gt;
+&lt;li class="sidebar-item"&gt;
+&lt;div class="sidebar-item-container"&gt;
+&lt;a class="sidebar-item-text sidebar-link" href="../../Homework/1/HW.html"&gt;
+&lt;span class="menu-text"&gt;HW1: Probability&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li class="sidebar-item sidebar-item-section"&gt;
+&lt;div class="sidebar-item-container"&gt;
+&lt;a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-3" data-bs-toggle="collapse"&gt;
+&lt;span class="menu-text"&gt;Ethics Discussions&lt;/span&gt;&lt;/a&gt;
+&lt;a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-3" data-bs-toggle="collapse"&gt;
+&lt;i class="bi bi-chevron-right ms-2"&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-3"&gt;
+&lt;li class="sidebar-item"&gt;
+&lt;div class="sidebar-item-container"&gt;
+&lt;a class="sidebar-item-text sidebar-link" href="../../Ethics/Week_2.html"&gt;
+&lt;span class="menu-text"&gt;W2: Political Content&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li class="sidebar-item"&gt;
+&lt;div class="sidebar-item-container"&gt;
+&lt;a class="sidebar-item-text sidebar-link" href="../../Ethics/Week_3.html"&gt;
+&lt;span class="menu-text"&gt;W3: Creative Work&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li class="sidebar-item"&gt;
+&lt;div class="sidebar-item-container"&gt;
+&lt;a class="sidebar-item-text sidebar-link" href="../../Ethics/Week_4.html"&gt;
+&lt;span class="menu-text"&gt;W4: Mental Health Support&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li class="sidebar-item sidebar-item-section"&gt;
+&lt;div class="sidebar-item-container"&gt;
+&lt;a aria-expanded="true" class="sidebar-item-text sidebar-link text-start" data-bs-target="#quarto-sidebar-section-4" data-bs-toggle="collapse"&gt;
+&lt;span class="menu-text"&gt;Syllabus&lt;/span&gt;&lt;/a&gt;
+&lt;a aria-expanded="true" aria-label="Toggle section" class="sidebar-item-toggle text-start" data-bs-target="#quarto-sidebar-section-4" data-bs-toggle="collapse"&gt;
+&lt;i class="bi bi-chevron-right ms-2"&gt;&lt;/i&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+&lt;ul class="collapse list-unstyled sidebar-section depth1 show" id="quarto-sidebar-section-4"&gt;
+&lt;li class="sidebar-item"&gt;
+&lt;div class="sidebar-item-container"&gt;
+&lt;a class="sidebar-item-text sidebar-link" href="../../Syllabus/Key_Info.html"&gt;
+&lt;span class="menu-text"&gt;Key Info&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li class="sidebar-item"&gt;
+&lt;div class="sidebar-item-container"&gt;
+&lt;a class="sidebar-item-text sidebar-link" href="../../Syllabus/Syllabus.html"&gt;
+&lt;span class="menu-text"&gt;Official Syllabus&lt;/span&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/nav&gt;
+&lt;div data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" data-bs-toggle="collapse" id="quarto-sidebar-glass"&gt;&lt;/div&gt;
+&lt;!-- margin-sidebar --&gt;
+&lt;div class="sidebar margin-sidebar" id="quarto-margin-sidebar"&gt;
+&lt;nav class="toc-active" id="TOC" role="doc-toc"&gt;
+&lt;h2 id="toc-title"&gt;On this page&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class="nav-link active" data-scroll-target="#sonams-choice" href="#sonams-choice" id="toc-sonams-choice"&gt;Sonam’s Choice&lt;/a&gt;
+&lt;ul class="collapse"&gt;
+&lt;li&gt;&lt;a class="nav-link" data-scroll-target="#bonus-question-1-point" href="#bonus-question-1-point" id="toc-bonus-question-1-point"&gt;Bonus Question : 1 point&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+&lt;!-- main --&gt;
+&lt;main class="content" id="quarto-document-content"&gt;
+&lt;section class="level2" id="sonams-choice"&gt;
+&lt;h2 class="anchored" data-anchor-id="sonams-choice"&gt;Sonam’s Choice&lt;/h2&gt;
+&lt;section class="level3" id="bonus-question-1-point"&gt;
+&lt;h3 class="anchored" data-anchor-id="bonus-question-1-point"&gt;Bonus Question : 1 point&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;Source : Story I made up, text improved by ChatGPT, and then edited by myself.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Once upon a time, in the grand kingdom of Razia, there existed a mesmerizing lead dancer named Sonam. She possesed a combination of charm, extraordinary talent, and intelligence that made her stand out amongst her peers. Sonam’s passion for dance was matched only by her love for her dance group,with 2000 other talented dances, who all shared an unbreakable bond and admired their noble Queen above all.&lt;/p&gt;
+&lt;p&gt;One fine day, as Sonam’s heart overflowed with gratitude for their benevolent ruler, she decided to express her deep admiration through the power of music. She crafted a beautiful song that portrayed the love and adoration her dance group held for Queen Razia. With eager anticipation, Sonam’s troupe dedicated themselves to perfecting their dance moves to match the rhythm and emotion of her heartfelt composition.&lt;/p&gt;
+&lt;p&gt;The auspicious occasion of Queen Razia’s birthday arrived, filling the grand palace with a sense of joy and celebration. The Queen, known for her discerning taste and appreciation for the arts, eagerly awaited the performance of Sonam’s dance group. As the music began to play and the dancers gracefully glided across the grand ballroom, a spell was cast upon all those in attendance.&lt;/p&gt;
+&lt;p&gt;The Queen was captivated by the talent displayed before her, and her heart swelled with pride and delight. She could not help but marvel at the synchronized movements and the sheer passion that emanated from each and every member of the dance group. As the performance reached its crescendo, Queen Razia’s decision was made in an instant—this remarkable group deserved a gift to commemorate their extraordinary dedication.&lt;/p&gt;
+&lt;div class="Secret"&gt;
+&lt;razia&gt;
+&lt;/razia&gt;&lt;/div&gt;
+&lt;p&gt;However, there were only a limited number of gift available to give out right now. She presented Sonam with two choices, each with its own intriguing possibilities. The first option was straightforward : 660 randomly chosen dancers would receive a gift. This meant that a select few would be rewarded, leaving the remaining members without a token of appreciation.&lt;/p&gt;
+&lt;p&gt;The second choice, however, offered a twist. Queen Shah proposed distributing the available gifts among all dancers, but with a twist of uncertainty. Each dancer would have a 33% chance of receiving a gift and a 66% chance of going without.&lt;/p&gt;
+&lt;p&gt;Now faced with this dilemma, Sonam’s sharp mind began to evaluate the situation. Which option should Sonam pick? Why? Why not the other?&lt;/p&gt;
+&lt;/section&gt;
+&lt;/section&gt;
+&lt;/main&gt; &lt;!-- /main --&gt;
+&lt;script id="quarto-html-after-body" type="application/javascript"&gt;
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) =&gt; {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () =&gt; {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) =&gt; {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i&lt;noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) =&gt; {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) =&gt; {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) =&gt; {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length &gt; 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length &gt; 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null &amp;&amp; height !== null &amp;&amp; parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () =&gt; {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) =&gt; {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) =&gt; {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) =&gt; {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i&lt;bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+&lt;/script&gt;
+&lt;/div&gt; &lt;!-- /content --&gt;
+&lt;/body&gt;&lt;/html&gt;</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>soup.find(<span class="st">"div"</span>,<span class="st">"Secret"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>&lt;div class="Secret"&gt;
+&lt;razia&gt;
+&lt;/razia&gt;&lt;/div&gt;</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pd.read_csv()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>https:<span class="op">//</span>rapidapi.com<span class="op">/</span>rapidapi<span class="op">/</span>api<span class="op">/</span>movie<span class="op">-</span>database<span class="op">-</span>alternative<span class="op">/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://movie-database-alternative.p.rapidapi.com/"</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>querystring <span class="op">=</span> {<span class="st">"s"</span>:<span class="st">"Avengers Endgame"</span>,<span class="st">"r"</span>:<span class="st">"json"</span>,<span class="st">"page"</span>:<span class="st">"1"</span>}</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>headers <span class="op">=</span> {</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"X-RapidAPI-Key"</span>: <span class="st">"6a46845521msh41376e85227bc6dp186f96jsn69aa14333a6a"</span>,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"X-RapidAPI-Host"</span>: <span class="st">"movie-database-alternative.p.rapidapi.com"</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> requests.get(url, headers<span class="op">=</span>headers, params<span class="op">=</span>querystring)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response.json())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'message': 'You are not subscribed to this API.'}</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>rep <span class="op">=</span> requests.get(<span class="st">"https://uselessfacts.jsph.pl/api/v2/facts/today"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>rep</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>&lt;Response [200]&gt;</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>rep.text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>'{"id":"3f4bac8655449adc95b7eb89c129e17e","text":"Tigers not only have striped fur, they have striped skin!","source":"djtech.net","source_url":"http://www.djtech.net/humor/useless_facts.htm","language":"en","permalink":"https://uselessfacts.jsph.pl/api/v2/facts/3f4bac8655449adc95b7eb89c129e17e"}\n'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> time <span class="im">import</span> sleep</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>random_useless_list <span class="op">=</span> []</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">11</span>):</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    requests_obj <span class="op">=</span> requests.get(<span class="st">"https://uselessfacts.jsph.pl/api/v2/facts/random"</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    random_useless_list.append(requests_obj.json())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>random_useless_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="35">
+<pre><code>[{'id': 'f91324a0ee29f683819108accdf1adb5',
+  'text': 'Dentists have recommended that a toothbrush be kept at least 6 feet away from a toilet to avoid airborne particles resulting from the flush.',
+  'source': 'djtech.net',
+  'source_url': 'http://www.djtech.net/humor/useless_facts.htm',
+  'language': 'en',
+  'permalink': 'https://uselessfacts.jsph.pl/api/v2/facts/f91324a0ee29f683819108accdf1adb5'},
+ {'id': 'df69791df8a67ebd2c88ee182c7dbe11',
+  'text': 'Each month, there is at least one report of UFOs from each province of Canada.',
+  'source': 'djtech.net',
+  'source_url': 'http://www.djtech.net/humor/useless_facts.htm',
+  'language': 'en',
+  'permalink': 'https://uselessfacts.jsph.pl/api/v2/facts/df69791df8a67ebd2c88ee182c7dbe11'},
+ {'id': 'f0faa5f084ed4bb0de6944765467ba74',
+  'text': 'Cranberries are sorted for ripeness by bouncing them; a fully ripened cranberry can be dribbled like a basketball. \xa0',
+  'source': 'djtech.net',
+  'source_url': 'http://www.djtech.net/humor/useless_facts.htm',
+  'language': 'en',
+  'permalink': 'https://uselessfacts.jsph.pl/api/v2/facts/f0faa5f084ed4bb0de6944765467ba74'},
+ {'id': '9d80e30de6b33a49697f02ff1c27695f',
+  'text': 'Telly Savalas and Louis Armstrong died on their birthdays. \xa0',
+  'source': 'djtech.net',
+  'source_url': 'http://www.djtech.net/humor/useless_facts.htm',
+  'language': 'en',
+  'permalink': 'https://uselessfacts.jsph.pl/api/v2/facts/9d80e30de6b33a49697f02ff1c27695f'},
+ {'id': '46ec24d354efadfd5e20fa996c33cb14',
+  'text': 'Alfred Hitchcock didn`t have a belly button. It was eliminated when he was sewn up after surgery.',
+  'source': 'djtech.net',
+  'source_url': 'http://www.djtech.net/humor/useless_facts.htm',
+  'language': 'en',
+  'permalink': 'https://uselessfacts.jsph.pl/api/v2/facts/46ec24d354efadfd5e20fa996c33cb14'},
+ {'id': 'a104fd2271d2a5c93d11d8eaa613c6af',
+  'text': 'Average number of people airborne over the US any given hour: 61,000.',
+  'source': 'djtech.net',
+  'source_url': 'http://www.djtech.net/humor/useless_facts.htm',
+  'language': 'en',
+  'permalink': 'https://uselessfacts.jsph.pl/api/v2/facts/a104fd2271d2a5c93d11d8eaa613c6af'},
+ {'id': 'f90ddc6406d668a0b7c14a7c19eba803',
+  'text': 'Firehouses have circular stairways originating from the old days when the engines were pulled by horses. The horses were stabled on the ground floor and figured out how to walk up straight staircases.',
+  'source': 'djtech.net',
+  'source_url': 'http://www.djtech.net/humor/useless_facts.htm',
+  'language': 'en',
+  'permalink': 'https://uselessfacts.jsph.pl/api/v2/facts/f90ddc6406d668a0b7c14a7c19eba803'},
+ {'id': '3197bc1e452331d2408c661be1be7748',
+  'text': 'One quarter of the bones in your body are in your feet.',
+  'source': 'djtech.net',
+  'source_url': 'http://www.djtech.net/humor/useless_facts.htm',
+  'language': 'en',
+  'permalink': 'https://uselessfacts.jsph.pl/api/v2/facts/3197bc1e452331d2408c661be1be7748'},
+ {'id': '2781366ffa6279ac04831226ad536abf',
+  'text': 'Donald Duck`s middle name is Fauntleroy. \xa0',
+  'source': 'djtech.net',
+  'source_url': 'http://www.djtech.net/humor/useless_facts.htm',
+  'language': 'en',
+  'permalink': 'https://uselessfacts.jsph.pl/api/v2/facts/2781366ffa6279ac04831226ad536abf'},
+ {'id': '45caa139567e4944550d9eadf41b5caa',
+  'text': 'A goldfish has a memory span of three seconds. \xa0',
+  'source': 'djtech.net',
+  'source_url': 'http://www.djtech.net/humor/useless_facts.htm',
+  'language': 'en',
+  'permalink': 'https://uselessfacts.jsph.pl/api/v2/facts/45caa139567e4944550d9eadf41b5caa'},
+ {'id': '422195f917c2d180bd9398545215c236',
+  'text': 'It was discovered on a space mission that a frog can throw up.\xa0The frog throws up its stomach first, so the stomach is dangling out of its mouth. Then the frog uses its forearms to dig out all of the stomach`s contents and then swallows the stomach back down.',
+  'source': 'djtech.net',
+  'source_url': 'http://www.djtech.net/humor/useless_facts.htm',
+  'language': 'en',
+  'permalink': 'https://uselessfacts.jsph.pl/api/v2/facts/422195f917c2d180bd9398545215c236'}]</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(random_useless_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="37">
+<pre><code>Index(['id', 'text', 'source', 'source_url', 'language', 'permalink'], dtype='object')</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'text'</span>].to_list()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="39">
+<pre><code>['Dentists have recommended that a toothbrush be kept at least 6 feet away from a toilet to avoid airborne particles resulting from the flush.',
+ 'Each month, there is at least one report of UFOs from each province of Canada.',
+ 'Cranberries are sorted for ripeness by bouncing them; a fully ripened cranberry can be dribbled like a basketball. \xa0',
+ 'Telly Savalas and Louis Armstrong died on their birthdays. \xa0',
+ 'Alfred Hitchcock didn`t have a belly button. It was eliminated when he was sewn up after surgery.',
+ 'Average number of people airborne over the US any given hour: 61,000.',
+ 'Firehouses have circular stairways originating from the old days when the engines were pulled by horses. The horses were stabled on the ground floor and figured out how to walk up straight staircases.',
+ 'One quarter of the bones in your body are in your feet.',
+ 'Donald Duck`s middle name is Fauntleroy. \xa0',
+ 'A goldfish has a memory span of three seconds. \xa0',
+ 'It was discovered on a space mission that a frog can throw up.\xa0The frog throws up its stomach first, so the stomach is dangling out of its mouth. Then the frog uses its forearms to dig out all of the stomach`s contents and then swallows the stomach back down.']</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#https://www.kaggle.com/datasets/shivamb/disney-movies-and-tv-shows</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>disney_df <span class="op">=</span> pd.read_csv(<span class="st">"disney_plus_titles.csv"</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>disney_df.head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="54">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">show_id</th>
+<th data-quarto-table-cell-role="th">type</th>
+<th data-quarto-table-cell-role="th">title</th>
+<th data-quarto-table-cell-role="th">director</th>
+<th data-quarto-table-cell-role="th">cast</th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">date_added</th>
+<th data-quarto-table-cell-role="th">release_year</th>
+<th data-quarto-table-cell-role="th">rating</th>
+<th data-quarto-table-cell-role="th">duration</th>
+<th data-quarto-table-cell-role="th">listed_in</th>
+<th data-quarto-table-cell-role="th">description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>s1</td>
+<td>Movie</td>
+<td>Duck the Halls: A Mickey Mouse Christmas Special</td>
+<td>Alonso Ramirez Ramos, Dave Wasson</td>
+<td>Chris Diamantopoulos, Tony Anselmo, Tress MacN...</td>
+<td>NaN</td>
+<td>November 26, 2021</td>
+<td>2016</td>
+<td>TV-G</td>
+<td>23 min</td>
+<td>Animation, Family</td>
+<td>Join Mickey and the gang as they duck the halls!</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>s2</td>
+<td>Movie</td>
+<td>Ernest Saves Christmas</td>
+<td>John Cherry</td>
+<td>Jim Varney, Noelle Parker, Douglas Seale</td>
+<td>NaN</td>
+<td>November 26, 2021</td>
+<td>1988</td>
+<td>PG</td>
+<td>91 min</td>
+<td>Comedy</td>
+<td>Santa Claus passes his magic bag to a new St. ...</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="55">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#https://www.kaggle.com/datasets/shivamb/amazon-prime-movies-and-tv-shows</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>amazon_df <span class="op">=</span> pd.read_csv(<span class="st">"amazon_prime_titles.csv"</span>)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>amazon_df.sample(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="55">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">show_id</th>
+<th data-quarto-table-cell-role="th">type</th>
+<th data-quarto-table-cell-role="th">title</th>
+<th data-quarto-table-cell-role="th">director</th>
+<th data-quarto-table-cell-role="th">cast</th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">date_added</th>
+<th data-quarto-table-cell-role="th">release_year</th>
+<th data-quarto-table-cell-role="th">rating</th>
+<th data-quarto-table-cell-role="th">duration</th>
+<th data-quarto-table-cell-role="th">listed_in</th>
+<th data-quarto-table-cell-role="th">description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1187</td>
+<td>s1188</td>
+<td>TV Show</td>
+<td>Regular Heroes</td>
+<td>NaN</td>
+<td>Alicia Keys, J.J. Watt, Chelsea Phaire</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2020</td>
+<td>13+</td>
+<td>1 Season</td>
+<td>Unscripted</td>
+<td>The COVID pandemic has drastically changed our...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1653</td>
+<td>s1654</td>
+<td>Movie</td>
+<td>Miracle on Highway 34</td>
+<td>Nathan Clarkson</td>
+<td>Sharonne Lanier, Dan Davidson, Josh Murray, St...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2020</td>
+<td>ALL</td>
+<td>71 min</td>
+<td>Drama, Special Interest</td>
+<td>A diverse set of characters find themselves to...</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co">#https://www.kaggle.com/datasets/shivamb/netflix-shows</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>netflix_df <span class="op">=</span> pd.read_csv(<span class="st">"netflix_titles.csv"</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>netflix_df.sample(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="56">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">show_id</th>
+<th data-quarto-table-cell-role="th">type</th>
+<th data-quarto-table-cell-role="th">title</th>
+<th data-quarto-table-cell-role="th">director</th>
+<th data-quarto-table-cell-role="th">cast</th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">date_added</th>
+<th data-quarto-table-cell-role="th">release_year</th>
+<th data-quarto-table-cell-role="th">rating</th>
+<th data-quarto-table-cell-role="th">duration</th>
+<th data-quarto-table-cell-role="th">listed_in</th>
+<th data-quarto-table-cell-role="th">description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">5455</td>
+<td>s5456</td>
+<td>Movie</td>
+<td>Maya Memsaab</td>
+<td>Ketan Mehta</td>
+<td>Deepa Sahi, Farooq Shaikh, Raj Babbar, Shah Ru...</td>
+<td>France, United Kingdom, India</td>
+<td>June 1, 2017</td>
+<td>1993</td>
+<td>TV-14</td>
+<td>122 min</td>
+<td>Dramas, International Movies, Music &amp; Musicals</td>
+<td>A beautiful, wealthy woman’s insatiable appeti...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3790</td>
+<td>s3791</td>
+<td>Movie</td>
+<td>Mere Pyare Prime Minister</td>
+<td>Rakeysh Omprakash Mehra</td>
+<td>Anjali Patil, Om Kanojiya, Niteesh Wadhwa, Mak...</td>
+<td>India</td>
+<td>May 31, 2019</td>
+<td>2019</td>
+<td>TV-MA</td>
+<td>103 min</td>
+<td>Dramas, International Movies</td>
+<td>When his mother suffers a traumatic incident, ...</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="89">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">#https://www.kaggle.com/datasets/shivamb/hulu-movies-and-tv-shows</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>hulu_df <span class="op">=</span> pd.read_csv(<span class="st">"hulu_titles.csv"</span>)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>hulu_df.sample(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="89">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">show_id</th>
+<th data-quarto-table-cell-role="th">type</th>
+<th data-quarto-table-cell-role="th">title</th>
+<th data-quarto-table-cell-role="th">director</th>
+<th data-quarto-table-cell-role="th">cast</th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">date_added</th>
+<th data-quarto-table-cell-role="th">release_year</th>
+<th data-quarto-table-cell-role="th">rating</th>
+<th data-quarto-table-cell-role="th">duration</th>
+<th data-quarto-table-cell-role="th">listed_in</th>
+<th data-quarto-table-cell-role="th">description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2686</td>
+<td>s2687</td>
+<td>TV Show</td>
+<td>Witchblade</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Japan, United States</td>
+<td>September 5, 2017</td>
+<td>2006</td>
+<td>TV-MA</td>
+<td>1 Season</td>
+<td>Action, Adventure, Anime</td>
+<td>Masane's fate is altered after uniting with th...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2044</td>
+<td>s2045</td>
+<td>Movie</td>
+<td>Uncanny Annie</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>October 4, 2019</td>
+<td>2019</td>
+<td>TV-MA</td>
+<td>80 min</td>
+<td>Horror</td>
+<td>On Halloween night a group of college students...</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>hulu_df[<span class="st">"Platform"</span>] <span class="op">=</span> <span class="st">"Hulu"</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>hulu_df.sample(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="58">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">show_id</th>
+<th data-quarto-table-cell-role="th">type</th>
+<th data-quarto-table-cell-role="th">title</th>
+<th data-quarto-table-cell-role="th">director</th>
+<th data-quarto-table-cell-role="th">cast</th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">date_added</th>
+<th data-quarto-table-cell-role="th">release_year</th>
+<th data-quarto-table-cell-role="th">rating</th>
+<th data-quarto-table-cell-role="th">duration</th>
+<th data-quarto-table-cell-role="th">listed_in</th>
+<th data-quarto-table-cell-role="th">description</th>
+<th data-quarto-table-cell-role="th">Platform</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2584</td>
+<td>s2585</td>
+<td>TV Show</td>
+<td>ESL: Defining Moments</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>United States</td>
+<td>December 8, 2017</td>
+<td>2017</td>
+<td>TV-14</td>
+<td>1 Season</td>
+<td>Documentaries</td>
+<td>Dive deep into the most impactful moments in e...</td>
+<td>Hulu</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">231</td>
+<td>s232</td>
+<td>Movie</td>
+<td>John Bronco Rides Again</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>September 13, 2021</td>
+<td>2021</td>
+<td>NaN</td>
+<td>26 min</td>
+<td>Comedy</td>
+<td>John Bronco, the greatest pitchman of all time...</td>
+<td>Hulu</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>netflix_df[<span class="st">"Platform"</span>] <span class="op">=</span> <span class="st">"Netflix"</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>amazon_df[<span class="st">"Platform"</span>] <span class="op">=</span> <span class="st">"Amazon"</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>disney_df[<span class="st">"Platform"</span>] <span class="op">=</span> <span class="st">"Disney"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="60">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>all_platforms <span class="op">=</span> pd.concat([hulu_df,netflix_df,amazon_df,disney_df])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>all_platforms.sample(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="70">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">show_id</th>
+<th data-quarto-table-cell-role="th">type</th>
+<th data-quarto-table-cell-role="th">title</th>
+<th data-quarto-table-cell-role="th">director</th>
+<th data-quarto-table-cell-role="th">cast</th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">date_added</th>
+<th data-quarto-table-cell-role="th">release_year</th>
+<th data-quarto-table-cell-role="th">rating</th>
+<th data-quarto-table-cell-role="th">duration</th>
+<th data-quarto-table-cell-role="th">listed_in</th>
+<th data-quarto-table-cell-role="th">description</th>
+<th data-quarto-table-cell-role="th">Platform</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4463</td>
+<td>s4464</td>
+<td>Movie</td>
+<td>Left Behind: The Movie</td>
+<td>Vic Sarin</td>
+<td>Kirk Cameron, Brad Johnson, Janaya Stephens, C...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>2000</td>
+<td>PG-13</td>
+<td>100 min</td>
+<td>Action, Adventure, Faith and Spirituality</td>
+<td>After learning that millions have completely v...</td>
+<td>Amazon</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">8268</td>
+<td>s8269</td>
+<td>Movie</td>
+<td>The Darkest Dawn</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>United Kingdom</td>
+<td>June 23, 2018</td>
+<td>2016</td>
+<td>TV-MA</td>
+<td>75 min</td>
+<td>Action &amp; Adventure, Independent Movies, Intern...</td>
+<td>An aspiring filmmaker records the chaos of an ...</td>
+<td>Netflix</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="72">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>all_platforms.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="72">
+<pre><code>(22998, 13)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="79">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(all_platforms[<span class="st">'title'</span>].unique())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="79">
+<pre><code>22115</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="92">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>titles <span class="op">=</span> all_platforms[<span class="st">"title"</span>].value_counts().to_frame()</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>titles</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="92">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">title</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Merlin</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Genius</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">America's Next Top Model</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Underworld</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Supermarket Sweep</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Rang De Basanti</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Raajneeti</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Mohenjo Daro</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Main aurr Mrs. Khanna</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Captain Sparky vs. The Flying Saucers</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+<p>22115 rows × 1 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="95">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>titles.reset_index(inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="99">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>titles[<span class="st">'Platforms'</span>].<span class="bu">max</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="99">
+<pre><code>3</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="96">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>titles.columns <span class="op">=</span> [<span class="st">"Movie Name"</span>,<span class="st">"Platforms"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="100">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>titles[titles[<span class="st">'Platforms'</span>]<span class="op">&gt;</span><span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="100">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Movie Name</th>
+<th data-quarto-table-cell-role="th">Platforms</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Merlin</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Genius</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>America's Next Top Model</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Underworld</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Supermarket Sweep</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">829</td>
+<td>Trumbo</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">830</td>
+<td>Same Kind of Different as Me</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">831</td>
+<td>Ghost Stories</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">832</td>
+<td>The Iron Lady</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">833</td>
+<td>The Princess and the Frog</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+
+<p>834 rows × 2 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="102">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>all_platforms[all_platforms[title]<span class="op">==</span><span class="st">"Underworld"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>NameError: name 'title' is not defined</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="106">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>all_platforms[all_platforms[<span class="st">'title'</span>] <span class="op">==</span> <span class="st">"Underworld"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="106">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">show_id</th>
+<th data-quarto-table-cell-role="th">type</th>
+<th data-quarto-table-cell-role="th">title</th>
+<th data-quarto-table-cell-role="th">director</th>
+<th data-quarto-table-cell-role="th">cast</th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">date_added</th>
+<th data-quarto-table-cell-role="th">release_year</th>
+<th data-quarto-table-cell-role="th">rating</th>
+<th data-quarto-table-cell-role="th">duration</th>
+<th data-quarto-table-cell-role="th">listed_in</th>
+<th data-quarto-table-cell-role="th">description</th>
+<th data-quarto-table-cell-role="th">Platform</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">559</td>
+<td>s560</td>
+<td>Movie</td>
+<td>Underworld</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>July 1, 2021</td>
+<td>2003</td>
+<td>R</td>
+<td>121 min</td>
+<td>Action, Thriller</td>
+<td>A beautiful vampire warrior is entrenched in a...</td>
+<td>Hulu</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">610</td>
+<td>s611</td>
+<td>Movie</td>
+<td>Underworld</td>
+<td>Len Wiseman</td>
+<td>Kate Beckinsale, Scott Speedman, Michael Sheen...</td>
+<td>United States, United Kingdom, Germany, Hungary</td>
+<td>July 1, 2021</td>
+<td>2003</td>
+<td>R</td>
+<td>121 min</td>
+<td>Action &amp; Adventure, Horror Movies, Sci-Fi &amp; Fa...</td>
+<td>A vampire warrior begins to question her missi...</td>
+<td>Netflix</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8820</td>
+<td>s8821</td>
+<td>Movie</td>
+<td>Underworld</td>
+<td>Roger Christian</td>
+<td>Denis Leary, Joe Mantegna, Annabella Sciora, L...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1997</td>
+<td>R</td>
+<td>95 min</td>
+<td>Comedy, Suspense</td>
+<td>A petty criminal fresh from a 7 year stint in ...</td>
+<td>Amazon</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>What is the average duration of shows?</p>
+<p>What is the average duration of movies?</p>
+<div class="cell" data-execution_count="155">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> all_platforms[all_platforms[<span class="st">"type"</span>]<span class="op">==</span><span class="st">"Movie"</span>]</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>x.sort_values(<span class="st">"duration"</span>,ascending<span class="op">=</span><span class="va">False</span>).iloc[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="155">
+<pre><code>show_id                                                     s1330
+type                                                        Movie
+title                       The Misadventures of Hedi and Cokeman
+director                                             Julien Royal
+cast            Hedi Bouchenafa, Nassim Lyes, Fred Testot, Jul...
+country                                                    France
+date_added                                      February 10, 2021
+release_year                                                 2021
+rating                                                      TV-MA
+duration                                                   99 min
+listed_in                          Comedies, International Movies
+description     In Paris, two dysfunctional dealers use family...
+Platform                                                  Netflix
+Name: 1329, dtype: object</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="158">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>x[x[<span class="st">"duration"</span>]<span class="op">==</span><span class="st">"269 min"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="158">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">show_id</th>
+<th data-quarto-table-cell-role="th">type</th>
+<th data-quarto-table-cell-role="th">title</th>
+<th data-quarto-table-cell-role="th">director</th>
+<th data-quarto-table-cell-role="th">cast</th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">date_added</th>
+<th data-quarto-table-cell-role="th">release_year</th>
+<th data-quarto-table-cell-role="th">rating</th>
+<th data-quarto-table-cell-role="th">duration</th>
+<th data-quarto-table-cell-role="th">listed_in</th>
+<th data-quarto-table-cell-role="th">description</th>
+<th data-quarto-table-cell-role="th">Platform</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8057</td>
+<td>s8058</td>
+<td>Movie</td>
+<td>A Woman Named Jackie</td>
+<td>Larry Peerce</td>
+<td>Sarah Michelle Gellar, Andy Buckley, Stephen C...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1991</td>
+<td>16+</td>
+<td>269 min</td>
+<td>Drama</td>
+<td>This starts when Jackie Kennedy was working af...</td>
+<td>Amazon</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="156">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>x[<span class="st">'duration'</span>].<span class="bu">max</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>TypeError: '&gt;=' not supported between instances of 'float' and 'str'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="141">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>ex_df <span class="op">=</span> all_platforms[all_platforms[<span class="st">"type"</span>]<span class="op">==</span><span class="st">"Movie"</span>]</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>abc <span class="op">=</span> ex_df[ex_df[<span class="st">'title'</span>].<span class="bu">str</span>.startswith(<span class="st">'E'</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="144">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>abc[<span class="st">'title'</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="144">
+<pre><code>array(['Edge of the World', 'Escape from Alcatraz',
+       'Exorcist: The Beginning', 'Eyewitness to 9/11: Behind the Lens',
+       'Edward Scissorhands', 'El Dorado', 'Election',
+       'Eredivisie Soccer', 'English Championship Soccer',
+       'Every Breath You Take', 'Enforcement', 'Exit Plan',
+       'Entre Nos Presents: Frankie Quiñones: Superhomies',
+       'Elaine Stritch: Shoot Me', 'Enemy At The Gates',
+       'Escape to Alcatraz', 'Elvis Presley: The Searcher',
+       "Everything's Gonna Be Okay", 'Everyone is Doing Great', 'Endless',
+       'Euphoria', 'Entre Nos: About Last Night', 'Elf', 'Earth to Echo',
+       'Emperor',
+       "Entre Nos Presents: Shayla Rivera: It's Not Rocket Science",
+       'ESPN FC', 'El embarcadero', 'Elena Undone', 'Eye In The Sky',
+       'Equilibrium', 'Emanuel', 'Elvira: Mistress of the Dark',
+       'Eddie Griffin: E-Niggma', 'Earth Views', 'Eating Animals',
+       'Every Other Holiday', 'ESPN Films Presents',
+       "Europe's Most Dangerous Man: Otto Skorzeny in Spain",
+       'El patrón, radiografía de un crimen', 'Extraction',
+       'EMI: Liya Hai To Chukana Padega', 'Esperando la carroza',
+       'Eyes of a Thief', 'Emicida: AmarElo - Live in São Paulo',
+       'Escape from Planet Earth',
+       'Elizabeth and Margaret: Love and Loyalty', 'Eeb Allay Ooo!',
+       'Eddie Murphy: Raw', 'Eggnoid: Love &amp; Time Portal',
+       'Emicida: AmarElo - It’s All For Yesterday', 'Effie Gray',
+       'Elf Pets: A Fox Cub’s Christmas Tale',
+       'Elf Pets: Santa’s Reindeer Rescue',
+       'Elliot the Littlest Reindeer', 'Exes Baggage',
+       "El-Khawaga's Dilemma", 'Enola Holmes', 'Edge of Seventeen',
+       'Eurovision Song Contest: The Story of Fire Saga',
+       'Eric Andre: Legalize Everything', 'Elevator Baby',
+       'El límite infinito', 'Either Me Or My Auntie',
+       'Escaping Tel Aviv', 'Ekşi Elmalar', 'Earth and Blood',
+       'El silencio es bienvenido', 'Eye For An Eye',
+       'El Pepe, a Supreme Life', 'Evvarikee Cheppoddu',
+       'Earthquake Bird', 'El sendero de la anaconda',
+       'Escape from Mr. Lemoncello’s Library', 'Echo in the Canyon',
+       'Eli', 'El Camino: A Breaking Bad Movie', 'Evelyn',
+       'Ee Nagaraniki Emaindi', 'Elena', 'Enter the Anime', 'Eerie',
+       'El testigo', 'EVANGELION: DEATH (TRUE)²', 'Elisa &amp; Marcela',
+       'Extremely Wicked, Shockingly Evil and Vile',
+       'Ek Khiladi Ek Haseena', 'Ek Ladki Ko Dekha Toh Aisa Laga',
+       'Edoardo Ferrario: Temi Caldi', 'Everything About Her',
+       'Everyday I Love You', 'Evening Shadows', 'Echcharikkai',
+       'El Potro: Unstoppable', 'El club de los insomnes', 'Edge of Fear',
+       'Edmilson Filho: Notas, Comedy about Relationships',
+       'Errementari: The Blacksmith and the Devil',
+       "Eric ldle's What About Dick?", 'Ek Main Aur Ekk Tu', 'Extinction',
+       'El club de los buenos infieles', 'Expelled from Paradise',
+       'End Game', 'Enissa Amani: Ehrenwort', 'Expedition China',
+       'Expedition Happiness', "Eve's Apple", 'El Camino Christmas',
+       'El Especial de Alex Fernández, el Especial', 'Ek Jaan Hain Hum',
+       'Enter the Warriors Gate', 'English Babu Desi Mem', 'Elaan',
+       'Eddie - Strongman', 'Extremis', 'E-Team', 'Even the Rain',
+       'E-Cigarettes: Miracle or Menace?', 'East Side Sushi', 'Easy A',
+       'Eat Pray Love', 'Eddie Murphy: Delirious', 'Eeda',
+       'Eh Janam Tumhare Lekhe', 'Ek Cup Chya', 'Ek Hasina Thi',
+       'El último testigo', 'El Che', 'El fin de ETA',
+       'El Viaje: Márama y Rombai', 'Elephants Dream 4 Hour',
+       'Elizabeth at 90: A Family Tribute', 'Elizabeth Harvest',
+       'Elles étaient en guerre (1914-1918)',
+       'Elles étaient en guerre 1939-1945',
+       'Elles ont toutes une histoire', 'Elstree 1976', 'Emelie',
+       "Emma' (Mother)", 'Emo the Musical', 'Empire of Scents',
+       'Employee of the Month', 'Encounter: The Killing', 'End of Watch',
+       'Enemy', 'Enlighten Us', 'Entanglement', 'Enter the Dragon',
+       'Equals', 'Escape from the "Liberty" Cinema',
+       'Esperando La Carroza', 'Estar o no estar', 'Ethirmarai',
+       'Evan Almighty', 'Event Horizon', 'Every Time I Die',
+       'Everybody Knows', 'Evolution', 'Ex Machina', 'Executive Decision',
+       'Exit Afghanistan', 'Exit Strategy', 'Exit Wounds', 'Expo',
+       'Eyyvah Eyyvah', 'Eyyvah Eyyvah 2', 'Eyyvah Eyyvah 3',
+       'Elon Musk: The Real Life Iron Man',
+       'Eyes Of Texas (Black &amp; White)',
+       'Eye of the Beholder: The Art of Dungeons and Dragons',
+       'Extracurricular Activities', 'Extra Golden', 'Explorers',
+       'Explore The Wildlife Kingdom: Lions - Kings of Africa',
+       'EXIT cLoV', 'Exciting Educational Songs! - Little Baby Bum',
+       'Evil Little Things', 'Everything is Free', "Everybody's Game",
+       'Eugene Mirman: Vegan on His Way to the Complain Store',
+       'ETs Among Us: UFO Witnesses and Whistleblowers',
+       'ETs Among Us 2: Our Alien Origins, Antarctica, Mars and Beyond',
+       'Escape from the Bronx', 'Escape', 'Ernest Cole',
+       'Erik Griffin: AmERIKan Warrior', 'Equal Means Equal',
+       "Ephraim's Rescue", 'Enchantment', 'Enchantimals: Finding Home',
+       'Enchantimals Spring into Harvest Hills', 'Enai Noki Paayum Thota',
+       "Emma's Chance", "Emily Bronte's Wuthering Heights", 'Elsewhere',
+       'Elon Gold: Chosen &amp; Taken', 'Eloise At The Plaza',
+       'Elliott Smith - Heaven Adores You', 'Elephant Song',
+       'Electric Six', 'Elayne Boosler: Party of One',
+       'El mundo fuera – Alejandro Sanz', 'El Ascensor', 'Ekaj',
+       'Ek Baar Kaho', 'Educational Songs for Toddlers - Little Baby Bum',
+       'Edison', 'Edie', 'Edge of Doom', 'Eddie Pepitone: In Ruins',
+       'Eddie Pence: The (Un)special Comedy Special',
+       'Eddie Griffin: Undeniable', 'Eat With Me', 'Easy Come, Easy Go',
+       'Early Day Miners', 'Ear Buds: The Podcasting Documentary',
+       'Eagle, The (Silent)', 'Eagle and the Hawk', 'E-Motion 2.0',
+       'Exit Speed', 'Extraordinary: The Seeding', 'Extracted',
+       'Everything and Nothing', 'Every Little Step',
+       'Evening Rain for Sleep 8 hours', 'Evaru',
+       'ETs Among Us 3: Secret Space Program, Alien Psychics &amp; Crop Circle Clues',
+       'Elvis &amp; Nixon', 'Elimination Game', 'Echoes of Fear', 'Elodie',
+       'Escape Plan: the Extractors Aka Escape Plan 3',
+       'Eriko, Pretended', 'Enchantimals Secrets of Snowy Valley', 'Eden',
+       'Emotional Fool', 'Escape Plan: The Extractors (4K UHD)',
+       'Everybody Changes', 'Enakkoru Magan Pirappan',
+       'Error In Judgement', 'Expiry', 'Escape from a Nazi Death Camp',
+       'En Jeevan Paduthu', 'Elliott Morgan: Holy Sh*t',
+       'Edgar Allan Poe\'s "The Oval Portrait"', 'Eternally Yours',
+       'Extreme Raheem', 'Eternity', 'El Cid, The Legend', 'Evan Straw',
+       "Egypt's Lost Queens", 'Enter the Dangerous Mind', 'Evil Boy',
+       "Emergency Vehicles for Kids - Gecko's Real Vehicles",
+       'Engada Iruthinga Ivvalavu Naala', 'El Gran McLintock',
+       'Ek Mini Katha', 'Eni', 'Eat Your Heart Out', 'Escape and Evasion',
+       'Elton John - Uncensored', 'Elyse', 'Eagle Eye', 'Evil Eye',
+       'El Duende Satiro', "Emmet Otter's Jug-Band Christmas",
+       'Eruption LA', 'Ed Hill: Candy and Smiley',
+       'Ed Wood\'s "The Violent Years" - An Exploitation Schlock Classic',
+       'Ee Kathalo Paatralu Kalpitam',
+       "Eddie Griffin: You Can Tell 'Em I Said It",
+       'Ek Tha Tiger (English Subtitled)', 'Extreme Movie',
+       'Ekkadiki Pothavu Chinnavada',
+       'Educational Songs for Kids - LooLoo Kids', 'Eye of the Beholder',
+       'Ester Steinberg: Burning Bush', 'Eggy',
+       "Erik Rivera: I'm No Expert", 'Eagles Attack at Dawn',
+       'Evil On Queen Street: Bloodlust', 'Every Single Someone',
+       'Europa Report', 'Erica Rhodes: La Vie en Rhodes', 'Edge Of Dawn',
+       'Ek Gadi Baki Anadi', 'Evocateur: The Morton Downey Jr. Movie',
+       'Exodus', "El Lute II: Tomorrow I'll be free", 'Egonìa',
+       'Enna Satham Indha Neram', 'Erotic Fire of The Unattainable',
+       'Emerald Run', 'Elektra', 'Esther and the King',
+       "Elektra DIRECTOR'S CUT", 'El Lute: Run for Your Life', 'Endless?',
+       'Eggs', 'En Manaivi', 'Ennul Aayiram',
+       'Eddie Izzard: Force Majeure', 'Eddie Izzard: Dress To Kill',
+       'EVANGELION:3.33 YOU CAN (NOT) REDO.',
+       'EVANGELION:3.0+1.01 THRICE UPON A TIME',
+       'EVANGELION:2.22 YOU CAN (NOT) ADVANCE.',
+       'EVANGELION:1.11 YOU ARE (NOT) ALONE.', 'Enhanced', 'Eighteen',
+       'E.14', 'Evil Everywhere', 'Enakku Vaaitha Adimaigal',
+       'Eartha Kitt &amp; Sammy Davis Jr. in "Anna Lucasta" - All Black Cast Classic!',
+       'Embryo', 'Eight Hours from Paris', 'Eternal Beauty',
+       'Eddie Izzard: Definite Article', 'Extracurricular', 'Excision',
+       'Ed Gein: The Butcher of Plainfield', 'Experimenter',
+       'Entrepreneurs', 'Entertainment', 'Exposed', "Emma's War",
+       'Elfette Saves Christmas', 'El Vigilante', 'Ebony, Ivory and Jade',
+       'English Fairy Tales', "Everybody's Talking About Jamie",
+       'Edge Of The Axe', 'Enclosed', "Elvira's Movie Macabre: Tormented",
+       "Elvira's Movie Macabre: The Werewolf Of Washington (2010)",
+       "Elvira's Movie Macabre: The Terror",
+       "Elvira's Movie Macabre: The Satanic Rites Of Dracula",
+       "Elvira's Movie Macabre: The Manster",
+       "Elvira's Movie Macabre: The Killer Shrews",
+       "Elvira's Movie Macabre: The Giant Gila Monster",
+       "Elvira's Movie Macabre: The Brain That Wouldn't Die",
+       "Elvira's Movie Macabre: Teenagers From Outer Space",
+       "Elvira's Movie Macabre: Scared To Death",
+       "Elvira's Movie Macabre: Santa Claus Conquers The Martians",
+       "Elvira's Movie Macabre: Night Of The Living Dead",
+       "Elvira's Movie Macabre: Manos: The Hands Of Fate",
+       "Elvira's Movie Macabre: Lady Frankenstein",
+       "Elvira's Movie Macabre: I Eat Your Skin",
+       "Elvira's Movie Macabre: Hercules And The Captive Women",
+       "Elvira's Movie Macabre: Eegah",
+       "Elvira's Movie Macabre: Don't Look In The Basement",
+       "Elvira's Movie Macabre: Beast From Haunted Cave",
+       "Elvira's Movie Macabre: Attack Of The Giant Leeches",
+       "Elvira's Movie Macabre: A Bucket Of Blood",
+       'Eddie Izzard: Dress To Circle', 'EVA', 'Eternal', 'Emerald Falls',
+       'El Topo', 'Eddie Izzard: Unrepeatable', 'Eddie Izzard: Stripped',
+       'Exit Humanity', 'Evidence of Blood', 'Electrician',
+       "Edgar Allan Poe's Requiem for the Damned", 'Eddie Izzard: Circle',
+       'EurOpen People', 'Eric Clapton: Standing at the Crossroads',
+       'Evilution', 'Ernest Saves Christmas', 'Enchanted', 'Eragon',
+       'Ewoks: The Battle for Endor', 'Expedition Everest',
+       'Ever After: A Cinderella Story', "Egypt's Treasure Guardians",
+       'Elephant', 'Elmer Elephant', 'Expedition Amelia', 'Early to Bed',
+       'Earth Live', 'Easter Island Unsolved',
+       "Eddie's Million Dollar Cook-off", 'Eight Below',
+       'Emil and the Detectives',
+       'Empire of Dreams: The Story of the Star Wars Trilogy',
+       'Escape to Witch Mountain',
+       'Expedition Mars: Spirit &amp; Opportunity', 'Eddie the Eagle'],
+      dtype=object)</code></pre>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
