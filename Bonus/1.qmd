@@ -1,11 +1,15 @@
-## Sonam's Dilemma: A Gift for Few or a Chance for All
+# Sonam's Dilemma: A Gift for Few or a Chance for All
 ###### Bonus Question : 1 point 
+
+<br>
+
 ### Instructions
 
-Due Date : July 7, Friday, 5 pm
-Submit your answer at D2L>Quiz>Sonam's Dilemma : a gift for few or a chance for all
+- Due Date : July 7, Friday, 5 pm
+- Submit your answer at D2 > Quiz > "Sonam's Dilemma : a gift for few or a chance for all"
 
-
+### Question
+<br>
 _Source : Story I made up, text improved by ChatGPT, and then edited by myself._
 
 Once upon a time, in the grand kingdom of Razia, there existed a mesmerizing lead dancer named Sonam. She possesed a combination of charm, extraordinary talent, and intelligence that made her stand out amongst her peers. Sonam's passion for dance was matched only by her love for her dance group,with 2000 other talented dances, who all shared an unbreakable bond and admired their noble Queen above all.
@@ -23,4 +27,3 @@ However, there were only a limited number of gift available to give out right no
 The second choice, however, offered a twist. Queen Shah proposed distributing the available gifts among all dancers, but with a twist of uncertainty. Each dancer would have a 33% chance of receiving a gift and a 66% chance of going without. 
 
 Now faced with this dilemma, Sonam's sharp mind began to evaluate the situation. Which option should Sonam pick? Why? Why not the other?
-

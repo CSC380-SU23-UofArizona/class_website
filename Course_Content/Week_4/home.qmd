@@ -1,4 +1,5 @@
-# Week 4 : Data Visualization, Introduction to ML
+# Week 4 : Data Visualization, Introduction to ML 
+#### [ June 29 to July 2]
 
 ## Objectives
 
@@ -35,13 +36,13 @@
 
 ### Homework
 
-- [Homework 2: Due TBD](../../Homework/1/HW.qmd)
-- [Bonus Homework: Due TBD](../../Homework/Bonus_1/HW.qmd)
+- [Homework 2: Due July 7, 5 pm](../../Homework/2/HW.qmd)
+- [Bonus Homework: Due July 7, 5 pm](../../Bonus/1.qmd)
 
 ### Weekly Checkin 
 
-- Weekly Checkin for Week 3 : Due 5 pm, July 2, Sunday ( Based on Lecture 2.x.1 & 3.1)
-- Weekly Checkin for Week 4 : Due 5 pm, TBD, ( Based on Lecture 4.1,4.2,4.3)
+- Weekly Checkin for Week 3 : Due 5 pm, July 2, Sunday ( Based on Lecture 2.x.1 & 3.1, 3.2, 3.3)
+- Weekly Checkin for Week 4 : Due 5 pm, July 7, ( Based on Lecture 4.1,4.2,4.3)
 
 ### Others
 
@@ -67,13 +68,13 @@
 
 ### 2. Homeworks
 
-- [ ] Homework 2 released
-- [ ] Bonus Homework (tentative)
+- [x] Homework 2 released
+- [x] Bonus Homework (tentative)
 
 ### 3. Weekly Check-in
 
-- [ ] Check-in for week 3 is due on 5 pm, July 2, Sunday
-- [ ] Check-in for week 4 opens.
+- [x] Check-in for week 3 is due on 5 pm, July 2, Sunday. (Based on Lecture 2.x.1 & 3.1, 3.2, 3.3)
+- [ ] Check-in for week 4 opens ( Based on Lecture 4.1, 4.2, 4.3 )
 
 ### 4. Assigned Reading
 
@@ -85,4 +86,4 @@
 - [ ] Contract Finalisation.
 
 ### 6. Others
-- Github experience in class . Take Survey on D2L>Survey
+-  [x] Github experience in class . Take Survey on D2L>Survey

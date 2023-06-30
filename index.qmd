@@ -3,23 +3,26 @@ title: "Principles Of Data Science"
 ---
 
 ::: {.callout-note}
-Latest Lectures: 
-[Lecture 3.2](Course_Content/Week_3/2/home.qmd)
-[Lecture 3.3](Course_Content/Week_3/3/home.qmd) 
-:::
-
-::: {.callout-note}
-Close to Week 3, there was a major course plan and related logistics update. Lectures during and before week 3 may refer to elements and notation before the update.
+- Latest Lecture - [Lecture 3.3](Course_Content/Week_3/3/home.qmd).
+- [Week 4](Course_Content/Week_4/home.html#week-4-june-28-to-july-2-4) Plans Shared.
+- Github Familarity Survey Open - D2L > Survey.
+- [Homework 2](Homework/2/HW.qmd) is open.
+- [Bonus Question One](Bonus/1.qmd) is open.
 :::
 
 ## CheckList
 
 ### Due Dates
 
-- [ ] Weekly Checkin for Week 3 | Due 5 pm , July 2, Sunday
+- [ ] Weekly Checkin for Week 3 | Due 5 pm , July 2, Sunday ( Based on Lecture 2.x.1 & 3.1, 3.2, 3.3)
+- [ ] Survey | Due 5 pm , July 7, Friday
+- [ ] [Homework 2](Homework/2/HW.qmd) | Due 5 pm , July 2, Sunday
+- [ ] [Bonus Question One](Bonus/1.qmd) | Due 5 pm, July 2, Sunday
 
-Previously:
 
-- [x] Weekly Checkin for Week 2 | Due 5 pm , June 25, Sunday
-- [x] Homework One | Due 5 pm, June 26, Monday
+::: {.callout-note}
+(Note will expire on July 2)
+
+Close to Week 3, there was a major course plan and related logistics update. Lectures during and before week 3 may refer to elements and notation before the update.
+:::
 
