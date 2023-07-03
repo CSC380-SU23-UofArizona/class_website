@@ -9,7 +9,7 @@ Continuing learning pandas functions
 
 * Group By
     * How does it work ? Split/Apply/Combine
-* Mulit-Index
+* Multi-Index
 * Joins
     * Inner
     * Outer
