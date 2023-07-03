@@ -3,10 +3,10 @@ title: "Principles Of Data Science"
 ---
 
 ::: {.callout-note}
-- Latest Lecture - [Lecture 3.3](Course_Content/Week_3/3/home.qmd).
-- [Week 4](Course_Content/Week_4/home.html#week-4-june-28-to-july-2-4) Plans Shared.
+- Latest Lecture - [Lecture 4.1](Course_Content/Week_4/1/home.qmd).
+- [Week 4](Course_Content/Week_4/home.html#week-4-june-28-to-july-2-4) Plans Updated.
 - Github Familarity Survey Open - D2L > Survey.
-- [Homework 2](Homework/2/HW.qmd) is open.
+- [Homework 2](Homework/2/HW.qmd) is open. Typo corrected , check page.
 - [Bonus Question One](Bonus/1.qmd) is open.
 :::
 

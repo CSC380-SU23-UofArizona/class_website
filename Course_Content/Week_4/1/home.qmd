@@ -1,0 +1,40 @@
+# 4.1 - Pandas cont... 
+
+######  Week 4 - Data Visualisation and Introduction to ML
+<br>
+
+## Objectives 
+
+Continuing learning pandas functions
+
+* Group By
+    * How does it work ? Split/Apply/Combine
+* Mulit-Index
+* Joins
+    * Inner
+    * Outer
+    * Left Join
+    * Right Join
+    * Cross
+* We also saw:
+    * idxmax()
+    * pd.concat()
+
+
+
+<br>
+
+## Materials
+
+* [Spotify Top 50 Playlist Songs | @anxods | Kaggle](https://www.kaggle.com/datasets/anxods/spotify-top-50-playlist-songs-anxods)
+<br>
+
+* [Jupyter Notebook](Notebook.ipynb)
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/i0w3m2Q8Nko" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Next Class 
+
+[4.2 - Data Cleaning](../2/home.qmd)
