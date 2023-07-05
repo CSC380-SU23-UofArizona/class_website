@@ -19,10 +19,3 @@ title: "Principles Of Data Science"
 - [ ] [Homework 2](Homework/2/HW.qmd) | Due 5 pm , July 7, Friday
 - [ ] [Bonus Question One](Bonus/1.qmd) | Due 5 pm, July 7, Friday
 
-
-::: {.callout-note}
-(Note will expire on July 2)
-
-Close to Week 3, there was a major course plan and related logistics update. Lectures during and before week 3 may refer to elements and notation before the update.
-:::
-
