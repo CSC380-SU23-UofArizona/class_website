@@ -9,3 +9,5 @@
 * [Questions](Homework_1.pdf)
 
 * [Hints](Homework_1_Hints.pdf)
+
+* [Solutions](Homework_1_Solutions.pdf)
