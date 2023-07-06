@@ -60,11 +60,11 @@
 
 ### 1. Lectures
 
-- [x] [4.1 - cont .. Pandas <small><small><s>Data Processing</s></small></small>](1/home.qmd) | <small><small><s>Tenative date : June 29, Thu</s></small></small> | Released on : July 3, Mon
+- [x] [4.1 - cont .. Pandas <small><small><s>Data Processing</s></small></small>](1/home.qmd) 
 
-- [ ] [4.2 - Data Cleaning <s>Vizualisation</s> ](2/home.qmd) | <small><small><s>Tenative date : June 30, Fri</s></small></small>
+- [x] [4.2 - Data Preprocessing - Part 1 | (Tabular Data, Audio and Image)](2/home.qmd)
 
-- [ ] [4.3 - Intro to Machine Learning](3/home.qmd) | <small><small><s>Tenative date : July 1, Sat</s></small></small>
+- [ ] [4.3 - Data Preprocessing - Part 2 & Data Visualization](3/home.qmd)
 
 ### 2. Homeworks
 
