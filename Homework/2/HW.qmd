@@ -8,4 +8,4 @@
 
 * [Questions](Homework_2_Questions.pdf)
 
-* [Bonus Question](../Bonus/1.qmd)
+* [Bonus Question](../../Bonus/1.qmd)
