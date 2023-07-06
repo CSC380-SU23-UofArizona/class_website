@@ -54,6 +54,9 @@ website:
 
           - text: "W8: Facial Recognition"
             file: Ethics/Week_8.qmd
+
+          - text: "W9:ChatGPT and friends"
+            file: Ethics/Week_9.qmd
       
       - section: "Bonus Questions"
         contents:

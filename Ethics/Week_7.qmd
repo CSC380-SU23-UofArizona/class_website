@@ -1,4 +1,6 @@
 # Week 7 : AI in Housekeeping
 
 ## Reading
-[A Roomba recorded a woman on the toilet. How did screenshots end up on Facebook?](https://www.technologyreview.com/2022/12/19/1065306/roomba-irobot-robot-vacuums-artificial-intelligence-training-data-privacy/)
+- [A Roomba recorded a woman on the toilet. How did screenshots end up on Facebook?](https://www.technologyreview.com/2022/12/19/1065306/roomba-irobot-robot-vacuums-artificial-intelligence-training-data-privacy/)
+
+- [Here’s What You’re Actually Agreeing To When You Accept a Privacy Policy](https://www.nytimes.com/wirecutter/blog/what-are-privacy-policies/)

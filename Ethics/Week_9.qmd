@@ -1,0 +1,6 @@
+# Week 9 : ChatGPT and friends
+
+## Reading
+
+- [Indirect Prompt Injection Threats](https://greshake.github.io/)
+- [Samsung Bans Staff’s AI Use After Spotting ChatGPT Data Leak](https://www.bloomberg.com/news/articles/2023-05-02/samsung-bans-chatgpt-and-other-generative-ai-use-by-staff-after-leak)

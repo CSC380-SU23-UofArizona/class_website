@@ -1,7 +1,7 @@
 # Week 8 : AI for Facial Recognition
 
+
 ## Reading
-<br>
 
 - [A Case for Banning Facial Recognition](https://www.nytimes.com/2020/06/09/technology/facial-recognition-software.html)
 - [Clothing designer tricks AI-powered face recognition into thinking you’re an animal](https://nypost.com/2023/01/25/clothing-designer-tricks-ai-powered-face-recognition/)
