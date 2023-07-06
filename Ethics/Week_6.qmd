@@ -1,0 +1,13 @@
+# Week 6 : AI in Autonomous Driving
+
+## Reading
+
+- [How do you teach an autonomous car when to hurt its passengers?](https://www.theverge.com/2016/6/23/12010476/social-dilemma-autonomous-vehicles-car-moral-machine-trolley-problem)
+
+- [The racism of technology - and why driverless cars could be the most dangerous example yet](https://www.theguardian.com/technology/shortcuts/2019/mar/13/driverless-cars-racist)
+
+- [The folly of trolleys: Ethical challenges and autonomous vehicles](https://www.brookings.edu/articles/the-folly-of-trolleys-ethical-challenges-and-autonomous-vehicles/)
+
+## Activity
+
+[Moral Machine](https://www.moralmachine.net/)

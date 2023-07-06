@@ -1790,5 +1790,89 @@
     "title": "Lecture 4.2 | Data Preprocessing ( Tabular Data, Audio and Image)",
     "section": "3. Image Data",
     "text": "3. Image Data\n\nimport cv2\nimport matplotlib.pyplot as plt\n\nLink\n\ndata_path = \"data/image/University_of_Arizona_May_2019_04_(Arizona_State_Museum).jpg\"\nimage = cv2.imread(data_path)\n\n#Show the image with matplotlib\nplt.imshow(image)\nplt.show()\n\n\n\n\n\nColorspaces\nA color space is a specific organization of colors.\n\nRGB(Red Green Blue)\nHSL(Hue Saturation Lightness)\nHSV(Hue Saturation Value)\nYUV(Luminance, blue–luminance, red–luminance)\nCMYK(Cyan, Magenta, Yellow, Key)\n\n\nimg_color = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)\n\n#Show the image with matplotlib\nplt.imshow(img_color)\nplt.show()\n\n\n\n\n\n\nConvert to GreyScale\n\nimg_color.shape\n\n(4000, 6000, 3)\n\n\n\nimg_gray = cv2.cvtColor(img_color, cv2.COLOR_RGB2GRAY)\n\n#Show the image with matplotlib\nplt.imshow(img_gray,cmap='gray')\nplt.show()\n\n\n\n\n\nimg_gray.shape\n\n(4000, 6000)\n\n\n\n\nResizing\n\nresized_pic = cv2.resize(img_color,(300,200))\n\nplt.imshow(resized_pic)\nplt.show()\n\n\n\n\n\n\nRotate\n\nimg_rotated = cv2.flip(img_color,0)\n\nplt.imshow(img_rotated)\nplt.show()\n\n\n\n\n\n\nCrop\n\nplt.imshow(img_color[1150:2350,800:5200])\n\n&lt;matplotlib.image.AxesImage at 0x16df7dde0&gt;\n\n\n\n\n\n\nNext Lecture - Final part of data preprocessing and Data visualisation"
+  },
+  {
+    "objectID": "Ethics/Week_5.html",
+    "href": "Ethics/Week_5.html",
+    "title": "Week 5 : AI for Recommendations",
+    "section": "",
+    "text": "How Target Figured Out A Teen Girl Was Pregnant Before Her Father Did\n\n\n\n\n\nTBD"
+  },
+  {
+    "objectID": "Ethics/Week_5.html#reading",
+    "href": "Ethics/Week_5.html#reading",
+    "title": "Week 5 : AI for Recommendations",
+    "section": "",
+    "text": "How Target Figured Out A Teen Girl Was Pregnant Before Her Father Did"
+  },
+  {
+    "objectID": "Ethics/Week_5.html#question-for-discussion",
+    "href": "Ethics/Week_5.html#question-for-discussion",
+    "title": "Week 5 : AI for Recommendations",
+    "section": "",
+    "text": "TBD"
+  },
+  {
+    "objectID": "Ethics/Week_6.html",
+    "href": "Ethics/Week_6.html",
+    "title": "Week 6 : AI in Autonomous Driving",
+    "section": "",
+    "text": "How do you teach an autonomous car when to hurt its passengers?\nThe racism of technology - and why driverless cars could be the most dangerous example yet\nThe folly of trolleys: Ethical challenges and autonomous vehicles\n\n\n\n\nMoral Machine"
+  },
+  {
+    "objectID": "Ethics/Week_6.html#reading",
+    "href": "Ethics/Week_6.html#reading",
+    "title": "Week 6 : AI in Autonomous Driving",
+    "section": "",
+    "text": "How do you teach an autonomous car when to hurt its passengers?\nThe racism of technology - and why driverless cars could be the most dangerous example yet\nThe folly of trolleys: Ethical challenges and autonomous vehicles"
+  },
+  {
+    "objectID": "Ethics/Week_6.html#activity",
+    "href": "Ethics/Week_6.html#activity",
+    "title": "Week 6 : AI in Autonomous Driving",
+    "section": "",
+    "text": "Moral Machine"
+  },
+  {
+    "objectID": "Ethics/Week_9.html",
+    "href": "Ethics/Week_9.html",
+    "title": "Week 9 : Adversarial Defense aganist AI",
+    "section": "",
+    "text": "Clothing designer tricks AI-powered face recognition into thinking you’re an animal"
+  },
+  {
+    "objectID": "Ethics/Week_9.html#reading",
+    "href": "Ethics/Week_9.html#reading",
+    "title": "Week 9 : Adversarial Defense aganist AI",
+    "section": "",
+    "text": "Clothing designer tricks AI-powered face recognition into thinking you’re an animal"
+  },
+  {
+    "objectID": "Ethics/Week_7.html",
+    "href": "Ethics/Week_7.html",
+    "title": "Week 7 : AI in Housekeeping",
+    "section": "",
+    "text": "A Roomba recorded a woman on the toilet. How did screenshots end up on Facebook?"
+  },
+  {
+    "objectID": "Ethics/Week_7.html#reading",
+    "href": "Ethics/Week_7.html#reading",
+    "title": "Week 7 : AI in Housekeeping",
+    "section": "",
+    "text": "A Roomba recorded a woman on the toilet. How did screenshots end up on Facebook?"
+  },
+  {
+    "objectID": "Ethics/Week_8.html",
+    "href": "Ethics/Week_8.html",
+    "title": "Week 8 : AI for Facial Recognition",
+    "section": "",
+    "text": "A Case for Banning Facial Recognition\nClothing designer tricks AI-powered face recognition into thinking you’re an animal"
+  },
+  {
+    "objectID": "Ethics/Week_8.html#reading",
+    "href": "Ethics/Week_8.html#reading",
+    "title": "Week 8 : AI for Facial Recognition",
+    "section": "",
+    "text": "A Case for Banning Facial Recognition\nClothing designer tricks AI-powered face recognition into thinking you’re an animal"
   }
 ]

@@ -1,0 +1,4 @@
+# Week 7 : AI in Housekeeping
+
+## Reading
+[A Roomba recorded a woman on the toilet. How did screenshots end up on Facebook?](https://www.technologyreview.com/2022/12/19/1065306/roomba-irobot-robot-vacuums-artificial-intelligence-training-data-privacy/)
