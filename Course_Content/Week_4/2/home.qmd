@@ -28,4 +28,4 @@
 
 ## Next Class 
 
-[4.3 - Data Preprocessing - Part 2 & Data Visualization)](../2/home.qmd)
+[4.3 - Data Preprocessing - Part 2 & Data Visualization)](../3/home.qmd)
