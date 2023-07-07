@@ -6,6 +6,8 @@
 
 ## Attachments
 
-* [Questions](Homework_1.pdf)
+* [Questions](Homework_1_Questions.pdf)
 
 * [Hints](Homework_1_Hints.pdf)
+
+* [Solutions](Homework_1_Solutions.pdf)
