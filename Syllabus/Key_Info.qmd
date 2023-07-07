@@ -31,7 +31,7 @@ A student who successfully completes this course will be able to:
 
 - [ ] Explain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)
 
-- [ ] Convert a raw data source into a version appropriate for downstream analysis using Python.
+- [x] Convert a raw data source into a version appropriate for downstream analysis using Python.
 
 - [ ] Write appropriate visualizations for different sources and types of data.
 

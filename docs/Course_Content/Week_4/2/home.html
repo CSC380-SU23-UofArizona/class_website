@@ -146,8 +146,14 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../Homework/HW1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../Homework/1/HW.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW1: Probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Homework/2/HW.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW2: Data Collection</span></a>
   </div>
 </li>
       </ul>
@@ -179,17 +185,52 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">W4: Mental Health Support</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W5: Recommendations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W6: Autonomous Driving</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W9: Adversarial Clothing</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
- <span class="menu-text">Syllabus</span></a>
+ <span class="menu-text">Bonus Questions</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Bonus/1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sonam’s Dilemma: A Gift for Few or a Chance for All</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">Syllabus</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../Syllabus/Key_Info.html" class="sidebar-item-text sidebar-link">
@@ -210,15 +251,62 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-preprocessing---part-1-tabular-data-audio-and-image" id="toc-data-preprocessing---part-1-tabular-data-audio-and-image" class="nav-link active" data-scroll-target="#data-preprocessing---part-1-tabular-data-audio-and-image">4.2 - Data Preprocessing - Part 1 | (Tabular Data, Audio and Image)</a>
+  <ul class="collapse">
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
+  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a></li>
+  <li><a href="#lecture" id="toc-lecture" class="nav-link" data-scroll-target="#lecture">Lecture</a></li>
+  <li><a href="#next-class" id="toc-next-class" class="nav-link" data-scroll-target="#next-class">Next Class</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
 
+<section id="data-preprocessing---part-1-tabular-data-audio-and-image" class="level1">
+<h1>4.2 - Data Preprocessing - Part 1 | (Tabular Data, Audio and Image)</h1>
+<section id="week-4---data-visualisation-and-introduction-to-ml" class="level6">
+<h6 class="anchored" data-anchor-id="week-4---data-visualisation-and-introduction-to-ml">Week 4 - Data Visualisation and Introduction to ML</h6>
+<p><br></p>
+</section>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
+<ul>
+<li>Identifying and Learning to remove noisy bits in your dataset</li>
+<li>Converting your data to a form that can be used for downstream analysis and machine learning.</li>
+<li>An idea of data preprocessing functions used for Audio and Image Data Type [Details not discussed, functions just mentioned.]</li>
+</ul>
+<p><br></p>
+</section>
+<section id="materials" class="level2">
+<h2 class="anchored" data-anchor-id="materials">Materials</h2>
+<ul>
+<li><p><a href="https://www.kaggle.com/datasets/snehangsude/audible-dataset">Tabular Data - Audible Dataset</a></p></li>
+<li><p><a href="https://storage.googleapis.com/kagglesdsdata/datasets/107620/256618/Actor_02/03-01-01-01-02-01-02.wav?X-Goog-Algorithm=GOOG4-RSA-SHA256&amp;X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20230705%2Fauto%2Fstorage%2Fgoog4_request&amp;X-Goog-Date=20230705T225408Z&amp;X-Goog-Expires=259200&amp;X-Goog-SignedHeaders=host&amp;X-Goog-Signature=1bbfb607c3e539bd2842e00ce488b232cf815f059fe0285d39ec86d655624247113db4d88a11c1b05c78797af699b4d0dde089c525de4acb71c861d68a920749c288dbe0e41f90711b299e6aefe9dfa7dc841a3f08208de08b0981cf73517841bf5ae54db0d23322d83571a589ac49054f65f0e4f6f76f6b6f5353543993260fe9e70354edb91259e67194d535df4c21e11403ef0194efd0db01ab70e00825f651f6c912a040ff2b2fb811c7e22313d910616146e2fff9ad6a90c373cd27bc2e5a7ded65723be88350b917afab395d3d473adb10470e2b6cef25f0968a3d56bb33558d21a6f8766939860cddfbdaa5e93800e4991844414cdd5c2ed738f116f2">Audio - Example</a></p></li>
+<li><p><a href="https://upload.wikimedia.org/wikipedia/commons/e/ed/University_of_Arizona_May_2019_04_%28Arizona_State_Museum%29.jpg">Image - Arizona State Museum</a></p></li>
+<li><p><a href="https://cheatography.com/mutanclan/cheat-sheets/python-regular-expression-regex/">Regex Cheatsheet</a> <br></p></li>
+<li><p><a href="../../../Course_Content/Week_4/2/Notebook.html">Jupyter Notebook</a></p></li>
+</ul>
+</section>
+<section id="lecture" class="level2">
+<h2 class="anchored" data-anchor-id="lecture">Lecture</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6TfLR5awgy8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
+</iframe>
+</section>
+<section id="next-class" class="level2">
+<h2 class="anchored" data-anchor-id="next-class">Next Class</h2>
+<p><a href="../../../Course_Content/Week_4/2/home.html">4.3 - Data Preprocessing - Part 2 &amp; Data Visualization)</a></p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
