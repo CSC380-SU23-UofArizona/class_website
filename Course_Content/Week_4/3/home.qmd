@@ -1,0 +1,34 @@
+# 4.3 - Data Preprocessing - Part 2 & Data Visualization
+
+######  Week 4 - Data Visualisation and Introduction to ML
+<br>
+
+## Objectives 
+
+* (Part 1) Data Preprocessing - Text :
+    - Cleaning Punct, Conversion to Lowercase
+    - Tokenisation
+    - Removing Stopwords
+    - Lemmatisation
+    - Stemming
+    - Nltk Library
+
+
+<br>
+
+## Materials
+
+*Part One:*
+
+* [Kaggle - BBC Full Text and Category](https://www.kaggle.com/datasets/yufengdev/bbc-fulltext-and-category)
+<br>
+
+* [Jupyter Notebook](Notebook_1.ipynb)
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NrDNwP0e78g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Next Class 
+
+[5.1 Some Stats and Introduction to Machine Learning](../../Week_5/home.qmd)

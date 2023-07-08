@@ -3,19 +3,14 @@ title: "Principles Of Data Science"
 ---
 
 ::: {.callout-note}
-- Latest Lecture - [Lecture 4.2](Course_Content/Week_4/2/home.qmd).
-- We are running a little behind, but will be caught up by this Sunday. [Week 4](Course_Content/Week_4/home.html#week-4-june-28-to-july-2-4) Plans Updated.
+- Latest Lecture - [Lecture 4.3 (Part 1)](Course_Content/Week_4/3/home.qmd).
+- We are running a little behind, but will be caught up by this Monday. [Week 4](Course_Content/Week_4/home.html#week-4-june-28-to-july-2-4) Plans Updated.
 - Github Familarity Survey Open - D2L > Survey.
-- [Homework 2](Homework/2/HW.qmd) is open. Typo corrected , check page.
-- [Bonus Question One](Bonus/1.qmd) is open.
 :::
 
 ## CheckList
 
 ### Due Dates
 
-- [ ] Weekly Checkin for Week 3 | Due 5 pm , July 2, Sunday ( Based on Lecture 2.x.1 & 3.1, 3.2, 3.3)
-- [ ] Survey | Due 5 pm , July 7, Friday
-- [ ] [Homework 2](Homework/2/HW.qmd) | Due 5 pm , July 7, Friday
-- [ ] [Bonus Question One](Bonus/1.qmd) | Due 5 pm, July 7, Friday
+- [ ] Weekly Checkin for Week 4 | Due 5 pm , July 10, Sunday ( Based on Lecture 4.1,4.2,4.3 )
 

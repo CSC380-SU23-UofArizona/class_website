@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>CSC 380 - Lecture 4.3 (Part 1) : Data Preprocessing - Part 2</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      CSC 380
+      </li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../../">CSC 380</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Course Content</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Course_Content/Week_1/home.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Course_Content/Week_2/home.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Course_Content/Week_3/home.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Course_Content/Week_4/home.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Homework</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Homework/1/HW.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW1: Probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Homework/2/HW.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW2: Data Collection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Ethics Discussions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W2: Political Content</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W3: Creative Work</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W4: Mental Health Support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W5: Recommendations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W6: Autonomous Driving</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W7: Housekeeping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W8: Facial Recognition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W9:ChatGPT and friends</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Bonus Questions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Bonus/1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sonam’s Dilemma: A Gift for Few or a Chance for All</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">Syllabus</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Syllabus/Key_Info.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Key Info</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Syllabus/Syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Official Syllabus</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#data-preprocessing---text" id="toc-data-preprocessing---text" class="nav-link active" data-scroll-target="#data-preprocessing---text">1. Data Preprocessing - Text</a></li>
+  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources">Sources :</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecture 4.3 (Part 1) : Data Preprocessing - Part 2</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="data-preprocessing---text" class="level2">
+<h2 class="anchored" data-anchor-id="data-preprocessing---text">1. Data Preprocessing - Text</h2>
+<p>dataset = https://www.kaggle.com/datasets/yufengdev/bbc-fulltext-and-category</p>
+<div class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-slideshow="{&quot;slide_type&quot;:&quot;subslide&quot;}" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>articles_df <span class="op">=</span> pd.read_csv(<span class="st">'data/bbc-text.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>articles_df.sample()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">category</th>
+<th data-quarto-table-cell-role="th">text</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">301</td>
+<td>politics</td>
+<td>fox attacks blair s tory lies tony blair lie...</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><strong>Categories</strong></p>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>articles_df[<span class="st">'category'</span>].unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>array(['tech', 'business', 'sport', 'entertainment', 'politics'],
+      dtype=object)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>articles_df[<span class="st">'category'</span>].value_counts().to_frame()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">category</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">sport</td>
+<td>511</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">business</td>
+<td>510</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">politics</td>
+<td>417</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">tech</td>
+<td>401</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">entertainment</td>
+<td>386</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>articles_df.sample()[<span class="st">'text'</span>].values.tolist()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>['children vote shrek 2 best film young uk film fans voted animated hollywood hit shrek 2 best film at the children s bafta awards on sunday.  more than 6 000 children voted in the only category chosen by fans. harry potter and the prisoner of azkaban  runner-up in the poll  was the choice of the bafta experts who named it best feature film. bbc one saturday morning show dick and dom in da bungalow won two awards - best entertainment and best presenters for richard mccourt and dominic wood.  former playschool presenter floella benjamin was awarded the special award for outstanding creative contribution to children s film and television. she first appeared on playschool 25 years ago and was made an obe in 2001 for services to broadcasting. south american-themed cartoon joko! jakamoko! toto! won the honour for pre-school animation and its writer tony collingwood for original writer. debbie isitt won the award for best adapted writer for her work with jacqueline wilson s the illustrated mum  which won the award for best schools drama.  schools  factual (primary) - thinking skills: think about it - hiding places  schools  factual (secondary) - in search of the tartan turban  pre-school live action - balamory  animation - brush head  drama - featherboy  factual - serious desert interactive bafta - king arthur international category - 8 simple rules for dating my teenage daughter']</code></pre>
+</div>
+</div>
+<p>Sometimes Language Detection is neccasary.</p>
+<p><strong>Capitalization/ Lower case</strong></p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>articles_df[<span class="st">'lower_case'</span>] <span class="op">=</span> articles_df[<span class="st">'text'</span>].<span class="bu">apply</span>(<span class="bu">str</span>.lower)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>articles_df.sample()[<span class="st">'lower_case'</span>].values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>array(['surprise win for anti-bush film michael moore s anti-bush documentary fahrenheit 9/11 has won best film at the us people s choice awards  voted for by the us public.  mel gibson s the passion of the christ won best drama  despite both films being snubbed so far at us film awards in the run-up to february s oscars. julia roberts won her 10th consecutive crown as favourite female movie star. johnny depp was favourite male movie star and renee zellweger was favourite leading lady at sunday s awards in la.  film sequel shrek 2 took three prizes - voted top animated movie  top film comedy and top sequel. in television categories  desperate housewives was named top new drama and joey  starring former friends actor matt leblanc  was best new comedy. long-running shows will and grace and csi: crime scene investigation were named best tv comedy and tv drama respectively.  nominees for the people s choice awards were picked by a 6 000-strong entertainment weekly magazine panel  and winners were subsequently chosen by 21 million online voters. fahrenheit 9/11 director michael moore dedicated his trophy to soldiers in iraq. his film was highly critical of president george w bush and the us-led invasion of iraq  and moore was an outspoken bush critic in the 2004 presidential campaign inwhich democratic challenger john kerry lost.   this country is still all of ours  not right or left or democrat or republican   moore told the audience at the ceremony in pasadena  california. moore said it was  an historic occasion  that the 31-year-old awards ceremony would name a documentary its best film. unlike many other film-makers  passion of the christ director mel gibson has vowed not to campaign for an oscar for his movie.  to me  really  this is the ultimate goal because one doesn t make work for the elite   gibson said backstage at the event.  to me  the people have spoken.'],
+      dtype=object)</code></pre>
+</div>
+</div>
+<ul>
+<li>Replace the Unicode character with equivalent ASCII character or remove them</li>
+<li>Replace the entity references with their actual symbols or removing HTML tags</li>
+<li>Replace the Typos, slang, acronyms or informal abbreviations - depend on different situations or main topics of the NLP such as finance or medical topics.</li>
+<li>List out all the hashtags/ usernames then replace with equivalent words</li>
+<li>Replace the emoticon/ emoji with equivalant word meaning such as “:)” with “smile” , or dropping emojis entirely.</li>
+<li>Spelling correction</li>
+</ul>
+<p><strong>Remove punctuation</strong></p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sample <span class="op">=</span> <span class="st">"hey! where are you!?"</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>sample_processed <span class="op">=</span> sample.translate (<span class="bu">str</span>.maketrans (<span class="st">''</span>, <span class="st">''</span>, string.punctuation))</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>sample_processed</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>'hey where are you'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>articles_df[<span class="st">'punct_removed'</span>] <span class="op">=</span> articles_df[<span class="st">'lower_case'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> doc : doc.translate (<span class="bu">str</span>.maketrans (<span class="st">''</span>, <span class="st">''</span>, string.punctuation)))                                                                  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>articles_df.sample()[<span class="st">'punct_removed'</span>].values </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>array(['zambia confident and cautious zambia s technical director  kalusha bwalya is confident and cautious ahead of the cosafa cup final against angola on saturday in lusaka  bwalya said  nothing short of victory will do  however bwalya warned his side not to be too complacent  i don t want my team to be too comfortable or too sure of victory as it is going to be a difficult game  for me the main aim of the game is to enjoy and to win  zambia have shown their determination to win this final by recalling nine of their foreignbased players however the 41 yearold bwalya  who became the oldest player to appear in the competition when he played and scored against mauritius  is uncertain whether he will take to the field or not the chipolopolo fans however are not being so cautious with a  victory  concert already scheduled for after the match featuring some of the country s top musicians both sides are hoping to win the competition for a record third time  and so keep the trophy for good the chipolopolo won the first two editions of the regional tournament for southern african nations in 1997 and 1998 they were prevented from a third straight win by angola who knocked out the zambians at the semifinal stage in 1999 that victory for angola also marked a first defeat in 14 years for zambia at lusaka s independence stadium  where saturday s game is being played angola named just four overseasbased players in their preliminary squad the palancas negras have been unable to secure the release of many of their portugalbased players'],
+      dtype=object)</code></pre>
+</div>
+</div>
+<p><strong>Tokenise</strong></p>
+<p>A token is an instance of a sequence of characters in some particular document that are grouped together as a useful semantic unit for processing. <a href="https://github.com/AmalM7/NLP-Stuff/blob/main/Tokenization_in_NLP.ipynb">Source</a></p>
+<p>ie A token is a meaningful chunk of text that we use to process and understand the information in a document. It can be a word, a phrase, or even a symbol or punctuation mark. Tokens help us break down the text into smaller pieces so that we can analyze and work with it more easily.</p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'punkt'</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> (word_tokenize,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>                          sent_tokenize,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>                          TreebankWordTokenizer,</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>                          wordpunct_tokenize,</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>                          TweetTokenizer,</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>                          MWETokenizer)</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>treebank_tokenizer <span class="op">=</span> TreebankWordTokenizer()</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>mwet_tokenizer<span class="op">=</span> MWETokenizer()</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>tweet_tokenizer<span class="op">=</span> TweetTokenizer()</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>text<span class="op">=</span><span class="st">"Mr. O'Neill thinks that the boys' stories about Chile's capital aren't amusing 🙃"</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>[nltk_data] Downloading package punkt to
+[nltk_data]     /Users/enfageorge/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>"Mr. O'Neill thinks that the boys' stories about Chile's capital aren't amusing 🙃"</code></pre>
+</div>
+</div>
+<p><a href="https://nlp.stanford.edu/IR-book/html/htmledition/tokenization-1.html#:~:text=A%20token%20is%20an%20instance,useful%20semantic%20unit%20for%20processing">Source : Introduction to Information Retrieval By Christopher D. Manning, Prabhakar Raghavan &amp; Hinrich Schütze</a></p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Word_tokenise : </span><span class="ch">\n</span><span class="st">"</span>, word_tokenize(text), <span class="st">"</span><span class="ch">\n</span><span class="st">Length :"</span> , <span class="bu">len</span>(word_tokenize(text)))</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Word Punct Tokeniser :  </span><span class="ch">\n</span><span class="st">"</span>, wordpunct_tokenize(text), <span class="st">"</span><span class="ch">\n</span><span class="st">Length :"</span> , <span class="bu">len</span>(wordpunct_tokenize(text)))</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Tree Bank : </span><span class="ch">\n</span><span class="st">"</span>, treebank_tokenizer.tokenize(text), <span class="st">"</span><span class="ch">\n</span><span class="st">Length :"</span> , <span class="bu">len</span>(treebank_tokenizer.tokenize(text)))</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Tweet Tokeniser: </span><span class="ch">\n</span><span class="st">"</span>, tweet_tokenizer.tokenize(text), <span class="st">"</span><span class="ch">\n</span><span class="st">Length :"</span> , <span class="bu">len</span>(tweet_tokenizer.tokenize(text)))</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">MWE Tokeniser: </span><span class="ch">\n</span><span class="st">"</span>, mwet_tokenizer.tokenize(word_tokenize(text)), <span class="st">"</span><span class="ch">\n</span><span class="st">Length :"</span> , <span class="bu">len</span>(mwet_tokenizer.tokenize(word_tokenize(text))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Word_tokenise : 
+ ['Mr.', "O'Neill", 'thinks', 'that', 'the', 'boys', "'", 'stories', 'about', 'Chile', "'s", 'capital', 'are', "n't", 'amusing', '🙃'] 
+Length : 16
+
+Word Punct Tokeniser :  
+ ['Mr', '.', 'O', "'", 'Neill', 'thinks', 'that', 'the', 'boys', "'", 'stories', 'about', 'Chile', "'", 's', 'capital', 'aren', "'", 't', 'amusing', '🙃'] 
+Length : 21
+
+Tree Bank : 
+ ['Mr.', "O'Neill", 'thinks', 'that', 'the', 'boys', "'", 'stories', 'about', 'Chile', "'s", 'capital', 'are', "n't", 'amusing', '🙃'] 
+Length : 16
+
+Tweet Tokeniser: 
+ ['Mr', '.', "O'Neill", 'thinks', 'that', 'the', 'boys', "'", 'stories', 'about', "Chile's", 'capital', "aren't", 'amusing', '🙃'] 
+Length : 15
+
+MWE Tokeniser: 
+ ['Mr.', "O'Neill", 'thinks', 'that', 'the', 'boys', "'", 'stories', 'about', 'Chile', "'s", 'capital', 'are', "n't", 'amusing', '🙃'] 
+Length : 16</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>articles_df[<span class="st">'tokenized'</span>] <span class="op">=</span> articles_df[<span class="st">'punct_removed'</span>].<span class="bu">apply</span>(word_tokenize)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>articles_df.sample()[<span class="st">'tokenized'</span>].values</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>array([list(['jungle', 'tv', 'show', 'ratings', 'drop', 'by', '4m', 'the', 'finale', 'of', 'itv1', 's', 'i', 'm', 'a', 'celebrity', 'get', 'me', 'out', 'of', 'here', 'drew', 'an', 'average', 'of', '109m', 'viewers', 'about', 'four', 'million', 'fewer', 'than', 'the', 'previous', 'series', 'the', 'fourth', 'series', 'of', 'the', 'show', 'peaked', 'on', 'monday', 'at', '119m', 'and', '492', 'of', 'the', 'audience', 'just', 'before', 'joe', 'pasquale', 'won', 'this', 'compared', 'with', 'a', 'peak', 'of', '153m', 'at', 'and', 'a', 'record', '622', 'of', 'the', 'tv', 'audience', 'when', 'kerry', 'mcfadden', 'won', 'in', 'february', 'comic', 'pasquale', 'beat', 'former', 'royal', 'butler', 'paul', 'burrell', 'who', 'came', 'second', 'nightclub', 'owner', 'fran', 'cosgrave', 'who', 'was', 'third', 'pasquale', 'follows', 'kerry', 'mcfadden', 'phil', 'tufnell', 'and', 'tony', 'blackburn', 'as', 'winners', 'of', 'the', 'show', 'singer', 'and', 'tv', 'presenter', 'mcfadden', 'was', 'the', 'show', 's', 'first', 'female', 'winner', 'when', 'cricketer', 'phil', 'tufnell', 'won', 'in', 'may', '2003', '123', 'million', 'people', '50', 'of', 'the', 'viewing', 'public', 'tuned', 'in', 'to', 'watch', 'and', 'when', 'tony', 'blackburn', 'won', 'the', 'first', 'show', 'in', '2002', '109', 'million', 'people', 'saw', 'the', 'show', 'pasquale', 'had', 'been', 'the', 'show', 's', 'hottest', 'ever', 'favourite', 'to', 'win', 'and', 'its', 'hosts', 'anthony', 'mcpartlin', 'and', 'declan', 'donnelly', 'known', 'as', 'ant', 'and', 'dec', 'said', 'monday', 's', 'deciding', 'vote', 'was', 'the', 'closest', 'in', 'the', 'programme', 's', 'history', 'pascuale', 'has', 'been', 'flooded', 'with', 'offers', 'of', 'tv', 'work', 'according', 'to', 'his', 'management', 'company', 'but', 'one', 'of', 'his', 'first', 'jobs', 'on', 'his', 'return', 'is', 'pantomime', 'before', 'joining', 'i', 'm', 'a', 'celebrity', 'he', 'had', 'signed', 'up', 'to', 'play', 'jack', 'in', 'jack', 'and', 'the', 'beanstalk', 'in', 'birmingham', 'and', 'tickets', 'for', 'the', 'show', 'have', 'become', 'increasingly', 'popular', 'since', 'he', 'joined', 'the', 'tv', 'show', 'his', 'manager', 'robert', 'voice', 'said', 'we', 've', 'had', 'interest', 'from', 'different', 'tv', 'producers', 'some', 'are', 'for', 'comedy', 'shows', 'some', 'are', 'newtype', 'projects', 'there', 'are', 'a', 'number', 'of', 'things', 'joe', 'wants', 'to', 'do', 'he', 'is', 'very', 'ambitious', 'he', 'wants', 'to', 'play', 'the', 'west', 'end', 'and', 'do', 'different', 'things', 'other', 'than', 'straightforward', 'comedy', 'we', 'are', 'talking', 'to', 'a', 'couple', 'of', 'west', 'end', 'producers', 'about', 'a', 'musical'])],
+      dtype=object)</code></pre>
+</div>
+</div>
+<p><strong>Remove Stop Words (or/and Frequent words/ Rare words)</strong></p>
+<p>Stop words are the most common words in any language (like articles, prepositions, pronouns, conjunctions, etc) and does not add much information to the text. Examples of a few stop words in English are “the”, “a”, “an”, “so”, “what”.</p>
+<p>It can go wrong too.</p>
+<ul>
+<li>Mark reported to the CEO : Mark reported CEO</li>
+<li>Suzanne reported as the CEO to the board : Suzanne reported CEO board</li>
+</ul>
+<p>In your NLP pipeline, you might create 4-grams such as reported to the CEO and reported as the CEO. If you remove the stop words from the 4-grams, both examples would be reduced to “reported CEO”, and you would lack the information about the professional hierarchy. In the first example, Mark could have been an assistant to the CEO, whereas in the second example Suzanne was the CEO reporting to the board. Unfortunately, retaining the stop words within your pipeline creates another problem: it increases the length of the n-grams required to make use of these connections formed by the otherwise meaningless stop words. This issue forces us to retain at least 4-grams if you want to avoid the ambiguity of the human resources example. Designing a filter for stop words depends on your particular application.</p>
+<p>Source : https://www.manning.com/books/natural-language-processing-in-action</p>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">"stopwords"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>[nltk_data] Downloading package stopwords to
+[nltk_data]     /Users/enfageorge/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.corpus <span class="im">import</span> stopwords</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>stopwords_eng <span class="op">=</span> <span class="bu">set</span>(stopwords.words(<span class="st">'english'</span>))</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stopwords_eng)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'again', "couldn't", 'but', 'nor', 'he', 'herself', "needn't", 'yours', 'then', "aren't", 'me', 'isn', 'both', 'between', 'and', 'against', "that'll", "haven't", 'such', 'further', 'y', 'what', 'after', "you've", 'hers', "hadn't", 'on', 'about', 'were', 'most', 'haven', 'does', "mightn't", 'who', 'them', 'when', 'can', "weren't", 'ourselves', 'these', 'than', 'why', 'she', 'the', "you'd", 've', 'her', 'during', 'those', 'once', 'aren', 'himself', 'weren', 'same', 'of', 'too', 'while', 'only', 'will', "hasn't", 'do', 'any', "isn't", 'an', 'which', 'needn', 'below', 'now', 'themselves', 'very', "shouldn't", 'shouldn', 'you', "doesn't", 'did', 'doing', 'their', 'i', 'over', 'because', 'into', 'it', 'where', 'we', 'doesn', 'ma', 'each', 'at', 'mightn', 'mustn', "wasn't", 'how', 'ain', 'that', 'not', "didn't", 'other', 'they', "she's", 'have', "won't", 'out', 'being', 'own', 't', 'theirs', 're', 'll', 'wouldn', 'for', "should've", 'am', 'had', 'some', 'd', 'is', 'his', 'under', 'has', 'through', 'yourselves', 'are', 'up', 'more', 'off', 'just', 'a', 'above', 'been', 'so', 'this', 'itself', 'be', "you'll", 'all', 'o', 'should', 'was', 'before', 'from', 'don', 'my', 'whom', 'm', "wouldn't", 'yourself', 'won', 'couldn', 'your', 'having', 'there', 'hasn', 's', 'didn', 'its', 'until', 'in', 'our', "it's", 'to', "mustn't", 'by', "don't", 'ours', 'or', 'down', 'hadn', 'him', 'few', 'shan', "shan't", 'with', 'as', 'wasn', 'myself', 'if', 'no', 'here', "you're"}</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>articles_df[<span class="st">'stopwords_removed'</span>] <span class="op">=</span> articles_df[<span class="st">'tokenized'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> doc: [word <span class="cf">for</span> word <span class="kw">in</span> doc <span class="cf">if</span> word <span class="kw">not</span> <span class="kw">in</span> stopwords_eng])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>articles_df.sample()[<span class="st">'stopwords_removed'</span>].values </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<pre><code>array([list(['west', 'end', 'honour', 'finest', 'shows', 'west', 'end', 'honouring', 'finest', 'stars', 'shows', 'evening', 'standard', 'theatre', 'awards', 'london', 'monday', 'producers', 'starring', 'nathan', 'lane', 'lee', 'evans', 'best', 'musical', 'ceremony', 'national', 'theatre', 'competing', 'sweeney', 'todd', 'funny', 'thing', 'happened', 'way', 'forum', 'award', 'goat', 'sylvia', 'edward', 'albee', 'pillowman', 'martin', 'mcdonagh', 'alan', 'bennett', 'history', 'boys', 'shortlisted', 'best', 'play', 'category', 'pam', 'ferris', 'victoria', 'hamilton', 'kelly', 'reilly', 'nominated', 'best', 'actress', 'ferris', 'best', 'known', 'television', 'roles', 'programmes', 'darling', 'buds', 'may', 'made', 'shortlist', 'role', 'notes', 'falling', 'leaves', 'royal', 'court', 'theatre', 'meanwhile', 'richard', 'griffiths', 'plays', 'hector', 'history', 'boys', 'national', 'theatre', 'battle', 'best', 'actor', 'award', 'douglas', 'hodge', 'dumb', 'show', 'stanley', 'townsend', 'shining', 'city', 'best', 'director', 'shortlist', 'includes', 'luc', 'bondy', 'cruel', 'tender', 'simon', 'mcburney', 'measure', 'measure', 'rufus', 'norris', 'festen', 'festen', 'also', 'shortlisted', 'best', 'designer', 'category', 'ian', 'macneil', 'jean', 'kalman', 'paul', 'arditti', 'hildegard', 'bechtler', 'iphigenia', 'aulis', 'paul', 'brown', 'false', 'servant', 'milton', 'shulman', 'award', 'outstanding', 'newcomer', 'presented', 'dominic', 'cooper', 'dark', 'materials', 'history', 'boys', 'romola', 'garai', 'calico', 'eddie', 'redmayne', 'goat', 'sylvia', 'ben', 'wishaw', 'hamlet', 'playwrights', 'david', 'eldridge', 'rebecca', 'lenkiewicz', 'owen', 'mccafferty', 'fight', 'charles', 'wintour', 'award', '£30', '000', 'bursary', 'three', '50th', 'anniversary', 'special', 'awards', 'also', 'presented', 'institution', 'playwright', 'individual'])],
+      dtype=object)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>sample_df <span class="op">=</span> articles_df.sample()</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Length after tokenisation : "</span>,<span class="bu">len</span>(sample_df[<span class="st">'tokenized'</span>].values[<span class="dv">0</span>]))</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Length after stopwords are removed : "</span>,<span class="bu">len</span>(sample_df[<span class="st">'stopwords_removed'</span>].values[<span class="dv">0</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Length after tokenisation :  295
+Length after stopwords are removed :  140</code></pre>
+</div>
+</div>
+<p><strong>Stemming</strong></p>
+<p>The process of removing affixes or changing affixes or getting to the root words in called stemming.</p>
+<p>Ex :</p>
+<ul>
+<li>run, running, runs =&gt; run</li>
+<li>programming, programmer ,programs =&gt; program</li>
+</ul>
+<p>There are multiple stemming algorithms, but we will use Snowball (Porter2) Stemming Algorithm here.</p>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem <span class="im">import</span> SnowballStemmer</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>stemmer <span class="op">=</span> nltk.PorterStemmer()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>articles_df[<span class="st">'snowball_stemmer'</span>] <span class="op">=</span> articles_df[<span class="st">'stopwords_removed'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> doc :  [stemmer.stem(word) <span class="cf">for</span> word <span class="kw">in</span> doc])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>example <span class="op">=</span> articles_df.sample()[[<span class="st">'stopwords_removed'</span>, <span class="st">'snowball_stemmer'</span>]].values.tolist()</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(example[<span class="dv">0</span>][<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['blues', 'slam', 'blackburn', 'savage', 'birmingham', 'confirmed', 'blackburn', 'made', 'bid', 'robbie', 'savage', 'managing', 'director', 'karen', 'brady', 'called', 'derisory', 'rovers', 'reportedly', 'offered', '£500', '000', 'front', 'wales', 'star', '30', 'fee', 'rising', '£22m', 'brady', 'told', 'sun', 'bid', 'waste', 'fax', 'paper', 'time', 'added', 'way', 'things', 'going', 'could', 'affect', 'relationship', 'clubs', 'got', 'robbie', 'head', 'sale', 'savage', 'future', 'birmingham', 'source', 'speculation', 'several', 'weeks', 'fans', 'criticising', 'performances', 'club', 'earlier', 'season', 'however', 'good', 'displays', 'west', 'brom', 'aston', 'villa', 'impressed', 'blues', 'fans', 'crowd', 'gave', 'massive', 'standing', 'ovation', 'came', 'saturday', 'nice', 'said', 'fantastic', 'even', 'though', 'criticised', 'number', 'recent', 'weeks', 'saturday', 'showed', 'much', 'mean', 'say', 'transfer', 'rumours', 'two', 'clubs', 'created', 'speculation', 'phoned', 'every', 'national', 'newspaper', 'saying', 'blackburn', 'trying', 'buy', 'birmingham', 'manager', 'steve', 'bruce', 'insists', 'want', 'sell', 'savage', 'lot', 'said', 'written', 'sav', 'terrific', 'birmingham', 'city', 'last', 'two', 'half', 'years', 'said', 'fans', 'love', 'epitomises', 'works', 'hard', 'like', 'people', 'like', 'many', 'like', 'hell', 'sell', 'someone', 'else', 'interested']</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(example[<span class="dv">0</span>][<span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['blue', 'slam', 'blackburn', 'savag', 'birmingham', 'confirm', 'blackburn', 'made', 'bid', 'robbi', 'savag', 'manag', 'director', 'karen', 'bradi', 'call', 'derisori', 'rover', 'reportedli', 'offer', '£500', '000', 'front', 'wale', 'star', '30', 'fee', 'rise', '£22m', 'bradi', 'told', 'sun', 'bid', 'wast', 'fax', 'paper', 'time', 'ad', 'way', 'thing', 'go', 'could', 'affect', 'relationship', 'club', 'got', 'robbi', 'head', 'sale', 'savag', 'futur', 'birmingham', 'sourc', 'specul', 'sever', 'week', 'fan', 'criticis', 'perform', 'club', 'earlier', 'season', 'howev', 'good', 'display', 'west', 'brom', 'aston', 'villa', 'impress', 'blue', 'fan', 'crowd', 'gave', 'massiv', 'stand', 'ovat', 'came', 'saturday', 'nice', 'said', 'fantast', 'even', 'though', 'criticis', 'number', 'recent', 'week', 'saturday', 'show', 'much', 'mean', 'say', 'transfer', 'rumour', 'two', 'club', 'creat', 'specul', 'phone', 'everi', 'nation', 'newspap', 'say', 'blackburn', 'tri', 'buy', 'birmingham', 'manag', 'steve', 'bruce', 'insist', 'want', 'sell', 'savag', 'lot', 'said', 'written', 'sav', 'terrif', 'birmingham', 'citi', 'last', 'two', 'half', 'year', 'said', 'fan', 'love', 'epitomis', 'work', 'hard', 'like', 'peopl', 'like', 'mani', 'like', 'hell', 'sell', 'someon', 'els', 'interest']</code></pre>
+</div>
+</div>
+<p><strong>Lemmatisation</strong></p>
+<p>Lemma is the canonical form dictionary form, or citation form of a set of word forms.In English, for example, break, breaks, broke, broken and breaking are forms of the same lexeme, with break as the lemma by which they are indexed.</p>
+<p><a href="https://en.wikipedia.org/wiki/Lemma_(morphology)">Source : Wikipedia</a></p>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">'wordnet'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>[nltk_data] Downloading package wordnet to
+[nltk_data]     /Users/enfageorge/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="34">
+<pre><code>True</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> nltk</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem <span class="im">import</span> PorterStemmer</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem <span class="im">import</span> WordNetLemmatizer</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>lemmatizer <span class="op">=</span> WordNetLemmatizer()</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>nltk.download(<span class="st">"punkt"</span>)</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize Python porter stemmer</span></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>ps <span class="op">=</span> PorterStemmer()</span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>wnl <span class="op">=</span> WordNetLemmatizer()</span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Example inflections to reduce</span></span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a>example_words <span class="op">=</span> [<span class="st">"program"</span>,<span class="st">"programming"</span>,<span class="st">"programer"</span>,<span class="st">"programs"</span>,<span class="st">"programmed"</span>]</span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Perform stemming</span></span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="sc">{0:20}{1:20}{2:20}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="st">"--Word--"</span>,<span class="st">"--Stem--"</span>, <span class="st">"--Lemma--"</span>))</span>
+<span id="cb47-19"><a href="#cb47-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> word <span class="kw">in</span> example_words:</span>
+<span id="cb47-20"><a href="#cb47-20" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span> (<span class="st">"</span><span class="sc">{0:20}{1:20}{2:20}</span><span class="st">"</span>.<span class="bu">format</span>(word, ps.stem(word),wnl.lemmatize(word, pos<span class="op">=</span><span class="st">'v'</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>--Word--            --Stem--            --Lemma--           
+program             program             program             
+programming         program             program             
+programer           program             programer           
+programs            program             program             
+programmed          program             program             </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>[nltk_data] Downloading package punkt to
+[nltk_data]     /Users/enfageorge/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!</code></pre>
+</div>
+</div>
+<p><a href="https://www.datacamp.com/tutorial/stemming-lemmatization-python">Source - DataCamp</a></p>
+<div class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> nltk.stem <span class="im">import</span> WordNetLemmatizer</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>lemmatizer <span class="op">=</span> WordNetLemmatizer()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>articles_df[<span class="st">'text lemma'</span>] <span class="op">=</span> articles_df[<span class="st">'stopwords_removed'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: [lemmatizer.lemmatize(word) <span class="cf">for</span> word <span class="kw">in</span> x])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_rows'</span>, <span class="dv">500</span>)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.max_columns'</span>, <span class="dv">500</span>)</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'display.width'</span>, <span class="dv">150</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>articles_df.sample()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="49">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">category</th>
+<th data-quarto-table-cell-role="th">text</th>
+<th data-quarto-table-cell-role="th">lower_case</th>
+<th data-quarto-table-cell-role="th">punct_removed</th>
+<th data-quarto-table-cell-role="th">tokenized</th>
+<th data-quarto-table-cell-role="th">stopwords_removed</th>
+<th data-quarto-table-cell-role="th">snowball_stemmer</th>
+<th data-quarto-table-cell-role="th">text lemma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">902</td>
+<td>tech</td>
+<td>mobiles not media players yet mobiles are not yet ready to be all-singing all-dancing multimedia devices which will replace portable media players say two reports. despite moves to bring music download services to mobiles people do not want to trade multimedia services with size and battery life said jupiter. a separate study by gartner has also said real-time tv broadcasts to mobiles is unlikely in europe until 2007. technical issues and standards must be resolved first said the r...</td>
+<td>mobiles not media players yet mobiles are not yet ready to be all-singing all-dancing multimedia devices which will replace portable media players say two reports. despite moves to bring music download services to mobiles people do not want to trade multimedia services with size and battery life said jupiter. a separate study by gartner has also said real-time tv broadcasts to mobiles is unlikely in europe until 2007. technical issues and standards must be resolved first said the r...</td>
+<td>mobiles not media players yet mobiles are not yet ready to be allsinging alldancing multimedia devices which will replace portable media players say two reports despite moves to bring music download services to mobiles people do not want to trade multimedia services with size and battery life said jupiter a separate study by gartner has also said realtime tv broadcasts to mobiles is unlikely in europe until 2007 technical issues and standards must be resolved first said the report ...</td>
+<td>[mobiles, not, media, players, yet, mobiles, are, not, yet, ready, to, be, allsinging, alldancing, multimedia, devices, which, will, replace, portable, media, players, say, two, reports, despite, moves, to, bring, music, download, services, to, mobiles, people, do, not, want, to, trade, multimedia, services, with, size, and, battery, life, said, jupiter, a, separate, study, by, gartner, has, also, said, realtime, tv, broadcasts, to, mobiles, is, unlikely, in, europe, until, 2007, technical, ...</td>
+<td>[mobiles, media, players, yet, mobiles, yet, ready, allsinging, alldancing, multimedia, devices, replace, portable, media, players, say, two, reports, despite, moves, bring, music, download, services, mobiles, people, want, trade, multimedia, services, size, battery, life, said, jupiter, separate, study, gartner, also, said, realtime, tv, broadcasts, mobiles, unlikely, europe, 2007, technical, issues, standards, must, resolved, first, said, report, batteries, already, cope, services, operato...</td>
+<td>[mobil, media, player, yet, mobil, yet, readi, allsing, alldanc, multimedia, devic, replac, portabl, media, player, say, two, report, despit, move, bring, music, download, servic, mobil, peopl, want, trade, multimedia, servic, size, batteri, life, said, jupit, separ, studi, gartner, also, said, realtim, tv, broadcast, mobil, unlik, europ, 2007, technic, issu, standard, must, resolv, first, said, report, batteri, alreadi, cope, servic, oper, offer, like, video, playback, video, messag, megapi...</td>
+<td>[mobile, medium, player, yet, mobile, yet, ready, allsinging, alldancing, multimedia, device, replace, portable, medium, player, say, two, report, despite, move, bring, music, download, service, mobile, people, want, trade, multimedia, service, size, battery, life, said, jupiter, separate, study, gartner, also, said, realtime, tv, broadcast, mobile, unlikely, europe, 2007, technical, issue, standard, must, resolved, first, said, report, battery, already, cope, service, operator, offer, like,...</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="sources" class="level2">
+<h2 class="anchored" data-anchor-id="sources">Sources :</h2>
+<p>From UofA 💛 ✨: <a href="https://clulab.org/gentlenlp/text.html">Deep Learning for Natural Language Processing: A Gentle Introduction : Mihai Surdeanu and Marco A. Valenzuela-Escárcega</a></p>
+<p>Books :</p>
+<ul>
+<li><a href="https://nlp.stanford.edu/IR-book/html/htmledition/tokenization-1.html#:~:text=A%20token%20is%20an%20instance,useful%20semantic%20unit%20for%20processing">Introduction to Information Retrieval By Christopher D. Manning, Prabhakar Raghavan &amp; Hinrich Schütze</a></li>
+<li><a href="https://web.stanford.edu/~jurafsky/slp3/ed3book.pdf">Speech and Language Processing</a></li>
+<li><a href="https://www.manning.com/books/natural-language-processing-in-action">Natural Language Processing in Action</a></li>
+</ul>
+<p>Blogs: - https://www.kaggle.com/code/longtng/nlp-preprocessing-feature-extraction-methods-a-z - http://hunterheidenreich.com/blog/stemming-lemmatization-what/</p>
+<p>Will be continued either in a ML example or on the week of Applications</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
