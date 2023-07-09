@@ -64,7 +64,7 @@
 
 - [x] [4.2 - Data Preprocessing - Part 1 | (Tabular Data, Audio and Image)](2/home.qmd)
 
-- [ ] [4.3 - Data Preprocessing - Part 2 & Data Visualization](3/home.qmd)
+- [x] [4.3 - Data Preprocessing - Part 2](3/home.qmd)
 
 ### 2. Homeworks
 
@@ -83,7 +83,7 @@
 
 ### 5. Honours
 
-- [ ] Contract Finalisation.
+- [x] Contract Finalisation.
 
 ### 6. Others
 -  [x] Github experience in class . Take Survey on D2L>Survey

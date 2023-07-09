@@ -6,17 +6,13 @@ title: "Principles Of Data Science"
 
 # Revised Schedule and Deadlines for the Course
 
-Dear Class,
+Hi Class, 
 
-I wanted to address the current status of our course and provide you with a revised schedule and updated deadlines.
-
-Firstly, I want to apologize for the delay / falling behind schedule. There have been some issues on my end the past weeks. Though it has gotten resolved over time, it contributed to this setback. However, I truly appreciate your understanding and patience throughout this process.
-
-With four weeks remaining until the Finals submission, we need to make some adjustments to ensure we cover all the necessary topics in a compressed timeframe. Here's the revised plan:
+Apologies for the falling behind schedule. As a remedial, the course plan has been updated. Please see below a revised schedule and updated deadlines. I truly appreciate your understanding and patience as we adjust the schedule to fit our course better.
 
 ### Lectures:
 
-Starting from Monday, I will merge the Week 5 topics with Weeks 6 and 7. This means we'll be covering all the topics, but in a more condensed manner, with only three lectures per week.
+Starting from Monday, instead of lectures 5.1 to 5.3, I will merge the Week 5 topics with Weeks 6 and 7. This means we'll be covering all the topics, but in a more condensed manner, with only three lectures per week.
 
 Regarding Week 4, we will conclude the lectures with the three already released: 4.1, 4.2, and 4.3. On Monday, we will continue with Lecture 6.1.
 
@@ -34,7 +30,7 @@ Here is the updated schedule for the upcoming weeks:
 
 | Week | Lectures        | Due Date              |  Weekly Reading Topic     |
 |------|-----------------|-----------------------|----------------------------|
-| 4    | 4.1, 4.2, 4.3   | July 8th               |                                                 | 
+| 4    | 4.1, 4.2, 4.3   | July 10th               |                                                 | 
 | 5    | Dropped                                                                                                 |
 | 6    | 6.1, 6.2, 6.3   | July 23, 2023 5:00 PM | Recommendations                                 |
 | 7    | 7.1, 7.2, 7.3   | July 30, 2023 5:00 PM  | Autonomous Driving                              |
@@ -63,7 +59,7 @@ Have a fun Sunday!
 
 
 :::{.callout-notice}
-- Latest Lecture - [Lecture 4.3 (Part 1)](Course_Content/Week_4/3/home.qmd).
+- Latest Lecture - [Lecture 4.3](Course_Content/Week_4/3/home.qmd).
 - Github Familarity Survey Open - D2L > Survey.
 ::: 
 
