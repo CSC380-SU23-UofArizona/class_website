@@ -3,10 +3,69 @@ title: "Principles Of Data Science"
 ---
 
 ::: {.callout-note}
-- Latest Lecture - [Lecture 4.3 (Part 1)](Course_Content/Week_4/3/home.qmd).
-- We are running a little behind, but will be caught up by this Monday. [Week 4](Course_Content/Week_4/home.html#week-4-june-28-to-july-2-4) Plans Updated.
-- Github Familarity Survey Open - D2L > Survey.
+
+# Revised Schedule and Deadlines for the Course
+
+Dear Class,
+
+I wanted to address the current status of our course and provide you with a revised schedule and updated deadlines.
+
+Firstly, I want to apologize for the delay / falling behind schedule. There have been some issues on my end the past weeks. Though it has gotten resolved over time, it contributed to this setback. However, I truly appreciate your understanding and patience throughout this process.
+
+With four weeks remaining until the Finals submission, we need to make some adjustments to ensure we cover all the necessary topics in a compressed timeframe. Here's the revised plan:
+
+### Lectures:
+
+Starting from Monday, I will merge the Week 5 topics with Weeks 6 and 7. This means we'll be covering all the topics, but in a more condensed manner, with only three lectures per week.
+
+Regarding Week 4, we will conclude the lectures with the three already released: 4.1, 4.2, and 4.3. On Monday, we will continue with Lecture 6.1.
+
+Here is the updated schedule for the upcoming weeks:
+
+| Week | Dates                            | Plan                                                       |
+|------|----------------------------------|------------------------------------------------------------|
+| 5    | Merged with Week 6 topics                                                                                   |
+| 6    | July 9 - July 15 | Data Visualization, Introduction to ML, Supervised Learning                                                  |
+| 7    | July 16 - July 22| Model Assessment, Unsupervised Learning, Applications                                                        |
+| 8    | July 23 - July 29| Robustness + Applied Probability and Statistics (2/2)                                                        |
+| 9    | July 30 - August 5| 1 lecture on Privacy and Ethics, buffer for any further delays in lecture                                    |
+
+### Weekly Check-in:
+
+| Week | Lectures        | Due Date              |  Weekly Reading Topic     |
+|------|-----------------|-----------------------|----------------------------|
+| 4    | 4.1, 4.2, 4.3   | July 8th               |                                                 | 
+| 5    | Dropped                                                                                                 |
+| 6    | 6.1, 6.2, 6.3   | July 23, 2023 5:00 PM | Recommendations                                 |
+| 7    | 7.1, 7.2, 7.3   | July 30, 2023 5:00 PM  | Autonomous Driving                              |
+| 8    | 8.1, 8.2, 8.3   | August 6, 2023 5:00 PM | Housekeeping                                    |
+| 9    | 9.1, 9.2, 9.3   | August 6, 2023 5:00 PM | Facial Recognition                              |
+
+### Homeworks:
+
+Due to the adjusted schedule, Homework 3 will now be released on Thursday instead of Sunday. Here are the dates for the remaining homework assignments and the final:
+
+| Item  | Released | Due Date | Number of Days |
+|-------|----------|----------|----------------|
+| 3     | July 13  | July 21  | 8 days         |
+| 4     | July 20  | July 28  | 8 days         |
+| Final | On or before July 27 | August 9 | 10 days        |
+
+Please note that I am considering extending the deadline for the final project, but the release date will be on or before July 27.
+
+Additionally, I will be announcing Participation and Bonus Point Activities during this week.
+
+Thank you for your understanding and cooperation as we navigate through these adjustments. If you have any questions or concerns, please don't hesitate to reach out to me. Let's make the most of the remaining time we have and ensure a successful completion of the course.
+
+Have a fun Sunday!
+
 :::
+
+
+:::{.callout-notice}
+- Latest Lecture - [Lecture 4.3 (Part 1)](Course_Content/Week_4/3/home.qmd).
+- Github Familarity Survey Open - D2L > Survey.
+::: 
 
 ## CheckList
 

@@ -1,13 +1,10 @@
-# Week 6 : AI in Autonomous Driving
+# Week 5 : AI for Recommendations
 
 ## Reading
 
-- [How do you teach an autonomous car when to hurt its passengers?](https://www.theverge.com/2016/6/23/12010476/social-dilemma-autonomous-vehicles-car-moral-machine-trolley-problem)
+- [How Target Figured Out A Teen Girl Was Pregnant Before Her Father Did](https://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did)
 
-- [The racism of technology - and why driverless cars could be the most dangerous example yet](https://www.theguardian.com/technology/shortcuts/2019/mar/13/driverless-cars-racist)
+<br>
 
-- [The folly of trolleys: Ethical challenges and autonomous vehicles](https://www.brookings.edu/articles/the-folly-of-trolleys-ethical-challenges-and-autonomous-vehicles/)
-
-## Activity
-
-[Moral Machine](https://www.moralmachine.net/)
+## Question for Discussion 
+TBD

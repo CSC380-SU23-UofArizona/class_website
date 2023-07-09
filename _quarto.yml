@@ -43,20 +43,19 @@ website:
           - text: "W4: Mental Health Support"
             file: Ethics/Week_4.qmd
 
-          - text: "W5: Recommendations"
-            file: Ethics/Week_5.qmd
-
-          - text: "W6: Autonomous Driving"
+          - text: "W6: Recommendations"
             file: Ethics/Week_6.qmd
 
-          - text: "W7: Housekeeping"
+          - text: "W7: Autonomous Driving"
             file: Ethics/Week_7.qmd
 
-          - text: "W8: Facial Recognition"
+          - text: "W8: Housekeeping"
             file: Ethics/Week_8.qmd
+            
 
-          - text: "W9:ChatGPT and friends"
+          - text: "W9: Facial Recognition"
             file: Ethics/Week_9.qmd
+            
       
       - section: "Bonus Questions"
         contents:
