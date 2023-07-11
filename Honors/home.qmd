@@ -1,0 +1,28 @@
+# Honors Contract Information
+
+This Honors Contract aims to provide students with an opportunity to delve deeper into the subject matter of CSC 380, encouraging critical thinking, justifying stances, and fostering the development of a comprehensive data science project.
+
+The honors work consists of 4 components.
+
+## Essay on an Ethical Question Stance
+
+(~1500 words ) 
+
+In Week 2, we explored the Influence of AI on Politics and engaged in discussions on the topic. Now, you are required to further explore this subject in a well-written essay of approximately 1000 words. Your essay should encompass an overview of the current situation, highlighting the key issues, and propose your stance on how we should address these challenges. Please provide a thoughtful explanation of your opinions and beliefs on the matter. I don’t need to agree with your stance, and my stance doesn’t matter in your work and grading.
+
+## Project
+
+You are required to select a dataset that does not have readily available solved code repositories. Utilize this dataset to solve a machine learning problem, following the structure of the final project. This includes tasks such as data cleaning, exploration, application of various machine learning methods, and thorough analysis of results and errors.
+
+Submit a report formatted in the style of a research paper, although strict adherence to research paper guidelines is not necessary. The report should include sections such as an abstract, introduction, dataset description, methodology, results, error analysis, conclusion, limitations, ethical considerations, and references.
+
+## Summarizing a research paper
+
+During Week 7, a research paper will be provided to you. Your task is to summarize the work presented in the paper in one to two paragraphs. Focus on describing the problem being addressed, the approach taken by the authors, the performance of their method, and any future directions or comments you may have.
+
+## Final Presentation
+
+
+Finally, on 4th August (tentative date), you will present your work so far in a concise presentation lasting no longer than five minutes. This presentation will be followed by a question and answer session.
+
+All work should be submitted 2 days before Presentation. Satisfactory completion of all components translates to a Pass for Honors Credit. 

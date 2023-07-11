@@ -19,8 +19,8 @@ website:
           - text: "Week 3"
             file: Course_Content/Week_3/home.qmd
 
-          - text: "Week 4"
-            file: Course_Content/Week_4/home.qmd
+          - text: "Week 4 & 5"
+            file: Course_Content/Week_4&5/home.qmd
 
       - section: "Homework"
         contents:
@@ -62,6 +62,12 @@ website:
 
           - text: "Sonam's Dilemma: A Gift for Few or a Chance for All"
             file: Bonus/1.qmd
+
+      - section: "Honors"
+        contents:
+
+          - text: "Assignments"
+            file: Honors/home.qmd
 
       - section: "Syllabus"
         contents:
