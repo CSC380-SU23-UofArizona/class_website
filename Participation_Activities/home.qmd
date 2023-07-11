@@ -1,0 +1,15 @@
+# Participation Activities
+
+## Active Participation Activities:
+
+5. [Github Setup](github_setup.qmd)
+
+## Past
+
+1. Easter Egg in Syllabus -1 : 
+    Message to send favorite movie hidden in syllabus
+2. aster Egg in Syllabus -1 : 
+    Message to send favorite meme hidden in syllabus
+3. Jupyter Notebook Setup
+    Marked as Homework 0:    
+4. Github Setup 

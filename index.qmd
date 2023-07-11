@@ -2,6 +2,25 @@
 title: "Principles Of Data Science"
 ---
 
+:::{.callout-notice}
+
+## Recent
+
+- Latest Lecture - [Lecture 4.3](Course_Content/Week_4&5/3/home.qmd).
+- [Participation Activity - Github Setup Released](Participation_Activities/home.qmd)
+
+
+::: 
+
+## CheckList
+
+### Due Dates
+
+- [ ] Github Setup due July 16th, 2023 | 5 pm.
+- [ ] Weekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )
+
+<br><br><br><br><br><br><br>
+
 ::: {.callout-note}
 
 # Revised Schedule and Deadlines for the Course
@@ -57,15 +76,4 @@ Have a fun Sunday!
 
 :::
 
-
-:::{.callout-notice}
-- Latest Lecture - [Lecture 4.3](Course_Content/Week_4/3/home.qmd).
-- Github Familarity Survey Open - D2L > Survey.
-::: 
-
-## CheckList
-
-### Due Dates
-
-- [ ] Weekly Checkin for Week 4 | Due 5 pm , July 10, Sunday ( Based on Lecture 4.1,4.2,4.3 )
 

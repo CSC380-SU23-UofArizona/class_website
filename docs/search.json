@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Principles Of Data Science",
     "section": "",
-    "text": "Revised Schedule and Deadlines for the Course\n\n\n\nHi Class,\nApologies for the falling behind schedule. As a remedial, the course plan has been updated. Please see below a revised schedule and updated deadlines. I truly appreciate your understanding and patience as we adjust the schedule to fit our course better.\n\n\nStarting from Monday, instead of lectures 5.1 to 5.3, I will merge the Week 5 topics with Weeks 6 and 7. This means we’ll be covering all the topics, but in a more condensed manner, with only three lectures per week.\nRegarding Week 4, we will conclude the lectures with the three already released: 4.1, 4.2, and 4.3. On Monday, we will continue with Lecture 6.1.\nHere is the updated schedule for the upcoming weeks:\n\n\n\n\n\n\n\n\nWeek\nDates\nPlan\n\n\n\n\n5\nMerged with Week 6 topics\n\n\n\n6\nJuly 9 - July 15\nData Visualization, Introduction to ML, Supervised Learning\n\n\n7\nJuly 16 - July 22\nModel Assessment, Unsupervised Learning, Applications\n\n\n8\nJuly 23 - July 29\nRobustness + Applied Probability and Statistics (2/2)\n\n\n9\nJuly 30 - August 5\n1 lecture on Privacy and Ethics, buffer for any further delays in lecture\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDue Date\nWeekly Reading Topic\n\n\n\n\n4\n4.1, 4.2, 4.3\nJuly 10th\n\n\n\n5\nDropped\n\n\n\n\n6\n6.1, 6.2, 6.3\nJuly 23, 2023 5:00 PM\nRecommendations\n\n\n7\n7.1, 7.2, 7.3\nJuly 30, 2023 5:00 PM\nAutonomous Driving\n\n\n8\n8.1, 8.2, 8.3\nAugust 6, 2023 5:00 PM\nHousekeeping\n\n\n9\n9.1, 9.2, 9.3\nAugust 6, 2023 5:00 PM\nFacial Recognition\n\n\n\n\n\n\nDue to the adjusted schedule, Homework 3 will now be released on Thursday instead of Sunday. Here are the dates for the remaining homework assignments and the final:\n\n\n\nItem\nReleased\nDue Date\nNumber of Days\n\n\n\n\n3\nJuly 13\nJuly 21\n8 days\n\n\n4\nJuly 20\nJuly 28\n8 days\n\n\nFinal\nOn or before July 27\nAugust 9\n10 days\n\n\n\nPlease note that I am considering extending the deadline for the final project, but the release date will be on or before July 27.\nAdditionally, I will be announcing Participation and Bonus Point Activities during this week.\nThank you for your understanding and cooperation as we navigate through these adjustments. If you have any questions or concerns, please don’t hesitate to reach out to me.\nHave a fun Sunday!"
+    "text": "Latest Lecture - Lecture 4.3.\nParticipation Activity - Github Setup Released"
   },
   {
     "objectID": "index.html#checklist",
     "href": "index.html#checklist",
     "title": "Principles Of Data Science",
     "section": "CheckList",
-    "text": "CheckList\n\nDue Dates\n\nWeekly Checkin for Week 4 | Due 5 pm , July 10, Sunday ( Based on Lecture 4.1,4.2,4.3 )"
+    "text": "CheckList\n\nDue Dates\n\nGithub Setup due July 16th, 2023 | 5 pm.\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )\n\n\n\n\n\n\n\n\nRevised Schedule and Deadlines for the Course\n\n\n\nHi Class,\nApologies for the falling behind schedule. As a remedial, the course plan has been updated. Please see below a revised schedule and updated deadlines. I truly appreciate your understanding and patience as we adjust the schedule to fit our course better.\n\nLectures:\nStarting from Monday, instead of lectures 5.1 to 5.3, I will merge the Week 5 topics with Weeks 6 and 7. This means we’ll be covering all the topics, but in a more condensed manner, with only three lectures per week.\nRegarding Week 4, we will conclude the lectures with the three already released: 4.1, 4.2, and 4.3. On Monday, we will continue with Lecture 6.1.\nHere is the updated schedule for the upcoming weeks:\n\n\n\n\n\n\n\n\nWeek\nDates\nPlan\n\n\n\n\n5\nMerged with Week 6 topics\n\n\n\n6\nJuly 9 - July 15\nData Visualization, Introduction to ML, Supervised Learning\n\n\n7\nJuly 16 - July 22\nModel Assessment, Unsupervised Learning, Applications\n\n\n8\nJuly 23 - July 29\nRobustness + Applied Probability and Statistics (2/2)\n\n\n9\nJuly 30 - August 5\n1 lecture on Privacy and Ethics, buffer for any further delays in lecture\n\n\n\n\n\nWeekly Check-in:\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDue Date\nWeekly Reading Topic\n\n\n\n\n4\n4.1, 4.2, 4.3\nJuly 10th\n\n\n\n5\nDropped\n\n\n\n\n6\n6.1, 6.2, 6.3\nJuly 23, 2023 5:00 PM\nRecommendations\n\n\n7\n7.1, 7.2, 7.3\nJuly 30, 2023 5:00 PM\nAutonomous Driving\n\n\n8\n8.1, 8.2, 8.3\nAugust 6, 2023 5:00 PM\nHousekeeping\n\n\n9\n9.1, 9.2, 9.3\nAugust 6, 2023 5:00 PM\nFacial Recognition\n\n\n\n\n\nHomeworks:\nDue to the adjusted schedule, Homework 3 will now be released on Thursday instead of Sunday. Here are the dates for the remaining homework assignments and the final:\n\n\n\nItem\nReleased\nDue Date\nNumber of Days\n\n\n\n\n3\nJuly 13\nJuly 21\n8 days\n\n\n4\nJuly 20\nJuly 28\n8 days\n\n\nFinal\nOn or before July 27\nAugust 9\n10 days\n\n\n\nPlease note that I am considering extending the deadline for the final project, but the release date will be on or before July 27.\nAdditionally, I will be announcing Participation and Bonus Point Activities during this week.\nThank you for your understanding and cooperation as we navigate through these adjustments. If you have any questions or concerns, please don’t hesitate to reach out to me.\nHave a fun Sunday!"
   },
   {
     "objectID": "Course_Content/Week_2/home.html",
@@ -1349,5 +1349,75 @@
     "title": "Week 6 : Data Visualization, Introduction to ML, Supervised Learning",
     "section": "",
     "text": "Strikethrough text is changes in plan.\nGreen is new items added after planning.\nChecked boxes are completed items."
+  },
+  {
+    "objectID": "Participation Activities/home.html",
+    "href": "Participation Activities/home.html",
+    "title": "Participation Activities",
+    "section": "",
+    "text": "Objective:\nHomework 3 will highly likely be a github classroom submission. This activity is to make sure we ( students, TA as well as the instructor ) won’t have any hiccups.\nInstructions\n\nVisit : https://classroom.github.com/a/1ckY6YTk\nYou will be asked to accept the homework\nInstruction on screen will guide you to clone a repo ; The repo name is expected to be github-setup-username.\nClone the repo to your local ie computer.\nAdd your Name as heading to the Readme.\nCommit and Push the change\nMake sure everything is in place.\n\nExample : When I did the activity, I got the following screen.\n\nYou are done!\nPS : DO NOT do anything with the Feedback Pull request that was autogenerated.\n\n\n\n\n\nEaster Egg in Syllabus -1 : Message to send favorite movie hidden in syllabus\naster Egg in Syllabus -1 : Message to send favorite meme hidden in syllabus\nJupyter Notebook Setup Marked as Homework 0:\n\nGithub Setup"
+  },
+  {
+    "objectID": "Participation Activities/home.html#active-participation-activities",
+    "href": "Participation Activities/home.html#active-participation-activities",
+    "title": "Participation Activities",
+    "section": "",
+    "text": "Objective:\nHomework 3 will highly likely be a github classroom submission. This activity is to make sure we ( students, TA as well as the instructor ) won’t have any hiccups.\nInstructions\n\nVisit : https://classroom.github.com/a/1ckY6YTk\nYou will be asked to accept the homework\nInstruction on screen will guide you to clone a repo ; The repo name is expected to be github-setup-username.\nClone the repo to your local ie computer.\nAdd your Name as heading to the Readme.\nCommit and Push the change\nMake sure everything is in place.\n\nExample : When I did the activity, I got the following screen.\n\nYou are done!\nPS : DO NOT do anything with the Feedback Pull request that was autogenerated."
+  },
+  {
+    "objectID": "Participation Activities/home.html#past",
+    "href": "Participation Activities/home.html#past",
+    "title": "Participation Activities",
+    "section": "",
+    "text": "Easter Egg in Syllabus -1 : Message to send favorite movie hidden in syllabus\naster Egg in Syllabus -1 : Message to send favorite meme hidden in syllabus\nJupyter Notebook Setup Marked as Homework 0:\n\nGithub Setup"
+  },
+  {
+    "objectID": "Participation_Activities/home.html",
+    "href": "Participation_Activities/home.html",
+    "title": "Participation Activities",
+    "section": "",
+    "text": "Github Setup\n\n\n\n\n\nEaster Egg in Syllabus -1 : Message to send favorite movie hidden in syllabus\naster Egg in Syllabus -1 : Message to send favorite meme hidden in syllabus\nJupyter Notebook Setup Marked as Homework 0:\n\nGithub Setup"
+  },
+  {
+    "objectID": "Participation_Activities/home.html#active-participation-activities",
+    "href": "Participation_Activities/home.html#active-participation-activities",
+    "title": "Participation Activities",
+    "section": "",
+    "text": "Github Setup"
+  },
+  {
+    "objectID": "Participation_Activities/home.html#past",
+    "href": "Participation_Activities/home.html#past",
+    "title": "Participation Activities",
+    "section": "",
+    "text": "Easter Egg in Syllabus -1 : Message to send favorite movie hidden in syllabus\naster Egg in Syllabus -1 : Message to send favorite meme hidden in syllabus\nJupyter Notebook Setup Marked as Homework 0:\n\nGithub Setup"
+  },
+  {
+    "objectID": "Participation_Activities/github_setup.html",
+    "href": "Participation_Activities/github_setup.html",
+    "title": "Github Setup :",
+    "section": "",
+    "text": "Homework 3 will highly likely be a github classroom submission. This activity is to make sure we ( students, TA as well as the instructor ) won’t have any hiccups.\n\n\n\nPS : DO NOT do anything with the Feedback Pull request that was autogenerated.\n\nVisit : https://classroom.github.com/a/1ckY6YTk\nYou will be asked to accept the homework\nInstruction on screen will guide you to clone a repo ; The repo name is expected to be github-setup-username.\nClone the repo to your local ie computer.\nAdd your Name as heading to the Readme.\nCommit and Push the change\nMake sure everything is in place.\n\nExample : When I did the activity, I got the following screen.\n\nYou are done!"
+  },
+  {
+    "objectID": "Participation_Activities/github_setup.html#objective",
+    "href": "Participation_Activities/github_setup.html#objective",
+    "title": "Github Setup :",
+    "section": "",
+    "text": "Homework 3 will highly likely be a github classroom submission. This activity is to make sure we ( students, TA as well as the instructor ) won’t have any hiccups."
+  },
+  {
+    "objectID": "Participation_Activities/github_setup.html#instructions",
+    "href": "Participation_Activities/github_setup.html#instructions",
+    "title": "Github Setup :",
+    "section": "",
+    "text": "PS : DO NOT do anything with the Feedback Pull request that was autogenerated.\n\nVisit : https://classroom.github.com/a/1ckY6YTk\nYou will be asked to accept the homework\nInstruction on screen will guide you to clone a repo ; The repo name is expected to be github-setup-username.\nClone the repo to your local ie computer.\nAdd your Name as heading to the Readme.\nCommit and Push the change\nMake sure everything is in place.\n\nExample : When I did the activity, I got the following screen.\n\nYou are done!"
+  },
+  {
+    "objectID": "index.html#recent",
+    "href": "index.html#recent",
+    "title": "Principles Of Data Science",
+    "section": "",
+    "text": "Latest Lecture - Lecture 4.3.\nParticipation Activity - Github Setup Released"
   }
 ]

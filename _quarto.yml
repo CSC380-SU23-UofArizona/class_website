@@ -63,6 +63,12 @@ website:
           - text: "Sonam's Dilemma: A Gift for Few or a Chance for All"
             file: Bonus/1.qmd
 
+      - section: "Participation"
+        contents:
+
+          - text: "Home"
+            file: Participation_Activities/home.qmd
+
       - section: "Honors"
         contents:
 
