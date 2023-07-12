@@ -1,12 +1,15 @@
-# Dataset Suggestions
+# Dataset Suggestions 
+#### Worth 1 Bonus Point
+
+<br>
 
 In the D2L platform, a Google Sheets document has been shared for this task. Please note that the document will not be shared on the website, in accordance with FERPA guidelines.
 
-## 1. Dataset Suggestion:
+## 1. Dataset Suggestion [ Graded out of 3 ]
 
 Your objective is to discover three datasets that are not widely known or extensively covered online. Locate your name in the first column and proceed as follows: in the second column, provide the name of the dataset, and in the third column, share the corresponding link. The additional condition is that, you need to select a dataset that has NOT already been listed by someone else in the document.
 
-## 2. Recommendation for Final Project
+## 2. Recommendation for Final Project [ Not graded ]
 
 In the fourth column, suggest the name of one dataset from the sheet ( it could be from anywhere in the sheet, not restricted to your suggestions) that you may want to be considered for your final project. Remember, this suggestion does not signify a commitment but rather serves as your personal recommendation.
 
