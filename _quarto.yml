@@ -60,8 +60,8 @@ website:
       - section: "Bonus Questions"
         contents:
 
-          - text: "Sonam's Dilemma: A Gift for Few or a Chance for All"
-            file: Bonus/1.qmd
+          - text: "Home"
+            file: Bonus/home.qmd
 
       - section: "Participation"
         contents:
