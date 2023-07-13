@@ -1,0 +1,16 @@
+# Summarise Viz types 
+#### Worth 2 Bonus Points
+
+
+## Summarise 
+#### [ 1 point ]
+
+What are the key takeaways summarizing the types of visualization discussed in the blog shared during Lecture 6.1? The blog delves into various groups of data visualization and their respective visualization types, best practices etc. Please provide a concise overview of what you learned/understood , comprising approximately 250 to 500 words.
+
+You don't have to read all the links, but go through as many as you can, and summarise.
+
+
+## Chart of Focus 
+#### [ 1 point ]
+
+Select a chart from the mentioned blog that resonated with you the most, and provide a concise overview of what you learned/understood , comprising approximately 250 to 500 words.

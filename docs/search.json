@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Principles Of Data Science",
     "section": "",
-    "text": "Latest Lecture - Lecture 4.3.\nParticipation Activity - Github Setup Released\nBonus Question released"
+    "text": "Latest Lecture - Lecture 6.1.\nParticipation Activity - Github Setup Released\nBonus Question released"
   },
   {
     "objectID": "index.html#checklist",
     "href": "index.html#checklist",
     "title": "Principles Of Data Science",
     "section": "CheckList",
-    "text": "CheckList\n\nDue Dates\n\nGithub Setup due July 16th, 2023 | 5 pm.\nBonus Question due by July 16th, 2023 | 11:59 pm.\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )"
+    "text": "CheckList\n\nDue Dates\n\nGithub Setup due July 16th, 2023 | 5 pm.\nBonus Question - Dataset Suggestions | Due by July 19th, 2023 | 11:59 pm\nBonus Question - Data Viz | Due by July 16th, 2023 | 11:59 pm.\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )"
   },
   {
     "objectID": "Course_Content/Week_2/home.html",
@@ -1334,7 +1334,7 @@
     "href": "Course_Content/Week_6/home.html",
     "title": "Week 6 : Data Visualization, Introduction to ML, Supervised Learning",
     "section": "",
-    "text": "Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nApply data analysis and visualization techniques to derive insights from diverse datasets.\nDevelop proficiency in using data science tools and programming languages.\nExplore the ethical considerations associated with data-driven decision-making.\n\n\n\n\n\nWrite appropriate visualizations for different sources and types of data.\nExplain why we seek to build machine learning models that generalize rather than memorize their input\nExplain the different uses for training, validation, and testing datasets\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem\nSelect the appropriate evaluation measure for the dataset and task being solved\nDemonstrate awareness of bias and ethics in data science.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nStrikethrough text is changes in plan.\nGreen is new items added after planning.\nChecked boxes are completed items."
+    "text": "Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nApply data analysis and visualization techniques to derive insights from diverse datasets.\nDevelop proficiency in using data science tools and programming languages.\nExplore the ethical considerations associated with data-driven decision-making.\n\n\n\n\n\nWrite appropriate visualizations for different sources and types of data.\nExplain why we seek to build machine learning models that generalize rather than memorize their input\nExplain the different uses for training, validation, and testing datasets\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem\nSelect the appropriate evaluation measure for the dataset and task being solved\nDemonstrate awareness of bias and ethics in data science.\n\n\n\n\n\n\n6.1 - Data Vizualisation and Introduction to Machine Learning\n\n\n\n\nBonus : Dataset Suggestions ( 1 point)\nBonus : Viz (2 points)\nParticipation Activity : Github Setup\n\n\n\n[Homework 3] - released thursday or friday. 7 days to work on it.\n\n\n\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )\n\n\n\n\n\n\n\n\n\nStrikethrough text is changes in plan.\nGreen is new items added after planning.\nChecked boxes are completed items."
   },
   {
     "objectID": "Course_Content/Week_6/home.html#objectives",
@@ -1418,7 +1418,7 @@
     "href": "index.html#recent",
     "title": "Principles Of Data Science",
     "section": "",
-    "text": "Latest Lecture - Lecture 4.3.\nParticipation Activity - Github Setup Released\nBonus Question released"
+    "text": "Latest Lecture - Lecture 6.1.\nParticipation Activity - Github Setup Released\nBonus Question released"
   },
   {
     "objectID": "index.html#instructor-information",
@@ -1446,7 +1446,7 @@
     "href": "Bonus/home.html",
     "title": "Bonus Questions",
     "section": "",
-    "text": "Bonus Questions\n\nActive\nDataset Suggestions\n\n\nPast\nSonam’s Dilema"
+    "text": "Bonus Questions\n\nActive\nDataset Suggestions - 1 point Summarise Viz Types - 2 points\n\n\nPast\nSonam’s Dilema"
   },
   {
     "objectID": "Bonus/2.html",
@@ -1489,5 +1489,138 @@
     "title": "Dataset Suggestions",
     "section": "",
     "text": "In the fourth column, suggest the name of one dataset from the sheet ( it could be from anywhere in the sheet, not restricted to your suggestions) that you may want to be considered for your final project. Remember, this suggestion does not signify a commitment but rather serves as your personal recommendation.\nExplore various sources and discover intriguing datasets. This is an excellent opportunity to dive into unexplored data and expand your knowledge of available datasets.\nNo formal submission on D2L is needed for the project. The grader will check the common sheet."
+  },
+  {
+    "objectID": "Course_Content/Week_6/home.html#lectures",
+    "href": "Course_Content/Week_6/home.html#lectures",
+    "title": "Week 6 : Data Visualization, Introduction to ML, Supervised Learning",
+    "section": "",
+    "text": "6.1 - Data Vizualisation and Introduction to Machine Learning"
+  },
+  {
+    "objectID": "Course_Content/Week_6/home.html#activities",
+    "href": "Course_Content/Week_6/home.html#activities",
+    "title": "Week 6 : Data Visualization, Introduction to ML, Supervised Learning",
+    "section": "",
+    "text": "Bonus : Dataset Suggestions ( 1 point)\nBonus : Viz (2 points)\nParticipation Activity : Github Setup\n\n\n\n[Homework 3] - released thursday or friday. 7 days to work on it.\n\n\n\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )"
+  },
+  {
+    "objectID": "Course_Content/Week_6/1/home.html",
+    "href": "Course_Content/Week_6/1/home.html",
+    "title": "6.1 - Data Vizualisation and Introduction to Machine Learning",
+    "section": "",
+    "text": "Data Viz:\n\nWhat is?\nWhy?\nDifferent types - [ Bonus Activity worth 2 points here ]\nBad Viz\nPython Libraries\n\nMatplotlib\n\nAnatomy\nSingle plot on a figure\nMultiple charts on a figure\n\n\n\nIntroduction to ML:\n\nTypes:\n\nSupervised\nUnsupervised\nSemi-supervised\nReinforcement learning\n\n\n\n\n\n\n\n\nSlides\nJupyter Notebook\n\n\n\n\n\n\n\n\n\n6.2 Supervised Learning"
+  },
+  {
+    "objectID": "Course_Content/Week_6/1/home.html#objectives",
+    "href": "Course_Content/Week_6/1/home.html#objectives",
+    "title": "6.1 - Data Vizualisation and Introduction to Machine Learning",
+    "section": "",
+    "text": "Data Viz:\n\nWhat is?\nWhy?\nDifferent types - [ Bonus Activity worth 2 points here ]\nBad Viz\nPython Libraries\n\nMatplotlib\n\nAnatomy\nSingle plot on a figure\nMultiple charts on a figure\n\n\n\nIntroduction to ML:\n\nTypes:\n\nSupervised\nUnsupervised\nSemi-supervised\nReinforcement learning"
+  },
+  {
+    "objectID": "Course_Content/Week_6/1/home.html#materials",
+    "href": "Course_Content/Week_6/1/home.html#materials",
+    "title": "6.1 - Data Vizualisation and Introduction to Machine Learning",
+    "section": "",
+    "text": "Slides\nJupyter Notebook"
+  },
+  {
+    "objectID": "Course_Content/Week_6/1/home.html#next-class",
+    "href": "Course_Content/Week_6/1/home.html#next-class",
+    "title": "6.1 - Data Vizualisation and Introduction to Machine Learning",
+    "section": "",
+    "text": "6.2 Supervised Learning"
+  },
+  {
+    "objectID": "Course_Content/Week_6/1/Notebook.html",
+    "href": "Course_Content/Week_6/1/Notebook.html",
+    "title": "Data Visualization",
+    "section": "",
+    "text": "Graphical display of data\nUseful for\n\ndata cleaning\nexploring data structure\ndetecting outliers and unusual groups\nidentifying trends and clusters\nspotting local patterns\nevaluating modeling output\nPresenting results.\n\nUsed to convey a message across, or to understand data better. \nA graphic won’t say the whole story. \nPresentation graphics are used to convey known information and are often designed to attract attention.\nExploratory graphics are used to find new information and should direct attention to information.\nSource - Why Is Data Visualization Important? What Is Important in Data Visualization?"
+  },
+  {
+    "objectID": "Course_Content/Week_6/1/Notebook.html#types",
+    "href": "Course_Content/Week_6/1/Notebook.html#types",
+    "title": "Data Visualization",
+    "section": "1. Types",
+    "text": "1. Types\nsome below"
+  },
+  {
+    "objectID": "Course_Content/Week_6/1/Notebook.html#chart",
+    "href": "Course_Content/Week_6/1/Notebook.html#chart",
+    "title": "Data Visualization",
+    "section": "Chart:",
+    "text": "Chart:\n\nSource - Tableau.com"
+  },
+  {
+    "objectID": "Course_Content/Week_6/1/Notebook.html#geospatial",
+    "href": "Course_Content/Week_6/1/Notebook.html#geospatial",
+    "title": "Data Visualization",
+    "section": "GeoSpatial",
+    "text": "GeoSpatial\n\nSource"
+  },
+  {
+    "objectID": "Course_Content/Week_6/1/Notebook.html#heatmaps",
+    "href": "Course_Content/Week_6/1/Notebook.html#heatmaps",
+    "title": "Data Visualization",
+    "section": "Heatmaps",
+    "text": "Heatmaps\n Bonus Point activity worth 2 points.- https://www.tableau.com/learn/articles/data-visualization#big-data"
+  },
+  {
+    "objectID": "Course_Content/Week_6/1/Notebook.html#good-and-bad-vizualisation",
+    "href": "Course_Content/Week_6/1/Notebook.html#good-and-bad-vizualisation",
+    "title": "Data Visualization",
+    "section": "2. Good and Bad Vizualisation",
+    "text": "2. Good and Bad Vizualisation\nExamples from : https://www.codeconquest.com/blog/12-bad-data-visualization-examples-explained/#htoc-what-does-this-graph-show"
+  },
+  {
+    "objectID": "Course_Content/Week_6/1/Notebook.html#key-principles-of-effective-data-visualization",
+    "href": "Course_Content/Week_6/1/Notebook.html#key-principles-of-effective-data-visualization",
+    "title": "Data Visualization",
+    "section": "3. Key Principles of Effective Data Visualization",
+    "text": "3. Key Principles of Effective Data Visualization\n\nChoosing the right visual representation for different types of data.\nUnderstanding the target audience and their needs.\nDesigning for clarity, simplicity, and accuracy.\nHighlighting the main message and avoiding clutter.\nUsing color, size, and shape effectively."
+  },
+  {
+    "objectID": "Course_Content/Week_6/1/Notebook.html#python-libraries-tools",
+    "href": "Course_Content/Week_6/1/Notebook.html#python-libraries-tools",
+    "title": "Data Visualization",
+    "section": "4. Python Libraries / Tools",
+    "text": "4. Python Libraries / Tools\n\nmatplotlib\nplotly\nseaborn\n\nCheckout -\n\nhttps://datavizcatalogue.com/search.html\nhttps://python-graph-gallery.com/\n\n\nMatplotlib\nExcellent Start - https://matplotlib.org/stable/tutorials/introductory/quick_start.html#\n\n\nPlot linear, quadratic, and cubic functions from 0 to 2, with 100 equally spaced intervals\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\nx = np.linspace(0, 2, 100)  # Sample data.\nx\n\narray([0.        , 0.02020202, 0.04040404, 0.06060606, 0.08080808,\n       0.1010101 , 0.12121212, 0.14141414, 0.16161616, 0.18181818,\n       0.2020202 , 0.22222222, 0.24242424, 0.26262626, 0.28282828,\n       0.3030303 , 0.32323232, 0.34343434, 0.36363636, 0.38383838,\n       0.4040404 , 0.42424242, 0.44444444, 0.46464646, 0.48484848,\n       0.50505051, 0.52525253, 0.54545455, 0.56565657, 0.58585859,\n       0.60606061, 0.62626263, 0.64646465, 0.66666667, 0.68686869,\n       0.70707071, 0.72727273, 0.74747475, 0.76767677, 0.78787879,\n       0.80808081, 0.82828283, 0.84848485, 0.86868687, 0.88888889,\n       0.90909091, 0.92929293, 0.94949495, 0.96969697, 0.98989899,\n       1.01010101, 1.03030303, 1.05050505, 1.07070707, 1.09090909,\n       1.11111111, 1.13131313, 1.15151515, 1.17171717, 1.19191919,\n       1.21212121, 1.23232323, 1.25252525, 1.27272727, 1.29292929,\n       1.31313131, 1.33333333, 1.35353535, 1.37373737, 1.39393939,\n       1.41414141, 1.43434343, 1.45454545, 1.47474747, 1.49494949,\n       1.51515152, 1.53535354, 1.55555556, 1.57575758, 1.5959596 ,\n       1.61616162, 1.63636364, 1.65656566, 1.67676768, 1.6969697 ,\n       1.71717172, 1.73737374, 1.75757576, 1.77777778, 1.7979798 ,\n       1.81818182, 1.83838384, 1.85858586, 1.87878788, 1.8989899 ,\n       1.91919192, 1.93939394, 1.95959596, 1.97979798, 2.        ])\n\n\n\nplt.figure(figsize=(5, 2.7), layout='constrained')\n\n&lt;Figure size 500x270 with 0 Axes&gt;\n\n\n&lt;Figure size 500x270 with 0 Axes&gt;\n\n\n\nplt.figure(figsize=(5, 2.7), layout='constrained')\nplt.plot(x, x, label='linear')  # Plot some data on the (implicit) axes.\nplt.plot(x, x**2, label='quadratic')  # etc.\nplt.plot(x, x**3, label='cubic')\nplt.legend()\n\n&lt;matplotlib.legend.Legend at 0x117cadcc0&gt;\n\n\n\n\n\n\nplt.figure(figsize=(5, 2.7), layout='constrained')\nplt.plot(x, x, label='linear')  # Plot some data on the (implicit) axes.\nplt.plot(x, x**2, label='quadratic')  # etc.\nplt.plot(x, x**3, label='cubic')\nplt.xlabel('x label')\nplt.ylabel('y label')\nplt.title(\"Simple Plot\")\nplt.legend()\nplt.show()\n\n\n\n\n\nMultiple graphs in one figure\n\n\nfig, axs = plt.subplots(2, 2, layout='constrained')\naxs[0][0].plot(x,x)\naxs[0][0].set_title(\"Linear\")\n\naxs[0][1].plot(x,x**2)\naxs[0][1].set_xlabel(\"X Label\")\n\naxs[1][0].plot(x,x**3)\naxs[1][0].set_ylabel(\"Y Label\")\naxs[1][1].plot(x,x**4, label=\"The Curve\")\naxs[1][1].legend()\n\nplt.show()\n\n\n\n\n\nfig, axd = plt.subplot_mosaic([['upleft', 'right'],\n                               ['lowleft', 'right']], layout='constrained')\naxd['upleft'].set_title('upleft')\naxd['lowleft'].set_title('lowleft')\naxd['right'].set_title('right')\n\nText(0.5, 1.0, 'right')"
+  },
+  {
+    "objectID": "Bonus/3.html",
+    "href": "Bonus/3.html",
+    "title": "Summarise Viz types",
+    "section": "",
+    "text": "What are the key takeaways summarizing the types of visualization discussed in the blog shared during Lecture 6.1? The blog delves into various groups of data visualization and their respective visualization types, best practices etc. Please provide a concise overview of what you learned/understood , comprising approximately 250 to 500 words.\nYou don’t have to read all the links, but go through as many as you can, and summarise.\n\n\n\n\n\n\nSelect a chart from the mentioned blog that resonated with you the most, and provide a concise overview of what you learned/understood , comprising approximately 250 to 500 words."
+  },
+  {
+    "objectID": "Bonus/3.html#summarise-1-point",
+    "href": "Bonus/3.html#summarise-1-point",
+    "title": "Summarise Viz types",
+    "section": "",
+    "text": "What are the key takeaways summarizing the types of visualization discussed in the blog shared during Lecture 6.1? The blog delves into various groups of data visualization and their respective visualization types, best practices etc. Please provide a concise overview of what you learned/understood , comprising approximately 250 to 500 words.\nYou don’t have to read all the links, but go through as many as you can, and summarise."
+  },
+  {
+    "objectID": "Bonus/3.html#chart-of-focus-1-point",
+    "href": "Bonus/3.html#chart-of-focus-1-point",
+    "title": "Summarise Viz types",
+    "section": "",
+    "text": "Select a chart from the mentioned blog that resonated with you the most, and provide a concise overview of what you learned/understood , comprising approximately 250 to 500 words."
+  },
+  {
+    "objectID": "Bonus/3.html#summarise",
+    "href": "Bonus/3.html#summarise",
+    "title": "Summarise Viz types",
+    "section": "",
+    "text": "What are the key takeaways summarizing the types of visualization discussed in the blog shared during Lecture 6.1? The blog delves into various groups of data visualization and their respective visualization types, best practices etc. Please provide a concise overview of what you learned/understood , comprising approximately 250 to 500 words.\nYou don’t have to read all the links, but go through as many as you can, and summarise."
+  },
+  {
+    "objectID": "Bonus/3.html#chart-of-focus",
+    "href": "Bonus/3.html#chart-of-focus",
+    "title": "Summarise Viz types",
+    "section": "",
+    "text": "Select a chart from the mentioned blog that resonated with you the most, and provide a concise overview of what you learned/understood , comprising approximately 250 to 500 words."
   }
 ]

@@ -22,6 +22,9 @@ website:
           - text: "Week 4 & 5"
             file: Course_Content/Week_4&5/home.qmd
 
+          - text: "Week 6"
+            file: Course_Content/Week_6/home.qmd
+
       - section: "Homework"
         contents:
 

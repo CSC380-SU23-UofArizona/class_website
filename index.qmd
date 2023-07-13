@@ -5,7 +5,7 @@ title: "Principles Of Data Science"
 :::{.callout-notice}
 ## Recent
 
-- Latest Lecture - [Lecture 4.3](Course_Content/Week_4&5/3/home.qmd).
+- Latest Lecture - [Lecture 6.1](Course_Content/Week_6/1/home.qmd).
 - [Participation Activity - Github Setup Released](Participation_Activities/home.qmd)
 - [Bonus Question released](Bonus/home.qmd)
 ::: 
@@ -15,7 +15,8 @@ title: "Principles Of Data Science"
 ### Due Dates
 
 - [ ] Github Setup due July 16th, 2023 | 5 pm.
-- [ ] Bonus Question due by July 16th, 2023 | 11:59 pm. 
+- [ ] Bonus Question - Dataset Suggestions | Due by July 19th, 2023 | 11:59 pm
+- [ ] Bonus Question - Data Viz | Due by July 16th, 2023 | 11:59 pm. 
 - [ ] Weekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )
 
 ## Class Playlist

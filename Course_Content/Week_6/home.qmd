@@ -23,15 +23,24 @@
 
 ## Lectures
 
-<br>
+[6.1 - Data Vizualisation and Introduction to Machine Learning](1/home.qmd)
 
 ## Activities
 
+- [Bonus : Dataset Suggestions ( 1 point) ](../../Bonus/2.qmd)
+
+- [Bonus : Viz (2 points)](../../Bonus/3.qmd)
+
+- [Participation Activity : Github Setup](../../Participation_Activities/github_setup.qmd)
+
+
 ### Homework
 
+[Homework 3] - released thursday or friday. 7 days to work on it.
 
 ### Weekly Checkin 
 
+Weekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )
 
 ### Others
 

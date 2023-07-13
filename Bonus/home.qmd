@@ -2,7 +2,8 @@
 
 ### Active
 
-[Dataset Suggestions](2.qmd)
+[Dataset Suggestions](2.qmd) - 1 point
+[Summarise Viz Types](3.qmd) - 2 points
 
 ### Past
 
