@@ -1,0 +1,83 @@
+# Week 4 : Data Preprocessing 
+#### [ June 29 to July <small><small><s>2</s></small></small> 7]
+
+## Objectives
+
+### Course Objectives:
+
+- [ ] Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.
+- [ ] Develop proficiency in using data science tools and programming languages.
+- [ ] Explore the ethical considerations associated with data-driven decision-making.
+
+### Learning Outcomes:
+
+- [x] Convert a raw data source into a version appropriate for downstream analysis using Python.
+- [ ] Demonstrate awareness of bias and ethics in data science.
+
+<br>
+
+## Lectures
+
+- [4.1 - Pandas cont...](1/home.qmd)
+
+- [4.2 - Data Preprocessing - Part 1 | (Tabular Data, Audio and Image)](2/home.qmd)
+
+- [4.3 - Data Preprocessing - Part 2 & Data Visualization](3/home.qmd)
+
+<br>
+
+## Activities
+
+### Homework
+
+- [Homework 2: Due July 7, 5 pm](../../Homework/2/HW.qmd)
+- [Bonus Homework: Due July 7, 5 pm](../../Bonus/1.qmd)
+
+### Weekly Checkin 
+
+- Weekly Checkin for Week 3 : Due 5 pm, July 2, Sunday ( Based on Lecture 2.x.1 & 3.1, 3.2, 3.3)
+- Weekly Checkin for Week 4 : Due 5 pm, July 7, ( Based on Lecture 4.1,4.2,4.3)
+
+### Others
+
+- Github experience in class . Take Survey on D2L>Survey
+
+<br>
+
+## Summary ( Plan versus Achievements):
+
+* Strikethrough text is changes in plan.
+* Green is new items added after planning.
+* Checked boxes are completed items.
+
+### Week 4 ( June 28 to July 2-4)
+
+### 1. Lectures
+
+- [x] [4.1 - cont .. Pandas <small><small><s>Data Processing</s></small></small>](1/home.qmd) 
+
+- [x] [4.2 - Data Preprocessing - Part 1 | (Tabular Data, Audio and Image)](2/home.qmd)
+
+- [x] [4.3 - Data Preprocessing - Part 2](3/home.qmd)
+
+### 2. Homeworks
+
+- [x] Homework 2 released
+- [x] Bonus Homework (tentative)
+
+### 3. Weekly Check-in
+
+- [x] Check-in for week 3 is due on 5 pm, July 2, Sunday. (Based on Lecture 2.x.1 & 3.1, 3.2, 3.3)
+- [x] Check-in for week 4 opens ( Based on Lecture 4.1, 4.2, 4.3 )
+
+### 4. Assigned Reading
+
+- [x] [Week 4](../../Ethics/Week_4.qmd)'s assigned reading already published.
+- [x] Week 5 assigned reading will be announced.
+
+### 5. Honours
+
+- [x] Contract Finalisation.
+
+### 6. Others
+-  [x] Github experience in class . Take Survey on D2L>Survey

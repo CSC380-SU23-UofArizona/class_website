@@ -1,0 +1,31 @@
+# 4.2 - Data Preprocessing - Part 1 | (Tabular Data, Audio and Image)
+
+######  Week 4 - Data Visualisation and Introduction to ML
+<br>
+
+## Objectives 
+
+* Identifying and Learning to remove noisy bits in your dataset
+* Converting your data to a form that can be used for downstream analysis and machine learning.
+* An idea of data preprocessing functions used for Audio and Image Data Type [Details not discussed, functions just mentioned.]
+
+
+<br>
+
+## Materials
+
+* [Tabular Data - Audible Dataset](https://www.kaggle.com/datasets/snehangsude/audible-dataset)
+* [Audio - Example](https://storage.googleapis.com/kagglesdsdata/datasets/107620/256618/Actor_02/03-01-01-01-02-01-02.wav?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20230705%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20230705T225408Z&X-Goog-Expires=259200&X-Goog-SignedHeaders=host&X-Goog-Signature=1bbfb607c3e539bd2842e00ce488b232cf815f059fe0285d39ec86d655624247113db4d88a11c1b05c78797af699b4d0dde089c525de4acb71c861d68a920749c288dbe0e41f90711b299e6aefe9dfa7dc841a3f08208de08b0981cf73517841bf5ae54db0d23322d83571a589ac49054f65f0e4f6f76f6b6f5353543993260fe9e70354edb91259e67194d535df4c21e11403ef0194efd0db01ab70e00825f651f6c912a040ff2b2fb811c7e22313d910616146e2fff9ad6a90c373cd27bc2e5a7ded65723be88350b917afab395d3d473adb10470e2b6cef25f0968a3d56bb33558d21a6f8766939860cddfbdaa5e93800e4991844414cdd5c2ed738f116f2)
+* [Image - Arizona State Museum](https://upload.wikimedia.org/wikipedia/commons/e/ed/University_of_Arizona_May_2019_04_%28Arizona_State_Museum%29.jpg)
+* [Regex Cheatsheet](https://cheatography.com/mutanclan/cheat-sheets/python-regular-expression-regex/)
+<br>
+
+* [Jupyter Notebook](Notebook.ipynb)
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6TfLR5awgy8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Next Class 
+
+[4.3 - Data Preprocessing - Part 2 & Data Visualization)](../3/home.qmd)

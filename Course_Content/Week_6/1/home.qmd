@@ -1,0 +1,38 @@
+# 6.1 - Data Vizualisation and Introduction to Machine Learning
+
+######  Week 6 
+<br>
+
+## Objectives 
+
+* Data Viz:
+    * What is?
+    * Why?
+    * Different types - [ Bonus Activity worth 2 points here ]
+    * Bad Viz
+    * Python Libraries
+        * Matplotlib
+            * Anatomy
+            * Single plot on a figure
+            * Multiple charts on a figure
+* Introduction to ML:
+    * Types:
+        * Supervised
+        * Unsupervised
+        * Semi-supervised
+        * Reinforcement learning
+
+<br>
+
+## Materials
+
+* [Slides](slides.pdf)
+* [Jupyter Notebook](Notebook.ipynb)
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/G4WtTahehWQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Next Class 
+
+[6.2 Supervised Learning](../../Week_6/home.qmd)

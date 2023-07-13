@@ -1,0 +1,2581 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>CSC 380 - Lecture 4.2 | Data Preprocessing ( Tabular Data, Audio and Image)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      CSC 380
+      </li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../../">CSC 380</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Course Content</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Course_Content/Week_1/home.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Course_Content/Week_2/home.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Course_Content/Week_3/home.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Course_Content/Week_4&amp;5/home.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4 &amp; 5</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Homework</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Homework/1/HW.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW1: Probability</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Homework/2/HW.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">HW2: Data Collection</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Ethics Discussions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W2: Political Content</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W3: Creative Work</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W4: Mental Health Support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W6: Recommendations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W7: Autonomous Driving</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W8: Housekeeping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Ethics/Week_9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">W9: Facial Recognition</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Bonus Questions</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Bonus/1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sonam’s Dilemma: A Gift for Few or a Chance for All</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">Honors</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Honors/home.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignments</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text">Syllabus</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Syllabus/Key_Info.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Key Info</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../Syllabus/Syllabus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Official Syllabus</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#tabular-dataset" id="toc-tabular-dataset" class="nav-link active" data-scroll-target="#tabular-dataset">1. Tabular Dataset</a></li>
+  <li><a href="#regex" id="toc-regex" class="nav-link" data-scroll-target="#regex">1. Regex</a></li>
+  <li><a href="#sound-data" id="toc-sound-data" class="nav-link" data-scroll-target="#sound-data">2. Sound data</a></li>
+  <li><a href="#what-is-sound" id="toc-what-is-sound" class="nav-link" data-scroll-target="#what-is-sound">What is sound?</a>
+  <ul class="collapse">
+  <li><a href="#fourier-transform" id="toc-fourier-transform" class="nav-link" data-scroll-target="#fourier-transform">Fourier Transform</a></li>
+  <li><a href="#spectrogram" id="toc-spectrogram" class="nav-link" data-scroll-target="#spectrogram">Spectrogram</a></li>
+  </ul></li>
+  <li><a href="#image-data" id="toc-image-data" class="nav-link" data-scroll-target="#image-data">3. Image Data</a>
+  <ul class="collapse">
+  <li><a href="#colorspaces" id="toc-colorspaces" class="nav-link" data-scroll-target="#colorspaces">Colorspaces</a></li>
+  <li><a href="#convert-to-greyscale" id="toc-convert-to-greyscale" class="nav-link" data-scroll-target="#convert-to-greyscale">Convert to GreyScale</a></li>
+  <li><a href="#resizing" id="toc-resizing" class="nav-link" data-scroll-target="#resizing">Resizing</a></li>
+  <li><a href="#rotate" id="toc-rotate" class="nav-link" data-scroll-target="#rotate">Rotate</a></li>
+  <li><a href="#crop" id="toc-crop" class="nav-link" data-scroll-target="#crop">Crop</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lecture 4.2 | Data Preprocessing ( Tabular Data, Audio and Image)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><img src="images/data_science_process.png"></p>
+<section id="tabular-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="tabular-dataset">1. Tabular Dataset</h2>
+<p><strong>Audible Dataset</strong></p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Column name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>name</td>
+<td>Name of the audiobook</td>
+</tr>
+<tr class="even">
+<td>author</td>
+<td>Author of the audiobook</td>
+</tr>
+<tr class="odd">
+<td>narrator</td>
+<td>Narrator of the audiobook</td>
+</tr>
+<tr class="even">
+<td>time</td>
+<td>Duration of the audiobook</td>
+</tr>
+<tr class="odd">
+<td>releasedate</td>
+<td>Release date of the audiobook</td>
+</tr>
+<tr class="even">
+<td>language</td>
+<td>Language of the audiobook</td>
+</tr>
+<tr class="odd">
+<td>stars</td>
+<td>Rating and number of ratings of the audiobook</td>
+</tr>
+<tr class="even">
+<td>price</td>
+<td>Price of the audiobook in INR</td>
+</tr>
+</tbody>
+</table>
+<p>src = https://www.kaggle.com/datasets/snehangsude/audible-dataset</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>audible_df <span class="op">=</span> pd.read_csv(<span class="st">'data/audible-dataset/audible_uncleaned.csv'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>audible_df.sample(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">author</th>
+<th data-quarto-table-cell-role="th">narrator</th>
+<th data-quarto-table-cell-role="th">time</th>
+<th data-quarto-table-cell-role="th">releasedate</th>
+<th data-quarto-table-cell-role="th">language</th>
+<th data-quarto-table-cell-role="th">stars</th>
+<th data-quarto-table-cell-role="th">price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">47778</td>
+<td>Ultratumba: Recopilación de terrores y pesadillas</td>
+<td>Writtenby:MiguelAguerraldeMovellán</td>
+<td>Narratedby:NachoGómez</td>
+<td>4 hrs and 8 mins</td>
+<td>04-10-21</td>
+<td>spanish</td>
+<td>Not rated yet</td>
+<td>268.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1361</td>
+<td>Building Log Houses</td>
+<td>Writtenby:HighlightsforChildren</td>
+<td>Narratedby:HighlightsforChildren</td>
+<td>1 min</td>
+<td>16-08-18</td>
+<td>English</td>
+<td>Not rated yet</td>
+<td>46.00</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>audible_df.sample(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">author</th>
+<th data-quarto-table-cell-role="th">narrator</th>
+<th data-quarto-table-cell-role="th">time</th>
+<th data-quarto-table-cell-role="th">releasedate</th>
+<th data-quarto-table-cell-role="th">language</th>
+<th data-quarto-table-cell-role="th">stars</th>
+<th data-quarto-table-cell-role="th">price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">24142</td>
+<td>Jesus of Nazareth</td>
+<td>Writtenby:PopeBenedictXVIJosephRatzinger</td>
+<td>Narratedby:NicholasBell</td>
+<td>12 hrs and 4 mins</td>
+<td>31-10-08</td>
+<td>English</td>
+<td>5 out of 5 stars1 rating</td>
+<td>937.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">84030</td>
+<td>Die Fowl-Zwillinge und der geheimnisvolle Jäger</td>
+<td>Writtenby:EoinColfer</td>
+<td>Narratedby:RobertFrank</td>
+<td>9 hrs and 12 mins</td>
+<td>29-11-19</td>
+<td>german</td>
+<td>Not rated yet</td>
+<td>703.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">84845</td>
+<td>A Taste for Love</td>
+<td>Writtenby:JenniferYen</td>
+<td>Narratedby:JosephineHuang</td>
+<td>8 hrs and 46 mins</td>
+<td>02-02-21</td>
+<td>English</td>
+<td>4.5 out of 5 stars4 ratings</td>
+<td>1,256.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">43863</td>
+<td>Confessions de Mademoiselle Sapho</td>
+<td>Writtenby:Mathieu-FrançoisdeMairobert</td>
+<td>Narratedby:FabienneProst</td>
+<td>1 hr and 16 mins</td>
+<td>07-09-11</td>
+<td>french</td>
+<td>Not rated yet</td>
+<td>375.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">36394</td>
+<td>Disarming the Narcissist (Third Edition)</td>
+<td>Writtenby:WendyT.BeharyLCSW,JeffreyYoungPhD-fo...</td>
+<td>Narratedby:JoanaGarcia</td>
+<td>8 hrs and 56 mins</td>
+<td>30-11-21</td>
+<td>English</td>
+<td>Not rated yet</td>
+<td>586.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">61512</td>
+<td>#gemeckerfrei</td>
+<td>Writtenby:UliBott,BerndBott</td>
+<td>Narratedby:UliBott,BerndBott</td>
+<td>5 hrs and 55 mins</td>
+<td>29-07-21</td>
+<td>german</td>
+<td>Not rated yet</td>
+<td>535.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">20982</td>
+<td>The Short, Strange Life of Herschel Grynszpan</td>
+<td>Writtenby:JonathanKirsch</td>
+<td>Narratedby:SimonPrebble</td>
+<td>9 hrs and 16 mins</td>
+<td>20-12-13</td>
+<td>English</td>
+<td>Not rated yet</td>
+<td>836.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">81887</td>
+<td>Rich Dad's Escape the Rat Race</td>
+<td>Writtenby:RobertT.Kiyosaki</td>
+<td>Narratedby:LukeDaniels,NickPodehl,BenjaminL.Da...</td>
+<td>54 mins</td>
+<td>12-07-13</td>
+<td>English</td>
+<td>5 out of 5 stars7 ratings</td>
+<td>1,005.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">23392</td>
+<td>The Innocent Man</td>
+<td>Writtenby:JohnGrisham</td>
+<td>Narratedby:DennisBoutsikaris</td>
+<td>5 hrs and 53 mins</td>
+<td>10-10-06</td>
+<td>English</td>
+<td>4.5 out of 5 stars11 ratings</td>
+<td>615.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">42708</td>
+<td>Love Is the Best Medicine</td>
+<td>Writtenby:NicholasTrout</td>
+<td>Narratedby:JonathanCowley</td>
+<td>8 hrs and 30 mins</td>
+<td>02-03-10</td>
+<td>English</td>
+<td>Not rated yet</td>
+<td>879.00</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<section id="describe" class="level5">
+<h5 class="anchored" data-anchor-id="describe">Describe()</h5>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>audible_df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">author</th>
+<th data-quarto-table-cell-role="th">narrator</th>
+<th data-quarto-table-cell-role="th">time</th>
+<th data-quarto-table-cell-role="th">releasedate</th>
+<th data-quarto-table-cell-role="th">language</th>
+<th data-quarto-table-cell-role="th">stars</th>
+<th data-quarto-table-cell-role="th">price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>87489</td>
+<td>87489</td>
+<td>87489</td>
+<td>87489</td>
+<td>87489</td>
+<td>87489</td>
+<td>87489</td>
+<td>87489</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">unique</td>
+<td>82767</td>
+<td>48374</td>
+<td>29717</td>
+<td>2284</td>
+<td>5058</td>
+<td>36</td>
+<td>665</td>
+<td>1011</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">top</td>
+<td>The Art of War</td>
+<td>Writtenby:矢島雅弘,石橋遊</td>
+<td>Narratedby:anonymous</td>
+<td>2 mins</td>
+<td>16-05-18</td>
+<td>English</td>
+<td>Not rated yet</td>
+<td>586.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">freq</td>
+<td>20</td>
+<td>874</td>
+<td>1034</td>
+<td>372</td>
+<td>773</td>
+<td>61884</td>
+<td>72417</td>
+<td>5533</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="info" class="level5">
+<h5 class="anchored" data-anchor-id="info">Info()</h5>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>audible_df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 87489 entries, 0 to 87488
+Data columns (total 8 columns):
+ #   Column       Non-Null Count  Dtype 
+---  ------       --------------  ----- 
+ 0   name         87489 non-null  object
+ 1   author       87489 non-null  object
+ 2   narrator     87489 non-null  object
+ 3   time         87489 non-null  object
+ 4   releasedate  87489 non-null  object
+ 5   language     87489 non-null  object
+ 6   stars        87489 non-null  object
+ 7   price        87489 non-null  object
+dtypes: object(8)
+memory usage: 5.3+ MB</code></pre>
+</div>
+</div>
+<p><strong>Name</strong></p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>audible_df[<span class="st">'name'</span>].sample(<span class="dv">3</span>).to_frame()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">35287</td>
+<td>The End of the Beginning</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">47069</td>
+<td>Jason and the Golden Fleece</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">40200</td>
+<td>On War</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>audible_df[audible_df[<span class="st">'name'</span>]<span class="op">==</span><span class="st">' '</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">author</th>
+<th data-quarto-table-cell-role="th">narrator</th>
+<th data-quarto-table-cell-role="th">time</th>
+<th data-quarto-table-cell-role="th">releasedate</th>
+<th data-quarto-table-cell-role="th">language</th>
+<th data-quarto-table-cell-role="th">stars</th>
+<th data-quarto-table-cell-role="th">price</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><strong>Author</strong></p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>audible_df[<span class="st">'author'</span>].sample(<span class="dv">3</span>).to_frame()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">author</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">19179</td>
+<td>Writtenby:DavidJiménez</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">86993</td>
+<td>Writtenby:CarloPizzati</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">46399</td>
+<td>Writtenby:T.C.Littles</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Remove written by</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sample <span class="op">=</span> audible_df[<span class="st">'author'</span>][<span class="dv">0</span>]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sample</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>'Writtenby:GeronimoStilton'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sample.split(<span class="st">":"</span>)[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>'GeronimoStilton'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>sample.replace(<span class="st">"Writtenby:"</span>,<span class="st">''</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>'GeronimoStilton'</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="regex" class="level2">
+<h2 class="anchored" data-anchor-id="regex">1. Regex</h2>
+<p><strong>Like find , but way better</strong></p>
+<p>A Regular Expressions (RegEx) is a special sequence of characters that uses a search pattern to find a string or set of strings. It can detect the presence or absence of a text by matching it with a particular pattern, and also can split a pattern into one or more sub-patterns.</p>
+<p>cheatsheet link = https://cheatography.com/mutanclan/cheat-sheets/python-regular-expression-regex/</p>
+<p><img src="images/1_regex_screenshot.png"></p>
+<p><img src="https://miro.medium.com/v2/resize:fit:1036/1*WfLCo4Ql59kxq_0frEe7xQ.png" width="800"></p>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Find all emails ( .com, .edu, .net)</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>email_regex <span class="op">=</span> <span class="st">"[a-zA-Z0-9]+@[a-zA-Z]+\.(com|net|edu)"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>email_input <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> re.search(email_regex, email_input):</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Valid Email"</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Invalid Email"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>abc@hello.com
+Valid Email</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>uppercase_letter_pattern <span class="op">=</span> <span class="st">'.[^A-Z]*'</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>re.findall(uppercase_letter_pattern, sample.replace(<span class="st">'Writtenby:'</span>,<span class="st">''</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>['Geronimo', 'Stilton']</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>modified_sample <span class="op">=</span> sample.replace(<span class="st">'Writtenby:'</span>,<span class="st">''</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> modified_sample.split(<span class="st">','</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>[<span class="st">' '</span>.join(re.findall(uppercase_letter_pattern,name)) <span class="cf">for</span> name <span class="kw">in</span> sample.replace(<span class="st">'Writtenby:'</span>,<span class="st">''</span>).split(<span class="st">','</span>)]</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>['Geronimo Stilton']</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_names(input_string):</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    cleaned_string <span class="op">=</span> input_string.replace(<span class="st">'Writtenby:'</span>,<span class="st">''</span>).replace(<span class="st">'Narratedby:'</span>,<span class="st">''</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    formatted_names <span class="op">=</span> []</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    names <span class="op">=</span> cleaned_string.split(<span class="st">','</span>)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> name <span class="kw">in</span> names:</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>        formatted_names.append(<span class="st">' '</span>.join(re.findall(uppercase_letter_pattern,name)))</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> formatted_names</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>audible_df[<span class="st">'author'</span>] <span class="op">=</span> audible_df[<span class="st">'author'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> input_string : format_names(input_string))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Narrator</strong></p>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>audible_df[<span class="st">'narrator'</span>] <span class="op">=</span> audible_df[<span class="st">'narrator'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> input_string : format_names(input_string))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>audible_df.sample(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">author</th>
+<th data-quarto-table-cell-role="th">narrator</th>
+<th data-quarto-table-cell-role="th">time</th>
+<th data-quarto-table-cell-role="th">releasedate</th>
+<th data-quarto-table-cell-role="th">language</th>
+<th data-quarto-table-cell-role="th">stars</th>
+<th data-quarto-table-cell-role="th">price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25051</td>
+<td>Harold Larwood</td>
+<td>[Duncan Hamilton]</td>
+<td>[Alex Jennings]</td>
+<td>11 hrs and 30 mins</td>
+<td>16-12-10</td>
+<td>English</td>
+<td>5 out of 5 stars1 rating</td>
+<td>835.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">84543</td>
+<td>In Her Skin</td>
+<td>[Kim Savage]</td>
+<td>[Sandy Rustin]</td>
+<td>6 hrs and 42 mins</td>
+<td>17-04-18</td>
+<td>English</td>
+<td>Not rated yet</td>
+<td>703.00</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><strong>Time</strong></p>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>audible_df[<span class="st">'time'</span>].to_list()[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<pre><code>['2 hrs and 20 mins',
+ '13 hrs and 8 mins',
+ '2 hrs and 3 mins',
+ '11 hrs and 16 mins',
+ '10 hrs']</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>time_str <span class="op">=</span> audible_df[<span class="st">'time'</span>].to_list()[<span class="dv">0</span>]</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>time_str</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>'2 hrs and 20 mins'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> convert_strtime_minutes(time_str):</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(time_str<span class="op">==</span><span class="st">'Less than 1 minute'</span>):</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    time_str <span class="op">=</span> time_str.replace(<span class="st">' hrs and'</span>,<span class="st">'h'</span>).replace(<span class="st">' mins'</span>,<span class="st">'m'</span>).replace(<span class="st">' min'</span>,<span class="st">'m'</span>).replace(<span class="st">' hrs'</span>,<span class="st">'h'</span>).replace(<span class="st">' hr'</span>,<span class="st">'h'</span>)</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    h,m <span class="op">=</span> <span class="dv">0</span>,<span class="dv">0</span></span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> item <span class="kw">in</span> time_str.split(<span class="st">' '</span>):</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">'h'</span> <span class="kw">in</span> item:</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>            h <span class="op">=</span> <span class="bu">int</span>(item.replace(<span class="st">'h'</span>,<span class="st">''</span>))</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="st">'m'</span> <span class="kw">in</span> item:</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>            m <span class="op">=</span> <span class="bu">int</span>(item.replace(<span class="st">'m'</span>,<span class="st">''</span>))</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (h<span class="op">*</span><span class="dv">60</span>)<span class="op">+</span>m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>audible_df[<span class="st">'time'</span>] <span class="op">=</span> audible_df[<span class="st">'time'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> time_str : convert_strtime_minutes(time_str))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>audible_df.sample(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">author</th>
+<th data-quarto-table-cell-role="th">narrator</th>
+<th data-quarto-table-cell-role="th">time</th>
+<th data-quarto-table-cell-role="th">releasedate</th>
+<th data-quarto-table-cell-role="th">language</th>
+<th data-quarto-table-cell-role="th">stars</th>
+<th data-quarto-table-cell-role="th">price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">46690</td>
+<td>Èdip Rei [Oedipus Rex] (Audiolibro en Catalán)</td>
+<td>[Sófocles]</td>
+<td>[Nuria Samsó]</td>
+<td>91</td>
+<td>02-01-19</td>
+<td>catalan</td>
+<td>Not rated yet</td>
+<td>268.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">66730</td>
+<td>Libro Di Michea</td>
+<td>[Autori Vari]</td>
+<td>[Simone Bedetti]</td>
+<td>28</td>
+<td>12-08-21</td>
+<td>italian</td>
+<td>Not rated yet</td>
+<td>152.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">66409</td>
+<td>True Sound of Sacred Name of God</td>
+<td>[Brother Arnold Bowen]</td>
+<td>[Hank Hart]</td>
+<td>109</td>
+<td>06-12-21</td>
+<td>English</td>
+<td>Not rated yet</td>
+<td>188.00</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>audible_df.rename({<span class="st">'time'</span>:<span class="st">'time in minutes'</span>}, axis<span class="op">=</span><span class="dv">1</span>, inplace <span class="op">=</span> <span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>audible_df.sample(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="28">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">author</th>
+<th data-quarto-table-cell-role="th">narrator</th>
+<th data-quarto-table-cell-role="th">time in minutes</th>
+<th data-quarto-table-cell-role="th">releasedate</th>
+<th data-quarto-table-cell-role="th">language</th>
+<th data-quarto-table-cell-role="th">stars</th>
+<th data-quarto-table-cell-role="th">price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">24830</td>
+<td>Playing to Win</td>
+<td>[Saina Nehwal]</td>
+<td>[Akanksha Sharma]</td>
+<td>202</td>
+<td>19-11-19</td>
+<td>English</td>
+<td>5 out of 5 stars1 rating</td>
+<td>1,005.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">70146</td>
+<td>The Investigator</td>
+<td>[Natalie Wrye]</td>
+<td>[Grace Grant, Alexander Cendese]</td>
+<td>406</td>
+<td>10-11-20</td>
+<td>English</td>
+<td>Not rated yet</td>
+<td>1,172.00</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><strong>Release date</strong></p>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>audible_df[<span class="st">'releasedate'</span>]<span class="op">=</span>pd.to_datetime(audible_df[<span class="st">'releasedate'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>audible_df.sample(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">author</th>
+<th data-quarto-table-cell-role="th">narrator</th>
+<th data-quarto-table-cell-role="th">time in minutes</th>
+<th data-quarto-table-cell-role="th">releasedate</th>
+<th data-quarto-table-cell-role="th">language</th>
+<th data-quarto-table-cell-role="th">stars</th>
+<th data-quarto-table-cell-role="th">price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">56257</td>
+<td>Una noche y nada más [One Night and Nothing Else]</td>
+<td>[Whitney G.]</td>
+<td>[Marcel Navarro, Maria Gil]</td>
+<td>623</td>
+<td>2019-02-01</td>
+<td>spanish</td>
+<td>Not rated yet</td>
+<td>883.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">27491</td>
+<td>48-Hour Start-Up: From Idea to Launch in 1 Wee...</td>
+<td>[Fraser Doherty M B E]</td>
+<td>[Fraser Doherty M B E]</td>
+<td>292</td>
+<td>2016-08-25</td>
+<td>English</td>
+<td>4.5 out of 5 stars6 ratings</td>
+<td>303.00</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><strong>Language</strong></p>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>audible_df[<span class="st">'language'</span>].value_counts().sort_values()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
+<pre><code>ukrainian               1
+hebrew                  2
+lithuanian              2
+telugu                  2
+basque                  2
+slovene                 4
+korean                  4
+bulgarian               9
+galician               10
+arabic                 16
+norwegian              16
+greek                  18
+turkish                20
+czech                  23
+afrikaans              28
+urdu                   34
+hungarian              36
+romanian               50
+icelandic              52
+mandarin_chinese       97
+catalan               153
+tamil                 161
+dutch                 190
+finnish               197
+polish                224
+Hindi                 436
+swedish               515
+portuguese            526
+danish                935
+russian              1804
+french               2386
+italian              2694
+japanese             3167
+spanish              3496
+german               8295
+English             61884
+Name: language, dtype: int64</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>audible_df[<span class="st">'language'</span>] <span class="op">=</span> audible_df[<span class="st">'language'</span>].<span class="bu">apply</span>(<span class="bu">str</span>.lower)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>audible_df.sample(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="33">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">author</th>
+<th data-quarto-table-cell-role="th">narrator</th>
+<th data-quarto-table-cell-role="th">time in minutes</th>
+<th data-quarto-table-cell-role="th">releasedate</th>
+<th data-quarto-table-cell-role="th">language</th>
+<th data-quarto-table-cell-role="th">stars</th>
+<th data-quarto-table-cell-role="th">price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">83723</td>
+<td>Queen of Volts</td>
+<td>[Amanda Foody]</td>
+<td>[Shiromi Arserio]</td>
+<td>993</td>
+<td>2020-01-09</td>
+<td>english</td>
+<td>5 out of 5 stars4 ratings</td>
+<td>937.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">46640</td>
+<td>The Persian Expedition</td>
+<td>[Xenophon]</td>
+<td>[David Timson]</td>
+<td>555</td>
+<td>2020-03-13</td>
+<td>english</td>
+<td>5 out of 5 stars1 rating</td>
+<td>633.00</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">33490</td>
+<td>Zen Body-Being</td>
+<td>[Peter Ralston, Laura Ralston]</td>
+<td>[Toby Sheets]</td>
+<td>404</td>
+<td>2019-08-20</td>
+<td>english</td>
+<td>4 out of 5 stars1 rating</td>
+<td>1,254.00</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>rating_str <span class="op">=</span> audible_df[<span class="st">'stars'</span>].to_list()[<span class="dv">0</span>]</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>rating_str</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="34">
+<pre><code>'5 out of 5 stars34 ratings'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_rating_text(rating_str):</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> rating_str <span class="op">==</span> <span class="st">'Not rated yet'</span>:</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> [np.NaN,np.NaN,<span class="dv">0</span>]</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>        split_text <span class="op">=</span> rating_str.split(<span class="st">' stars'</span>)</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Working on the stars and out of part </span></span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>        stars_and_out_of <span class="op">=</span> split_text[<span class="dv">0</span>].split(<span class="st">' out of '</span>)</span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-14"><a href="#cb46-14" aria-hidden="true" tabindex="-1"></a>        stars <span class="op">=</span> <span class="bu">float</span>(stars_and_out_of[<span class="dv">0</span>])</span>
+<span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>        out_of <span class="op">=</span> <span class="bu">int</span>(stars_and_out_of[<span class="dv">1</span>])</span>
+<span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-17"><a href="#cb46-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Working on number of ratings</span></span>
+<span id="cb46-18"><a href="#cb46-18" aria-hidden="true" tabindex="-1"></a>        nos_of_rating <span class="op">=</span> <span class="bu">int</span>(split_text[<span class="dv">1</span>].replace(<span class="st">' ratings'</span>,<span class="st">''</span>).replace(<span class="st">' rating'</span>,<span class="st">''</span>).replace(<span class="st">','</span>,<span class="st">''</span>))</span>
+<span id="cb46-19"><a href="#cb46-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-20"><a href="#cb46-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> stars, out_of, nos_of_rating</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>star_rating_df <span class="op">=</span> pd.DataFrame(audible_df[<span class="st">'stars'</span>].<span class="bu">apply</span>(format_rating_text).to_list(),columns<span class="op">=</span>[<span class="st">'star rating'</span>,<span class="st">'total stars'</span>,<span class="st">'number of ratings'</span>])</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>star_rating_df.sample(<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="36">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">star rating</th>
+<th data-quarto-table-cell-role="th">total stars</th>
+<th data-quarto-table-cell-role="th">number of ratings</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">32450</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11881</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">31393</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">85528</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12790</td>
+<td>4.0</td>
+<td>5.0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">26034</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">40108</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25646</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">65040</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">41445</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<p>100 rows × 3 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>audible_df[[<span class="st">'star rating'</span>,<span class="st">'total stars'</span>,<span class="st">'number of ratings'</span>]] <span class="op">=</span> star_rating_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>audible_df.sample(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="38">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">author</th>
+<th data-quarto-table-cell-role="th">narrator</th>
+<th data-quarto-table-cell-role="th">time in minutes</th>
+<th data-quarto-table-cell-role="th">releasedate</th>
+<th data-quarto-table-cell-role="th">language</th>
+<th data-quarto-table-cell-role="th">stars</th>
+<th data-quarto-table-cell-role="th">price</th>
+<th data-quarto-table-cell-role="th">star rating</th>
+<th data-quarto-table-cell-role="th">total stars</th>
+<th data-quarto-table-cell-role="th">number of ratings</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">47520</td>
+<td>Highland Hunger</td>
+<td>[Hannah Howell, Michele Sinclair, Jackie Ivie]</td>
+<td>[Jayne Entwistle]</td>
+<td>630</td>
+<td>2021-11-30</td>
+<td>english</td>
+<td>Not rated yet</td>
+<td>703.00</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">73285</td>
+<td>Moon's Web</td>
+<td>[C. T. Adams, Kathy Clamp]</td>
+<td>[Adam Epstein]</td>
+<td>827</td>
+<td>2013-09-24</td>
+<td>english</td>
+<td>Not rated yet</td>
+<td>836.00</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">24509</td>
+<td>Frère François</td>
+<td>[Julien Green]</td>
+<td>[François Montagut]</td>
+<td>723</td>
+<td>2013-06-12</td>
+<td>french</td>
+<td>Not rated yet</td>
+<td>679.00</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> audible_df[<span class="st">'stars'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>audible_df.sample(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="40">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">author</th>
+<th data-quarto-table-cell-role="th">narrator</th>
+<th data-quarto-table-cell-role="th">time in minutes</th>
+<th data-quarto-table-cell-role="th">releasedate</th>
+<th data-quarto-table-cell-role="th">language</th>
+<th data-quarto-table-cell-role="th">price</th>
+<th data-quarto-table-cell-role="th">star rating</th>
+<th data-quarto-table-cell-role="th">total stars</th>
+<th data-quarto-table-cell-role="th">number of ratings</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">53683</td>
+<td>Pablo Neruda Lee a Pablo Neruda [Pablo Neruda ...</td>
+<td>[Pablo Neruda]</td>
+<td>[Pablo Neruda]</td>
+<td>62</td>
+<td>2005-09-14</td>
+<td>spanish</td>
+<td>325.00</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">82141</td>
+<td>Wait for Me</td>
+<td>[An Na]</td>
+<td>[Kim Mai Guest]</td>
+<td>260</td>
+<td>2006-01-01</td>
+<td>english</td>
+<td>754.00</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><strong>Price</strong></p>
+<div class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> format_pricing(price_text):</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> price_text<span class="op">==</span><span class="st">'Free'</span>:</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">float</span>(price_text.replace(<span class="st">","</span>,<span class="st">''</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>audible_df[<span class="st">'price in indian rupees'</span>] <span class="op">=</span> audible_df[<span class="st">'price'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> price_text : format_pricing(price_text))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>audible_df.sample(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="43">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">author</th>
+<th data-quarto-table-cell-role="th">narrator</th>
+<th data-quarto-table-cell-role="th">time in minutes</th>
+<th data-quarto-table-cell-role="th">releasedate</th>
+<th data-quarto-table-cell-role="th">language</th>
+<th data-quarto-table-cell-role="th">price</th>
+<th data-quarto-table-cell-role="th">star rating</th>
+<th data-quarto-table-cell-role="th">total stars</th>
+<th data-quarto-table-cell-role="th">number of ratings</th>
+<th data-quarto-table-cell-role="th">price in indian rupees</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">68583</td>
+<td>言葉の魔法でハッピーに！聴いて できる タロットカウンセリング</td>
+<td>[石川小百合]</td>
+<td>[石川小百合, 吉田渚]</td>
+<td>250</td>
+<td>2021-07-07</td>
+<td>japanese</td>
+<td>697.00</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>697.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">61099</td>
+<td>Школа на краю света. Драконий дар [School at t...</td>
+<td>[Uliya Arharova]</td>
+<td>[Natalya Frolova]</td>
+<td>526</td>
+<td>2022-01-27</td>
+<td>russian</td>
+<td>234.00</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>234.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6664</td>
+<td>The House That George Built</td>
+<td>[Suzanne Slade]</td>
+<td>[Lauren Mc Cullough]</td>
+<td>9</td>
+<td>2019-11-21</td>
+<td>english</td>
+<td>63.00</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>63.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">25143</td>
+<td>Never Settle</td>
+<td>[Marty Smith]</td>
+<td>[Marty Smith]</td>
+<td>494</td>
+<td>2019-06-08</td>
+<td>english</td>
+<td>500.00</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>500.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> audible_df[<span class="st">'price'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>audible_df.sample(<span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="45">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">author</th>
+<th data-quarto-table-cell-role="th">narrator</th>
+<th data-quarto-table-cell-role="th">time in minutes</th>
+<th data-quarto-table-cell-role="th">releasedate</th>
+<th data-quarto-table-cell-role="th">language</th>
+<th data-quarto-table-cell-role="th">star rating</th>
+<th data-quarto-table-cell-role="th">total stars</th>
+<th data-quarto-table-cell-role="th">number of ratings</th>
+<th data-quarto-table-cell-role="th">price in indian rupees</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">58712</td>
+<td>The Science of Getting Rich</td>
+<td>[Wallace Wattles]</td>
+<td>[Dan Strutzel]</td>
+<td>135</td>
+<td>2018-06-13</td>
+<td>english</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>1</td>
+<td>1003.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">37191</td>
+<td>Destruction of Black Civilization</td>
+<td>[Chancellor Williams]</td>
+<td>[Joseph Kent]</td>
+<td>767</td>
+<td>2019-07-11</td>
+<td>english</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>836.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">74262</td>
+<td>Only a Promise</td>
+<td>[Mary Balogh]</td>
+<td>[Rosalyn Landor]</td>
+<td>674</td>
+<td>2015-09-06</td>
+<td>english</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>1</td>
+<td>938.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">37760</td>
+<td>Revolutionary Backlash</td>
+<td>[Rosmarie Zagarri]</td>
+<td>[Kirsten Potter]</td>
+<td>554</td>
+<td>2021-06-22</td>
+<td>english</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>586.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">31917</td>
+<td>Mrs D Is Going Without</td>
+<td>[Lotta Dann]</td>
+<td>[Cat Gould]</td>
+<td>419</td>
+<td>2019-01-29</td>
+<td>english</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>586.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">72769</td>
+<td>Две судьбы [Two Destinies]</td>
+<td>[Wilkie Collins]</td>
+<td>[Lyudmila Bykov]</td>
+<td>626</td>
+<td>2021-02-26</td>
+<td>russian</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>70.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">16541</td>
+<td>第375回 新刊ラジオ第2部プレミアム</td>
+<td>[矢島雅弘, 石橋遊]</td>
+<td>[矢島雅弘, 石橋遊]</td>
+<td>16</td>
+<td>2018-05-16</td>
+<td>japanese</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>139.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">82784</td>
+<td>ティアムーン帝国物語7 ～断頭台から始まる、姫の転生逆転ストーリー～</td>
+<td>[餅月望]</td>
+<td>[斎藤楓子]</td>
+<td>744</td>
+<td>2022-02-25</td>
+<td>japanese</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>976.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">66892</td>
+<td>Kundalini</td>
+<td>[Om Swami]</td>
+<td>[Jagdish Raja]</td>
+<td>250</td>
+<td>2019-03-25</td>
+<td>english</td>
+<td>4.5</td>
+<td>5.0</td>
+<td>335</td>
+<td>288.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">78993</td>
+<td>The Shipwreck Hunter</td>
+<td>[David L. Mearns]</td>
+<td>[Dan Woren]</td>
+<td>1011</td>
+<td>2018-06-26</td>
+<td>english</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>1003.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">18793</td>
+<td>Yours, for Probably Always</td>
+<td>[Janet Somerville]</td>
+<td>[Ellen Barkin]</td>
+<td>1197</td>
+<td>2021-05-18</td>
+<td>english</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>1382.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9931</td>
+<td>Magic Tree House: Books 31 &amp; 32</td>
+<td>[Mary Pope Osborne]</td>
+<td>[Mary Pope Osborne]</td>
+<td>132</td>
+<td>2019-09-07</td>
+<td>english</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>1</td>
+<td>502.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">18346</td>
+<td>Letter to My Daughter</td>
+<td>[Maya Angelou]</td>
+<td>[Maya Angelou]</td>
+<td>152</td>
+<td>2008-10-13</td>
+<td>english</td>
+<td>4.5</td>
+<td>5.0</td>
+<td>24</td>
+<td>452.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">43359</td>
+<td>Clinch</td>
+<td>[Martin Holmén]</td>
+<td>[Barnaby Jago]</td>
+<td>506</td>
+<td>2020-02-18</td>
+<td>english</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>636.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">71800</td>
+<td>Face Offs &amp; Cheap Shots</td>
+<td>[Eden Finley, Saxon James]</td>
+<td>[Alexander Cendese, Iggy Toma]</td>
+<td>425</td>
+<td>2021-01-26</td>
+<td>english</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>586.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">72432</td>
+<td>Хоровод Невест [Round Dance of Brides]</td>
+<td>[Sergey Efanov]</td>
+<td>[Alexey Semenov]</td>
+<td>747</td>
+<td>2021-08-10</td>
+<td>russian</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>234.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">24086</td>
+<td>Passport to Heaven</td>
+<td>[Micah Wilder]</td>
+<td>[Micah Wilder]</td>
+<td>615</td>
+<td>2021-01-06</td>
+<td>english</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>702.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">40991</td>
+<td>She Votes</td>
+<td>[Bridget Quinn]</td>
+<td>[Bridget Quinn, Donna Allen]</td>
+<td>301</td>
+<td>2020-11-08</td>
+<td>english</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>500.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">83763</td>
+<td>The Tenth Girl</td>
+<td>[Sara Faring]</td>
+<td>[Frankie Corzo, Mark Sanderlin]</td>
+<td>935</td>
+<td>2019-09-24</td>
+<td>english</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>221.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6775</td>
+<td>I Bicchierini e la Missione di Natale [The Bic...</td>
+<td>[E. J. Pitch]</td>
+<td>[E. J. Pitch]</td>
+<td>14</td>
+<td>2022-03-23</td>
+<td>italian</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>117.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="46">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>audible_df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 87489 entries, 0 to 87488
+Data columns (total 10 columns):
+ #   Column                  Non-Null Count  Dtype         
+---  ------                  --------------  -----         
+ 0   name                    87489 non-null  object        
+ 1   author                  87489 non-null  object        
+ 2   narrator                87489 non-null  object        
+ 3   time in minutes         87489 non-null  int64         
+ 4   releasedate             87489 non-null  datetime64[ns]
+ 5   language                87489 non-null  object        
+ 6   star rating             15072 non-null  float64       
+ 7   total stars             15072 non-null  float64       
+ 8   number of ratings       87489 non-null  int64         
+ 9   price in indian rupees  87489 non-null  float64       
+dtypes: datetime64[ns](1), float64(3), int64(2), object(4)
+memory usage: 6.7+ MB</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>audible_df.describe()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="47">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">time in minutes</th>
+<th data-quarto-table-cell-role="th">star rating</th>
+<th data-quarto-table-cell-role="th">total stars</th>
+<th data-quarto-table-cell-role="th">number of ratings</th>
+<th data-quarto-table-cell-role="th">price in indian rupees</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">count</td>
+<td>87489.000000</td>
+<td>15072.00000</td>
+<td>15072.0</td>
+<td>87489.000000</td>
+<td>87489.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">mean</td>
+<td>417.496965</td>
+<td>4.45694</td>
+<td>5.0</td>
+<td>3.723371</td>
+<td>559.009246</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">std</td>
+<td>364.560197</td>
+<td>0.72394</td>
+<td>0.0</td>
+<td>86.499601</td>
+<td>336.096642</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">min</td>
+<td>0.000000</td>
+<td>1.00000</td>
+<td>5.0</td>
+<td>0.000000</td>
+<td>0.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">25%</td>
+<td>142.000000</td>
+<td>4.00000</td>
+<td>5.0</td>
+<td>0.000000</td>
+<td>268.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">50%</td>
+<td>386.000000</td>
+<td>4.50000</td>
+<td>5.0</td>
+<td>0.000000</td>
+<td>585.000000</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">75%</td>
+<td>584.000000</td>
+<td>5.00000</td>
+<td>5.0</td>
+<td>0.000000</td>
+<td>755.000000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">max</td>
+<td>8595.000000</td>
+<td>5.00000</td>
+<td>5.0</td>
+<td>12573.000000</td>
+<td>7198.000000</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><strong>Questions</strong></p>
+<div class="cell" data-execution_count="48">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>original_audible_df <span class="op">=</span> pd.read_csv(<span class="st">'data/audible-dataset/audible_uncleaned.csv'</span>)</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>original_audible_df.sample(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="48">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">author</th>
+<th data-quarto-table-cell-role="th">narrator</th>
+<th data-quarto-table-cell-role="th">time</th>
+<th data-quarto-table-cell-role="th">releasedate</th>
+<th data-quarto-table-cell-role="th">language</th>
+<th data-quarto-table-cell-role="th">stars</th>
+<th data-quarto-table-cell-role="th">price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">68702</td>
+<td>La porte secrète du succès</td>
+<td>Writtenby:FlorenceScovelSchinn</td>
+<td>Narratedby:SarahA.</td>
+<td>1 hr and 36 mins</td>
+<td>25-01-21</td>
+<td>french</td>
+<td>Not rated yet</td>
+<td>650.00</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">73341</td>
+<td>Der Rebell</td>
+<td>Writtenby:J.R.Ward</td>
+<td>Narratedby:UweBüschken</td>
+<td>14 hrs and 53 mins</td>
+<td>13-06-12</td>
+<td>german</td>
+<td>Not rated yet</td>
+<td>837.00</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>audible_df.sample(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="49">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">author</th>
+<th data-quarto-table-cell-role="th">narrator</th>
+<th data-quarto-table-cell-role="th">time in minutes</th>
+<th data-quarto-table-cell-role="th">releasedate</th>
+<th data-quarto-table-cell-role="th">language</th>
+<th data-quarto-table-cell-role="th">star rating</th>
+<th data-quarto-table-cell-role="th">total stars</th>
+<th data-quarto-table-cell-role="th">number of ratings</th>
+<th data-quarto-table-cell-role="th">price in indian rupees</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">47803</td>
+<td>Life Without Children</td>
+<td>[Roddy Doyle]</td>
+<td>[Roddy Doyle]</td>
+<td>293</td>
+<td>2021-07-10</td>
+<td>english</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>615.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">28466</td>
+<td>Content Marketing, Content Management &amp; Conten...</td>
+<td>[Paul Reichenbach]</td>
+<td>[Angelo Aufderheide]</td>
+<td>159</td>
+<td>2022-03-29</td>
+<td>german</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0</td>
+<td>267.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p><strong>What is the average number of ratings a listing in audible.in receives</strong></p>
+<div class="cell" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co">#original_audible_df['']</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Multiple lines of code</span></span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>audible_df[<span class="st">'number of ratings'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="50">
+<pre><code>3.7233709380607847</code></pre>
+</div>
+</div>
+</section>
+<section id="sound-data" class="level2">
+<h2 class="anchored" data-anchor-id="sound-data">2. Sound data</h2>
+<p><img src="https://media.tenor.com/ddgCZ7sdwJUAAAAM/music-listening.gif"></p>
+</section>
+<section id="what-is-sound" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-sound">What is sound?</h2>
+<p><img src="https://cdn.ttgtmedia.com/rms/onlineimages/characteristics_of_a_sound_wave-f_mobile.png"></p>
+<p><a href="https://storage.googleapis.com/kagglesdsdata/datasets/107620/256618/Actor_02/03-01-01-01-02-01-02.wav?X-Goog-Algorithm=GOOG4-RSA-SHA256&amp;X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20230705%2Fauto%2Fstorage%2Fgoog4_request&amp;X-Goog-Date=20230705T225408Z&amp;X-Goog-Expires=259200&amp;X-Goog-SignedHeaders=host&amp;X-Goog-Signature=1bbfb607c3e539bd2842e00ce488b232cf815f059fe0285d39ec86d655624247113db4d88a11c1b05c78797af699b4d0dde089c525de4acb71c861d68a920749c288dbe0e41f90711b299e6aefe9dfa7dc841a3f08208de08b0981cf73517841bf5ae54db0d23322d83571a589ac49054f65f0e4f6f76f6b6f5353543993260fe9e70354edb91259e67194d535df4c21e11403ef0194efd0db01ab70e00825f651f6c912a040ff2b2fb811c7e22313d910616146e2fff9ad6a90c373cd27bc2e5a7ded65723be88350b917afab395d3d473adb10470e2b6cef25f0968a3d56bb33558d21a6f8766939860cddfbdaa5e93800e4991844414cdd5c2ed738f116f2">Link</a></p>
+<div class="cell" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install librosa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Requirement already satisfied: librosa in /Users/enfageorge/miniconda/lib/python3.10/site-packages (0.10.0.post2)
+Requirement already satisfied: audioread&gt;=2.1.9 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from librosa) (3.0.0)
+Requirement already satisfied: typing-extensions&gt;=4.1.1 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from librosa) (4.5.0)
+Requirement already satisfied: joblib&gt;=0.14 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from librosa) (1.2.0)
+Requirement already satisfied: decorator&gt;=4.3.0 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from librosa) (5.1.1)
+Requirement already satisfied: msgpack&gt;=1.0 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from librosa) (1.0.5)
+Requirement already satisfied: scipy&gt;=1.2.0 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from librosa) (1.9.3)
+Requirement already satisfied: numba&gt;=0.51.0 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from librosa) (0.56.4)
+Requirement already satisfied: numpy!=1.22.0,!=1.22.1,!=1.22.2,&gt;=1.20.3 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from librosa) (1.23.5)
+Requirement already satisfied: pooch&lt;1.7,&gt;=1.0 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from librosa) (1.6.0)
+Requirement already satisfied: soxr&gt;=0.3.2 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from librosa) (0.3.5)
+Requirement already satisfied: scikit-learn&gt;=0.20.0 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from librosa) (1.2.2)
+Requirement already satisfied: lazy-loader&gt;=0.1 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from librosa) (0.3)
+Requirement already satisfied: soundfile&gt;=0.12.1 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from librosa) (0.12.1)
+Requirement already satisfied: llvmlite&lt;0.40,&gt;=0.39.0dev0 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from numba&gt;=0.51.0-&gt;librosa) (0.39.1)
+Requirement already satisfied: setuptools in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from numba&gt;=0.51.0-&gt;librosa) (67.4.0)
+Requirement already satisfied: requests&gt;=2.19.0 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from pooch&lt;1.7,&gt;=1.0-&gt;librosa) (2.28.2)
+Requirement already satisfied: packaging&gt;=20.0 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from pooch&lt;1.7,&gt;=1.0-&gt;librosa) (23.1)
+Requirement already satisfied: appdirs&gt;=1.3.0 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from pooch&lt;1.7,&gt;=1.0-&gt;librosa) (1.4.4)
+Requirement already satisfied: threadpoolctl&gt;=2.0.0 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from scikit-learn&gt;=0.20.0-&gt;librosa) (3.1.0)
+Requirement already satisfied: cffi&gt;=1.0 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from soundfile&gt;=0.12.1-&gt;librosa) (1.15.1)
+Requirement already satisfied: pycparser in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from cffi&gt;=1.0-&gt;soundfile&gt;=0.12.1-&gt;librosa) (2.21)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from requests&gt;=2.19.0-&gt;pooch&lt;1.7,&gt;=1.0-&gt;librosa) (2022.12.7)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from requests&gt;=2.19.0-&gt;pooch&lt;1.7,&gt;=1.0-&gt;librosa) (3.0.1)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from requests&gt;=2.19.0-&gt;pooch&lt;1.7,&gt;=1.0-&gt;librosa) (1.26.14)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /Users/enfageorge/miniconda/lib/python3.10/site-packages (from requests&gt;=2.19.0-&gt;pooch&lt;1.7,&gt;=1.0-&gt;librosa) (3.4)</code></pre>
+</div>
+</div>
+<p><strong>Sound:</strong> sequence of vibrations in varying pressure strengths (y) <br> <strong>Sample Rate: (sr)</strong> is the number of samples of audio carried per second, measured in Hz or kHz</p>
+<div class="cell" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Importing 1 file</span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> librosa</span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>audio_signal, sample_rate <span class="op">=</span> librosa.load(<span class="st">'data/sound/sound_example.wav'</span>,sr<span class="op">=</span><span class="dv">2200</span>)</span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'signal:'</span>, audio_signal, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'signal shape:'</span>, np.shape(audio_signal), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Sample Rate (KHz):'</span>, sample_rate, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb66-9"><a href="#cb66-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-10"><a href="#cb66-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Verify length of the audio</span></span>
+<span id="cb66-11"><a href="#cb66-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Check Len of Audio:'</span>, np.shape(audio_signal)[<span class="dv">0</span>]<span class="op">/</span>sample_rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>signal: [ 7.67160710e-11 -6.01338909e-11  3.56031073e-11 ...  4.21123696e-06
+  5.02657258e-07  1.06644375e-05] 
+
+signal shape: (8295,) 
+
+Sample Rate (KHz): 2200 
+
+Check Len of Audio: 3.7704545454545455</code></pre>
+</div>
+</div>
+<p><strong>Trim silence</strong></p>
+<div class="cell" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Trim leading and trailing silence from an audio signal (silence before and after the actual audio)</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>audio_signal_trimmed, _ <span class="op">=</span> librosa.effects.trim(audio_signal)</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="co"># the result is an numpy ndarray</span></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Audio File:'</span>, audio_signal_trimmed, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Audio File shape:'</span>, np.shape(audio_signal_trimmed))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Audio File: [ 1.69425641e-06 -5.26718111e-07 -1.19822676e-06 ...  4.21123696e-06
+  5.02657258e-07  1.06644375e-05] 
+
+Audio File shape: (6759,)</code></pre>
+</div>
+</div>
+<p><strong>Sound Waves- 2D Representation</strong></p>
+<div class="cell" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="55">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">9</span>))</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>librosa.display.waveshow(y <span class="op">=</span> audio_signal, sr <span class="op">=</span> sample_rate, color <span class="op">=</span> <span class="st">"#A300F9"</span>)</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'Sound Waves'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="55">
+<pre><code>Text(0.5, 0.98, 'Sound Waves')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Notebook_files/figure-html/cell-56-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">9</span>))</span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>librosa.display.waveshow(y <span class="op">=</span> audio_signal_trimmed, sr <span class="op">=</span> sample_rate, color <span class="op">=</span> <span class="st">"#A300F9"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="56">
+<pre><code>&lt;librosa.display.AdaptiveWaveplot at 0x15bcb34c0&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Notebook_files/figure-html/cell-57-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<section id="fourier-transform" class="level3">
+<h3 class="anchored" data-anchor-id="fourier-transform">Fourier Transform</h3>
+<p>Function that gets a signal in the time domain as input, and outputs its decomposition into frequencies. Transform both the y-axis (frequency) to log scale, and the “color” axis (amplitude) to Decibels, which is approx. the log scale of amplitudes.</p>
+<div class="cell" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Default FFT window size</span></span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>n_fft <span class="op">=</span> <span class="dv">2048</span> <span class="co"># FFT window size</span></span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>hop_length <span class="op">=</span> <span class="dv">512</span> <span class="co"># number audio of frames between STFT columns (looks like a good default)</span></span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Short-time Fourier transform (STFT)</span></span>
+<span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a>audio_fft <span class="op">=</span> np.<span class="bu">abs</span>(librosa.stft(audio_signal_trimmed, n_fft <span class="op">=</span> n_fft, hop_length <span class="op">=</span> hop_length))</span>
+<span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-8"><a href="#cb75-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Shape of D object:'</span>, np.shape(audio_fft))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Shape of D object: (1025, 14)</code></pre>
+</div>
+</div>
+</section>
+<section id="spectrogram" class="level3">
+<h3 class="anchored" data-anchor-id="spectrogram">Spectrogram</h3>
+<p>A spectrogram is a visual representation of the spectrum of frequencies of a signal as it varies with time. When applied to an audio signal, spectrograms are sometimes called sonographs, voiceprints, or voicegrams (wiki).</p>
+<div class="cell" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>db_audio <span class="op">=</span> librosa.amplitude_to_db(audio_fft, ref <span class="op">=</span> np.<span class="bu">max</span>)</span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="co"># === PLOT ===</span></span>
+<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">16</span>, <span class="dv">9</span>))</span>
+<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">'Spectrogram'</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb77-7"><a href="#cb77-7" aria-hidden="true" tabindex="-1"></a>librosa.display.specshow(db_audio, sr <span class="op">=</span> sample_rate, hop_length <span class="op">=</span> hop_length, x_axis <span class="op">=</span> <span class="st">'time'</span>, </span>
+<span id="cb77-8"><a href="#cb77-8" aria-hidden="true" tabindex="-1"></a>                         y_axis <span class="op">=</span> <span class="st">'log'</span>, cmap <span class="op">=</span> <span class="st">'cool'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="58">
+<pre><code>&lt;matplotlib.collections.QuadMesh at 0x15bd83eb0&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Notebook_files/figure-html/cell-59-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Refer :</p>
+<ol type="1">
+<li><p><a href="https://www.youtube.com/watch?v=iCwMQJnKk2c&amp;list=PL-wATfeyAMNqIee7cH3q1bh4QJFAaeNv0">Audio Signal Processing for Machine Learning | Valerio Velardo - The Sound of AI</a></p></li>
+<li><p><a href="https://www.kaggle.com/code/andradaolteanu/birdcall-recognition-eda-and-audio-fe">Birdcall Recognition: EDA and Audio FE</a></p></li>
+<li><p><a href="https://towardsdatascience.com/audio-deep-learning-made-simple-part-1-state-of-the-art-techniques-da1d3dff2504">Audio Deep Learning Made Simple (Part 1): State-of-the-Art Techniques</a></p></li>
+<li><p><a href="https://towardsdatascience.com/machine-learning-on-sound-and-audio-data-3ae03bcf5095">Machine Learning on Sound and Audio data</a></p></li>
+</ol>
+</section>
+</section>
+<section id="image-data" class="level2">
+<h2 class="anchored" data-anchor-id="image-data">3. Image Data</h2>
+<div class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cv2</span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><a href="https://upload.wikimedia.org/wikipedia/commons/e/ed/University_of_Arizona_May_2019_04_%28Arizona_State_Museum%29.jpg">Link</a></p>
+<div class="cell" data-execution_count="60">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>data_path <span class="op">=</span> <span class="st">"data/image/University_of_Arizona_May_2019_04_(Arizona_State_Museum).jpg"</span></span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>image <span class="op">=</span> cv2.imread(data_path)</span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Show the image with matplotlib</span></span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>plt.imshow(image)</span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Notebook_files/figure-html/cell-61-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<section id="colorspaces" class="level3">
+<h3 class="anchored" data-anchor-id="colorspaces">Colorspaces</h3>
+<p>A color space is a specific organization of colors.</p>
+<ul>
+<li>RGB(Red Green Blue)</li>
+<li>HSL(Hue Saturation Lightness)</li>
+<li>HSV(Hue Saturation Value)</li>
+<li>YUV(Luminance, blue–luminance, red–luminance)</li>
+<li>CMYK(Cyan, Magenta, Yellow, Key)</li>
+</ul>
+<div class="cell" data-execution_count="61">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>img_color <span class="op">=</span> cv2.cvtColor(image, cv2.COLOR_BGR2RGB)</span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Show the image with matplotlib</span></span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>plt.imshow(img_color)</span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Notebook_files/figure-html/cell-62-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="convert-to-greyscale" class="level3">
+<h3 class="anchored" data-anchor-id="convert-to-greyscale">Convert to GreyScale</h3>
+<div class="cell" data-execution_count="62">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>img_color.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="62">
+<pre><code>(4000, 6000, 3)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="63">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>img_gray <span class="op">=</span> cv2.cvtColor(img_color, cv2.COLOR_RGB2GRAY)</span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Show the image with matplotlib</span></span>
+<span id="cb84-4"><a href="#cb84-4" aria-hidden="true" tabindex="-1"></a>plt.imshow(img_gray,cmap<span class="op">=</span><span class="st">'gray'</span>)</span>
+<span id="cb84-5"><a href="#cb84-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Notebook_files/figure-html/cell-64-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="64">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>img_gray.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="64">
+<pre><code>(4000, 6000)</code></pre>
+</div>
+</div>
+</section>
+<section id="resizing" class="level3">
+<h3 class="anchored" data-anchor-id="resizing">Resizing</h3>
+<div class="cell" data-execution_count="65">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>resized_pic <span class="op">=</span> cv2.resize(img_color,(<span class="dv">300</span>,<span class="dv">200</span>))</span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>plt.imshow(resized_pic)</span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Notebook_files/figure-html/cell-66-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="rotate" class="level3">
+<h3 class="anchored" data-anchor-id="rotate">Rotate</h3>
+<div class="cell" data-execution_count="66">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>img_rotated <span class="op">=</span> cv2.flip(img_color,<span class="dv">0</span>)</span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a>plt.imshow(img_rotated)</span>
+<span id="cb88-4"><a href="#cb88-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="Notebook_files/figure-html/cell-67-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="crop" class="level3">
+<h3 class="anchored" data-anchor-id="crop">Crop</h3>
+<div class="cell" data-execution_count="67">
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>plt.imshow(img_color[<span class="dv">1150</span>:<span class="dv">2350</span>,<span class="dv">800</span>:<span class="dv">5200</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="67">
+<pre><code>&lt;matplotlib.image.AxesImage at 0x16df7dde0&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Notebook_files/figure-html/cell-68-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<section id="next-lecture---final-part-of-data-preprocessing-and-data-visualisation" class="level5">
+<h5 class="anchored" data-anchor-id="next-lecture---final-part-of-data-preprocessing-and-data-visualisation">Next Lecture - Final part of data preprocessing and Data visualisation</h5>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

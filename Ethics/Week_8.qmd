@@ -1,7 +1,6 @@
-# Week 8 : AI for Facial Recognition
-
+# Week 7 : AI in Housekeeping
 
 ## Reading
+- [A Roomba recorded a woman on the toilet. How did screenshots end up on Facebook?](https://www.technologyreview.com/2022/12/19/1065306/roomba-irobot-robot-vacuums-artificial-intelligence-training-data-privacy/)
 
-- [A Case for Banning Facial Recognition](https://www.nytimes.com/2020/06/09/technology/facial-recognition-software.html)
-- [Clothing designer tricks AI-powered face recognition into thinking you’re an animal](https://nypost.com/2023/01/25/clothing-designer-tricks-ai-powered-face-recognition/)
+- [Here’s What You’re Actually Agreeing To When You Accept a Privacy Policy](https://www.nytimes.com/wirecutter/blog/what-are-privacy-policies/)

@@ -6,6 +6,6 @@
 
 ## Attachments
 
-* [Questions](Homework_2_Questions.pdf)
+* [Questions](Questions.pdf)
 
 * [Bonus Question](../../Bonus/1.qmd)

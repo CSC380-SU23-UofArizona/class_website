@@ -2,20 +2,108 @@
 title: "Principles Of Data Science"
 ---
 
-::: {.callout-note}
-- Latest Lecture - [Lecture 4.2](Course_Content/Week_4/2/home.qmd).
-- We are running a little behind, but will be caught up by this Sunday. [Week 4](Course_Content/Week_4/home.html#week-4-june-28-to-july-2-4) Plans Updated.
-- Github Familarity Survey Open - D2L > Survey.
-- [Homework 2](Homework/2/HW.qmd) is open. Typo corrected , check page.
-- [Bonus Question One](Bonus/1.qmd) is open.
-:::
+:::{.callout-notice}
+## Recent
+
+- Latest Lecture - [Lecture 6.1](Course_Content/Week_6/1/home.qmd).
+- [Participation Activity - Github Setup Released](Participation_Activities/home.qmd)
+- [Bonus Question released](Bonus/home.qmd)
+::: 
 
 ## CheckList
 
 ### Due Dates
 
-- [ ] Weekly Checkin for Week 3 | Due 5 pm , July 2, Sunday ( Based on Lecture 2.x.1 & 3.1, 3.2, 3.3)
-- [ ] Survey | Due 5 pm , July 7, Friday
-- [ ] [Homework 2](Homework/2/HW.qmd) | Due 5 pm , July 7, Friday
-- [ ] [Bonus Question One](Bonus/1.qmd) | Due 5 pm, July 7, Friday
+- [ ] Github Setup due July 16th, 2023 | 5 pm.
+- [ ] Bonus Question - Dataset Suggestions | Due by July 19th, 2023 | 11:59 pm
+- [ ] Bonus Question - Data Viz | Due by July 16th, 2023 | 11:59 pm. 
+- [ ] Weekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )
+
+## Class Playlist
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLWuxUsazy5CxXr1GJsDgm3ANenzefAtvp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Staff 
+
+<table class="noborder">
+    <tr>
+       <td style = "padding: 0 35px;">
+            <img style= "vertical-align: middle;  width: 150px;  height: 150px;  border-radius: 50%;" src = "info/images/Enfa%20George.jpeg">
+            <br> <br>
+             Enfa George <br>
+             Summer Instructor <br>
+        </td>
+        <td style = "padding: 0 35px;">
+        Office Hours : 
+        <ul>
+        <li> Wed : 2 pm to 3 pm </li>
+        <li> Fri : 3 pm to 4 pm </li>
+        <li> By Appointment </li>
+        </ul>
+        Website : [beingenfa.com](https://www.beingenfa.com/)<br>
+        Incoming PhD Student <br>
+        Comp Sci Fall 2023 <br>
+        Focus on NLP - Fairness and Ethics, Public Policy
+        
+        </td>   
+    </tr>
+</table>
+<hr>
+<br><br><br><br><br><br><br>
+
+::: {.callout-note}
+
+# Revised Schedule and Deadlines for the Course
+
+Hi Class, 
+
+Apologies for the falling behind schedule. As a remedial, the course plan has been updated. Please see below a revised schedule and updated deadlines. I truly appreciate your understanding and patience as we adjust the schedule to fit our course better.
+
+### Lectures:
+
+Starting from Monday, instead of lectures 5.1 to 5.3, I will merge the Week 5 topics with Weeks 6 and 7. This means we'll be covering all the topics, but in a more condensed manner, with only three lectures per week.
+
+Regarding Week 4, we will conclude the lectures with the three already released: 4.1, 4.2, and 4.3. On Monday, we will continue with Lecture 6.1.
+
+Here is the updated schedule for the upcoming weeks:
+
+| Week | Dates                            | Plan                                                       |
+|------|----------------------------------|------------------------------------------------------------|
+| 5    | Merged with Week 6 topics                                                                                   |
+| 6    | July 9 - July 15 | Data Visualization, Introduction to ML, Supervised Learning                                                  |
+| 7    | July 16 - July 22| Model Assessment, Unsupervised Learning, Applications                                                        |
+| 8    | July 23 - July 29| Robustness + Applied Probability and Statistics (2/2)                                                        |
+| 9    | July 30 - August 5| 1 lecture on Privacy and Ethics, buffer for any further delays in lecture                                    |
+
+### Weekly Check-in:
+
+| Week | Lectures        | Due Date              |  Weekly Reading Topic     |
+|------|-----------------|-----------------------|----------------------------|
+| 4    | 4.1, 4.2, 4.3   | July 10th               |                                                 | 
+| 5    | Dropped                                                                                                 |
+| 6    | 6.1, 6.2, 6.3   | July 23, 2023 5:00 PM | Recommendations                                 |
+| 7    | 7.1, 7.2, 7.3   | July 30, 2023 5:00 PM  | Autonomous Driving                              |
+| 8    | 8.1, 8.2, 8.3   | August 6, 2023 5:00 PM | Housekeeping                                    |
+| 9    | 9.1, 9.2, 9.3   | August 6, 2023 5:00 PM | Facial Recognition                              |
+
+### Homeworks:
+
+Due to the adjusted schedule, Homework 3 will now be released on Thursday instead of Sunday. Here are the dates for the remaining homework assignments and the final:
+
+| Item  | Released | Due Date | Number of Days |
+|-------|----------|----------|----------------|
+| 3     | July 13  | July 21  | 8 days         |
+| 4     | July 20  | July 28  | 8 days         |
+| Final | On or before July 27 | August 9 | 10 days        |
+
+Please note that I am considering extending the deadline for the final project, but the release date will be on or before July 27.
+
+Additionally, I will be announcing Participation and Bonus Point Activities during this week.
+
+Thank you for your understanding and cooperation as we navigate through these adjustments. If you have any questions or concerns, please don't hesitate to reach out to me. 
+
+Have a fun Sunday!
+
+:::
+
 

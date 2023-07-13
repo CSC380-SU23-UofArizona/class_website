@@ -19,8 +19,11 @@ website:
           - text: "Week 3"
             file: Course_Content/Week_3/home.qmd
 
-          - text: "Week 4"
-            file: Course_Content/Week_4/home.qmd
+          - text: "Week 4 & 5"
+            file: Course_Content/Week_4&5/home.qmd
+
+          - text: "Week 6"
+            file: Course_Content/Week_6/home.qmd
 
       - section: "Homework"
         contents:
@@ -43,26 +46,37 @@ website:
           - text: "W4: Mental Health Support"
             file: Ethics/Week_4.qmd
 
-          - text: "W5: Recommendations"
-            file: Ethics/Week_5.qmd
-
-          - text: "W6: Autonomous Driving"
+          - text: "W6: Recommendations"
             file: Ethics/Week_6.qmd
 
-          - text: "W7: Housekeeping"
+          - text: "W7: Autonomous Driving"
             file: Ethics/Week_7.qmd
 
-          - text: "W8: Facial Recognition"
+          - text: "W8: Housekeeping"
             file: Ethics/Week_8.qmd
+            
 
-          - text: "W9:ChatGPT and friends"
+          - text: "W9: Facial Recognition"
             file: Ethics/Week_9.qmd
+            
       
       - section: "Bonus Questions"
         contents:
 
-          - text: "Sonam's Dilemma: A Gift for Few or a Chance for All"
-            file: Bonus/1.qmd
+          - text: "Home"
+            file: Bonus/home.qmd
+
+      - section: "Participation"
+        contents:
+
+          - text: "Home"
+            file: Participation_Activities/home.qmd
+
+      - section: "Honors"
+        contents:
+
+          - text: "Assignments"
+            file: Honors/home.qmd
 
       - section: "Syllabus"
         contents:

@@ -1,0 +1,55 @@
+# Week 6 : Data Visualization, Introduction to ML, Supervised Learning
+#### [ July 9 to July 15 ]
+
+## Objectives
+
+### Course Objectives:
+
+- [ ] Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation. 
+- [ ] Apply data analysis and visualization techniques to derive insights from diverse datasets.
+- [ ] Develop proficiency in using data science tools and programming languages.
+- [ ] Explore the ethical considerations associated with data-driven decision-making.
+
+### Learning Outcomes:
+
+- [ ] Write appropriate visualizations for different sources and types of data.
+- [ ] Explain why we seek to build machine learning models that generalize rather than memorize their input
+- [ ] Explain the different uses for training, validation, and testing datasets
+- [ ] Articulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem
+- [ ] Select the appropriate evaluation measure for the dataset and task being solved
+- [ ] Demonstrate awareness of bias and ethics in data science.
+
+<br>
+
+## Lectures
+
+[6.1 - Data Vizualisation and Introduction to Machine Learning](1/home.qmd)
+
+## Activities
+
+- [Bonus : Dataset Suggestions ( 1 point) ](../../Bonus/2.qmd)
+
+- [Bonus : Viz (2 points)](../../Bonus/3.qmd)
+
+- [Participation Activity : Github Setup](../../Participation_Activities/github_setup.qmd)
+
+
+### Homework
+
+[Homework 3] - released thursday or friday. 7 days to work on it.
+
+### Weekly Checkin 
+
+Weekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )
+
+### Others
+
+
+<br>
+
+## Summary ( Plan versus Achievements):
+
+* Strikethrough text is changes in plan.
+* Green is new items added after planning.
+* Checked boxes are completed items.
+
