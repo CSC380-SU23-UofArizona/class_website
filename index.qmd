@@ -49,6 +49,32 @@ title: "Principles Of Data Science"
     </tr>
 </table>
 <hr>
+<br>
+
+<table class="noborder">
+    <tr>
+       <td style = "padding: 0 35px;">
+            <img style= "vertical-align: middle;  width: 150px;  height: 150px;  border-radius: 50%;" src = "info/images/bennett_brixen.png">
+            <br> <br>
+             Bennett Brixen <br>
+             Summer TA<br>
+        </td>
+        <td style = "padding: 0 35px;">
+        Office Hours : 
+        <ul>
+        <li> Mon : 11 am to 12 pm </li>
+        <li> Tue : 1 pm to 2 pm </li>
+        <li> Thur : 4 pm to 5 pm </li>
+        </ul>
+        GitHub : [BBrixen](https://github.com/BBrixen)<br>
+        Incoming Masters Student <br>
+        Comp Sci Fall 2023 <br>
+        Focus on Algorithm Design and Analysis
+        
+        </td>   
+    </tr>
+</table>
+<hr>
 <br><br><br><br><br><br><br>
 
 ::: {.callout-note}
