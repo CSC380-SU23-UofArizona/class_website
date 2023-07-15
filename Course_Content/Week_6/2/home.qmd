@@ -1,0 +1,44 @@
+# 6.2 - Machine Learning - Key Concepts & Supervised ML : Linear Regression
+
+######  Week 6 
+<br>
+
+## Objectives 
+
+* ML Terminology:
+    * Labels, Features, Examples, Models
+    * Training, Inference/Testing, 
+* Linear Regression:
+    * Equation, Loss, Update weights based on Loss
+    * LASSO, RIDGE
+* Gradient Descent
+    *  Stochastic, Batch, Mini-batch stochastic
+* Loss Functions : 
+    * Esp MAE, MSE
+* Learning rate
+* Overfitting v/s Underfitting
+* Data - 
+    * Split as (Train, Val, test)
+    * K Cross validation
+* Regularisation : 
+    * Reducing Model Complexity:
+        * L1/L2 Regularisation
+        * Dropout
+        * Early stopping
+    * Data Augmentation 
+
+
+<br>
+
+## Materials
+
+* [Slides](slides.pdf)
+* [Board I used](board.pdf)
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Next Class 
+
+[6.3 Supervised Learning - Logistic Regression & Getting to code](../../Week_6/3/home.qmd)

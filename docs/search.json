@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Principles Of Data Science",
     "section": "",
-    "text": "Latest Lecture - Lecture 6.1.\nParticipation Activity - Github Setup Released\nBonus Question released"
+    "text": "Latest Lecture - Lecture 6.2 : Machine Learning - Key Concepts & Supervised ML : Linear Regression.\nParticipation Activity - Github Setup Released\nBonus Question released"
   },
   {
     "objectID": "index.html#checklist",
@@ -620,7 +620,7 @@
     "href": "Syllabus/Key_Info.html",
     "title": "Syllabus (Key Info)",
     "section": "",
-    "text": "The course introduces students to the principles of data science, which are essential for computer scientists to make effective decisions in their professional careers. In today’s data-driven world, a wide range of computer science sub-disciplines heavily rely on data collection, analysis, and interpretation. With the pervasive presence of artificial intelligence (AI) in our lives, understanding the basics of how these systems work is becoming increasingly important. Additionally, it covers the basics of artificial intelligence (AI) systems and examines practical use cases, current news, and ethical considerations through readings and discussions.\n\n\n\nCourse Objectives\nThis course aims to introduce students to the principles and techniques of data science, enabling them to make effective decisions in their computer science careers. During this course, the student will,\n\nUnderstand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nApply data analysis and visualization techniques to derive insights from diverse datasets.\nGain familiarity with machine learning algorithms and their practical applications.\nDevelop proficiency in using data science tools and programming languages.\nEngage in critical thinking and problem-solving through project-based assignments.\nExplore the ethical considerations associated with data-driven decision-making.\nStay informed about current trends and developments in data science and artificial intelligence.\n\n\n\n\nA student who successfully completes this course will be able to:\n\nExplain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)\nConvert a raw data source into a version appropriate for downstream analysis using Python.\nWrite appropriate visualizations for different sources and types of data.\nExplain why we seek to build machine learning models that generalize rather than memorize their input.\nExplain the different uses for training, validation, and testing datasets\nSelect the appropriate evaluation measure for the dataset and task being solved\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem\nDemonstrate awareness of bias and ethics in data science."
+    "text": "The course introduces students to the principles of data science, which are essential for computer scientists to make effective decisions in their professional careers. In today’s data-driven world, a wide range of computer science sub-disciplines heavily rely on data collection, analysis, and interpretation. With the pervasive presence of artificial intelligence (AI) in our lives, understanding the basics of how these systems work is becoming increasingly important. Additionally, it covers the basics of artificial intelligence (AI) systems and examines practical use cases, current news, and ethical considerations through readings and discussions.\n\n\n\nCourse Objectives\nThis course aims to introduce students to the principles and techniques of data science, enabling them to make effective decisions in their computer science careers. During this course, the student will,\n\nUnderstand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nApply data analysis and visualization techniques to derive insights from diverse datasets on Week 6\nGain familiarity with machine learning algorithms and their practical applications.\nDevelop proficiency in using data science tools and programming languages.\nEngage in critical thinking and problem-solving through project-based assignments.\nExplore the ethical considerations associated with data-driven decision-making.\nStay informed about current trends and developments in data science and artificial intelligence.\n\n\n\n\nA student who successfully completes this course will be able to:\n\nExplain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)\nConvert a raw data source into a version appropriate for downstream analysis using Python. | Week 4 & 5\nWrite appropriate visualizations for different sources and types of data | Week 6\nExplain why we seek to build machine learning models that generalize rather than memorize their input. | Week 6\nExplain the different uses for training, validation, and testing datasets | Week 6\nSelect the appropriate evaluation measure for the dataset and task being solved\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem | Week 6\nDemonstrate awareness of bias and ethics in data science."
   },
   {
     "objectID": "Syllabus/Key_Info.html#description",
@@ -634,14 +634,14 @@
     "href": "Syllabus/Key_Info.html#course-objective",
     "title": "Syllabus (Key Info)",
     "section": "",
-    "text": "Course Objectives\nThis course aims to introduce students to the principles and techniques of data science, enabling them to make effective decisions in their computer science careers. During this course, the student will,\n\nUnderstand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nApply data analysis and visualization techniques to derive insights from diverse datasets.\nGain familiarity with machine learning algorithms and their practical applications.\nDevelop proficiency in using data science tools and programming languages.\nEngage in critical thinking and problem-solving through project-based assignments.\nExplore the ethical considerations associated with data-driven decision-making.\nStay informed about current trends and developments in data science and artificial intelligence."
+    "text": "Course Objectives\nThis course aims to introduce students to the principles and techniques of data science, enabling them to make effective decisions in their computer science careers. During this course, the student will,\n\nUnderstand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nApply data analysis and visualization techniques to derive insights from diverse datasets on Week 6\nGain familiarity with machine learning algorithms and their practical applications.\nDevelop proficiency in using data science tools and programming languages.\nEngage in critical thinking and problem-solving through project-based assignments.\nExplore the ethical considerations associated with data-driven decision-making.\nStay informed about current trends and developments in data science and artificial intelligence."
   },
   {
     "objectID": "Syllabus/Key_Info.html#expected-learning-outcomes",
     "href": "Syllabus/Key_Info.html#expected-learning-outcomes",
     "title": "Syllabus (Key Info)",
     "section": "",
-    "text": "A student who successfully completes this course will be able to:\n\nExplain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)\nConvert a raw data source into a version appropriate for downstream analysis using Python.\nWrite appropriate visualizations for different sources and types of data.\nExplain why we seek to build machine learning models that generalize rather than memorize their input.\nExplain the different uses for training, validation, and testing datasets\nSelect the appropriate evaluation measure for the dataset and task being solved\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem\nDemonstrate awareness of bias and ethics in data science."
+    "text": "A student who successfully completes this course will be able to:\n\nExplain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)\nConvert a raw data source into a version appropriate for downstream analysis using Python. | Week 4 & 5\nWrite appropriate visualizations for different sources and types of data | Week 6\nExplain why we seek to build machine learning models that generalize rather than memorize their input. | Week 6\nExplain the different uses for training, validation, and testing datasets | Week 6\nSelect the appropriate evaluation measure for the dataset and task being solved\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem | Week 6\nDemonstrate awareness of bias and ethics in data science."
   },
   {
     "objectID": "Syllabus/Syllabus.html",
@@ -956,21 +956,21 @@
     "href": "Homework/3/HW.html",
     "title": "Homework 3",
     "section": "",
-    "text": "Convert a raw data source into a version appropriate for downstream analysis using Python.\n\n\n\n\n\nQuestions\nBonus Question"
+    "text": "Convert a raw data source into a version appropriate for downstream analysis using Python. | Week 4 & 5\nWrite appropriate visualizations for different sources and types of data | Week 6\nExplain why we seek to build machine learning models that generalize rather than memorize their input. | Week 6\nExplain the different uses for training, validation, and testing datasets | Week 6\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem | Week 6\n\n\n\n\n\nQuestions"
   },
   {
     "objectID": "Homework/3/HW.html#tested-learning-outcome",
     "href": "Homework/3/HW.html#tested-learning-outcome",
     "title": "Homework 3",
     "section": "",
-    "text": "Convert a raw data source into a version appropriate for downstream analysis using Python."
+    "text": "Convert a raw data source into a version appropriate for downstream analysis using Python. | Week 4 & 5\nWrite appropriate visualizations for different sources and types of data | Week 6\nExplain why we seek to build machine learning models that generalize rather than memorize their input. | Week 6\nExplain the different uses for training, validation, and testing datasets | Week 6\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem | Week 6"
   },
   {
     "objectID": "Homework/3/HW.html#attachments",
     "href": "Homework/3/HW.html#attachments",
     "title": "Homework 3",
     "section": "",
-    "text": "Questions\nBonus Question"
+    "text": "Questions"
   },
   {
     "objectID": "Homework/2/Unreleased/Solutions_HW2_Enfa_George.html",
@@ -1334,7 +1334,7 @@
     "href": "Course_Content/Week_6/home.html",
     "title": "Week 6 : Data Visualization, Introduction to ML, Supervised Learning",
     "section": "",
-    "text": "Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nApply data analysis and visualization techniques to derive insights from diverse datasets.\nDevelop proficiency in using data science tools and programming languages.\nExplore the ethical considerations associated with data-driven decision-making.\n\n\n\n\n\nWrite appropriate visualizations for different sources and types of data.\nExplain why we seek to build machine learning models that generalize rather than memorize their input\nExplain the different uses for training, validation, and testing datasets\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem\nSelect the appropriate evaluation measure for the dataset and task being solved\nDemonstrate awareness of bias and ethics in data science.\n\n\n\n\n\n\n6.1 - Data Vizualisation and Introduction to Machine Learning\n\n\n\n\nBonus : Dataset Suggestions ( 1 point)\nBonus : Viz (2 points)\nParticipation Activity : Github Setup\n\n\n\n[Homework 3] - released thursday or friday. 7 days to work on it.\n\n\n\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )\n\n\n\n\n\n\n\n\n\nStrikethrough text is changes in plan.\nGreen is new items added after planning.\nChecked boxes are completed items."
+    "text": "Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nApply data analysis and visualization techniques to derive insights from diverse datasets.\nDevelop proficiency in using data science tools and programming languages.\nExplore the ethical considerations associated with data-driven decision-making.\n\n\n\n\n\nWrite appropriate visualizations for different sources and types of data.\nExplain why we seek to build machine learning models that generalize rather than memorize their input\nExplain the different uses for training, validation, and testing datasets\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem\nSelect the appropriate evaluation measure for the dataset and task being solved\nDemonstrate awareness of bias and ethics in data science.\n\n\n\n\n\n\n6.1 - Data Vizualisation and Introduction to Machine Learning 6.2 - Machine Learning - Key Concepts & Supervised ML : Linear Regression\n\n\n\n\nBonus : Dataset Suggestions ( 1 point)\nBonus : Viz (2 points)\nParticipation Activity : Github Setup\n\n\n\n[Homework 3] - released Sunday ( delayed on my part ). 7 days to work on it.\n\n\n\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )\n\n\n\n\n\n\n\n\n\nStrikethrough text is changes in plan.\nGreen is new items added after planning.\nChecked boxes are completed items.\n\n\n\n\n\n\n\n6.1 - Data Vizualisation and Introduction to Machine Learning\n[x][6.2 - Machine Learning - Key Concepts & Supervised ML : Linear Regression](2/home.qmd)\n[] 6.3 - Logistic Regression and Coding\n\n\n\n\n\nHomework 3 released [delayed by 2 days]\nBonus Homeworks ( 3 total points )\nParticipation Activity\n\n\n\n\n\nCheck-in for week 6 opens ( Based on Lecture 6.1,6.2,6.3 )\n\n\n\n\n\nWeek 5 assigned reading discussion question to be released\n\n\n\n\n\nEthical Question start\nDataset Selection"
   },
   {
     "objectID": "Course_Content/Week_6/home.html#objectives",
@@ -1348,7 +1348,7 @@
     "href": "Course_Content/Week_6/home.html#summary-plan-versus-achievements",
     "title": "Week 6 : Data Visualization, Introduction to ML, Supervised Learning",
     "section": "",
-    "text": "Strikethrough text is changes in plan.\nGreen is new items added after planning.\nChecked boxes are completed items."
+    "text": "Strikethrough text is changes in plan.\nGreen is new items added after planning.\nChecked boxes are completed items.\n\n\n\n\n\n\n\n6.1 - Data Vizualisation and Introduction to Machine Learning\n[x][6.2 - Machine Learning - Key Concepts & Supervised ML : Linear Regression](2/home.qmd)\n[] 6.3 - Logistic Regression and Coding\n\n\n\n\n\nHomework 3 released [delayed by 2 days]\nBonus Homeworks ( 3 total points )\nParticipation Activity\n\n\n\n\n\nCheck-in for week 6 opens ( Based on Lecture 6.1,6.2,6.3 )\n\n\n\n\n\nWeek 5 assigned reading discussion question to be released\n\n\n\n\n\nEthical Question start\nDataset Selection"
   },
   {
     "objectID": "Participation Activities/home.html",
@@ -1418,7 +1418,7 @@
     "href": "index.html#recent",
     "title": "Principles Of Data Science",
     "section": "",
-    "text": "Latest Lecture - Lecture 6.1.\nParticipation Activity - Github Setup Released\nBonus Question released"
+    "text": "Latest Lecture - Lecture 6.2 : Machine Learning - Key Concepts & Supervised ML : Linear Regression.\nParticipation Activity - Github Setup Released\nBonus Question released"
   },
   {
     "objectID": "index.html#instructor-information",
@@ -1432,7 +1432,7 @@
     "href": "index.html#staff",
     "title": "Principles Of Data Science",
     "section": "Staff",
-    "text": "Staff\n\n\n\n\n   Enfa George  Summer Instructor \n\n\nOffice Hours :\n\n\nWed : 2 pm to 3 pm\n\n\nFri : 3 pm to 4 pm\n\n\nBy Appointment\n\n\nWebsite : beingenfa.com Incoming PhD Student  Comp Sci Fall 2023  Focus on NLP - Fairness and Ethics, Public Policy\n\n\n\n\n\n\n\n\n\n\n   Bennett Brixen  Summer TA\n\n\nOffice Hours :\n\n\nMon : 11 am to 12 pm\n\n\nTue : 1 pm to 2 pm\n\n\nThur : 4 pm to 5 pm\n\n\nGitHub : BBrixen Incoming Masters Student  Comp Sci Fall 2023  Focus on Algorithm Design and Analysis\n\n\n\n\n\n\n\n\n\n\n\n\nRevised Schedule and Deadlines for the Course\n\n\n\nHi Class,\nApologies for the falling behind schedule. As a remedial, the course plan has been updated. Please see below a revised schedule and updated deadlines. I truly appreciate your understanding and patience as we adjust the schedule to fit our course better.\n\nLectures:\nStarting from Monday, instead of lectures 5.1 to 5.3, I will merge the Week 5 topics with Weeks 6 and 7. This means we’ll be covering all the topics, but in a more condensed manner, with only three lectures per week.\nRegarding Week 4, we will conclude the lectures with the three already released: 4.1, 4.2, and 4.3. On Monday, we will continue with Lecture 6.1.\nHere is the updated schedule for the upcoming weeks:\n\n\n\n\n\n\n\n\nWeek\nDates\nPlan\n\n\n\n\n5\nMerged with Week 6 topics\n\n\n\n6\nJuly 9 - July 15\nData Visualization, Introduction to ML, Supervised Learning\n\n\n7\nJuly 16 - July 22\nModel Assessment, Unsupervised Learning, Applications\n\n\n8\nJuly 23 - July 29\nRobustness + Applied Probability and Statistics (2/2)\n\n\n9\nJuly 30 - August 5\n1 lecture on Privacy and Ethics, buffer for any further delays in lecture\n\n\n\n\n\nWeekly Check-in:\n\n\n\n\n\n\n\n\n\nWeek\nLectures\nDue Date\nWeekly Reading Topic\n\n\n\n\n4\n4.1, 4.2, 4.3\nJuly 10th\n\n\n\n5\nDropped\n\n\n\n\n6\n6.1, 6.2, 6.3\nJuly 23, 2023 5:00 PM\nRecommendations\n\n\n7\n7.1, 7.2, 7.3\nJuly 30, 2023 5:00 PM\nAutonomous Driving\n\n\n8\n8.1, 8.2, 8.3\nAugust 6, 2023 5:00 PM\nHousekeeping\n\n\n9\n9.1, 9.2, 9.3\nAugust 6, 2023 5:00 PM\nFacial Recognition\n\n\n\n\n\nHomeworks:\nDue to the adjusted schedule, Homework 3 will now be released on Thursday instead of Sunday. Here are the dates for the remaining homework assignments and the final:\n\n\n\nItem\nReleased\nDue Date\nNumber of Days\n\n\n\n\n3\nJuly 13\nJuly 21\n8 days\n\n\n4\nJuly 20\nJuly 28\n8 days\n\n\nFinal\nOn or before July 27\nAugust 9\n10 days\n\n\n\nPlease note that I am considering extending the deadline for the final project, but the release date will be on or before July 27.\nAdditionally, I will be announcing Participation and Bonus Point Activities during this week.\nThank you for your understanding and cooperation as we navigate through these adjustments. If you have any questions or concerns, please don’t hesitate to reach out to me.\nHave a fun Sunday!"
+    "text": "Staff\n\n\n\n\n   Enfa George  Summer Instructor \n\n\nOffice Hours :\n\n\nWed : 2 pm to 3 pm\n\n\nFri : 3 pm to 4 pm\n\n\nBy Appointment\n\n\nWebsite : beingenfa.com Incoming PhD Student  Comp Sci Fall 2023  Focus on NLP - Fairness and Ethics, Public Policy\n\n\n\n\n\n\n\n\n\n\n   Bennett Brixen  Summer TA\n\n\nOffice Hours :\n\n\nMon : 11 am to 12 pm\n\n\nTue : 1 pm to 2 pm\n\n\nThur : 4 pm to 5 pm\n\n\nGitHub : BBrixen Incoming Masters Student  Comp Sci Fall 2023  Focus on Algorithm Design and Analysis"
   },
   {
     "objectID": "index.html#class-playlist",
@@ -1495,21 +1495,21 @@
     "href": "Course_Content/Week_6/home.html#lectures",
     "title": "Week 6 : Data Visualization, Introduction to ML, Supervised Learning",
     "section": "",
-    "text": "6.1 - Data Vizualisation and Introduction to Machine Learning"
+    "text": "6.1 - Data Vizualisation and Introduction to Machine Learning 6.2 - Machine Learning - Key Concepts & Supervised ML : Linear Regression"
   },
   {
     "objectID": "Course_Content/Week_6/home.html#activities",
     "href": "Course_Content/Week_6/home.html#activities",
     "title": "Week 6 : Data Visualization, Introduction to ML, Supervised Learning",
     "section": "",
-    "text": "Bonus : Dataset Suggestions ( 1 point)\nBonus : Viz (2 points)\nParticipation Activity : Github Setup\n\n\n\n[Homework 3] - released thursday or friday. 7 days to work on it.\n\n\n\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )"
+    "text": "Bonus : Dataset Suggestions ( 1 point)\nBonus : Viz (2 points)\nParticipation Activity : Github Setup\n\n\n\n[Homework 3] - released Sunday ( delayed on my part ). 7 days to work on it.\n\n\n\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )"
   },
   {
     "objectID": "Course_Content/Week_6/1/home.html",
     "href": "Course_Content/Week_6/1/home.html",
     "title": "6.1 - Data Vizualisation and Introduction to Machine Learning",
     "section": "",
-    "text": "Data Viz:\n\nWhat is?\nWhy?\nDifferent types - [ Bonus Activity worth 2 points here ]\nBad Viz\nPython Libraries\n\nMatplotlib\n\nAnatomy\nSingle plot on a figure\nMultiple charts on a figure\n\n\n\nIntroduction to ML:\n\nTypes:\n\nSupervised\nUnsupervised\nSemi-supervised\nReinforcement learning\n\n\n\n\n\n\n\n\nSlides\nJupyter Notebook\n\n\n\n\n\n\n\n\n\n6.2 Supervised Learning"
+    "text": "Data Viz:\n\nWhat is?\nWhy?\nDifferent types - [ Bonus Activity worth 2 points here ]\nBad Viz\nPython Libraries\n\nMatplotlib\n\nAnatomy\nSingle plot on a figure\nMultiple charts on a figure\n\n\n\nIntroduction to ML:\n\nTypes:\n\nSupervised\nUnsupervised\nSemi-supervised\nReinforcement learning\n\n\n\n\n\n\n\n\nSlides\nJupyter Notebook\n\n\n\n\n\n\n\n\n\n6.2Machine Learning - Key Concepts & Supervised ML : Linear Regression"
   },
   {
     "objectID": "Course_Content/Week_6/1/home.html#objectives",
@@ -1530,7 +1530,7 @@
     "href": "Course_Content/Week_6/1/home.html#next-class",
     "title": "6.1 - Data Vizualisation and Introduction to Machine Learning",
     "section": "",
-    "text": "6.2 Supervised Learning"
+    "text": "6.2Machine Learning - Key Concepts & Supervised ML : Linear Regression"
   },
   {
     "objectID": "Course_Content/Week_6/1/Notebook.html",
@@ -1622,5 +1622,33 @@
     "title": "Summarise Viz types",
     "section": "",
     "text": "Select a chart from the mentioned blog that resonated with you the most, and provide a concise overview of what you learned/understood , comprising approximately 250 to 500 words."
+  },
+  {
+    "objectID": "Course_Content/Week_6/2/home.html",
+    "href": "Course_Content/Week_6/2/home.html",
+    "title": "6.2 - Machine Learning - Key Concepts & Supervised ML : Linear Regression",
+    "section": "",
+    "text": "ML Terminology:\n\nLabels, Features, Examples, Models\nTraining, Inference/Testing,\n\nLinear Regression:\n\nEquation, Loss, Update weights based on Loss\nLASSO, RIDGE\n\nGradient Descent\n\nStochastic, Batch, Mini-batch stochastic\n\nLoss Functions :\n\nEsp MAE, MSE\n\nLearning rate\nOverfitting v/s Underfitting\nData -\n\nSplit as (Train, Val, test)\nK Cross validation\n\nRegularisation :\n\nReducing Model Complexity:\n\nL1/L2 Regularisation\nDropout\nEarly stopping\n\nData Augmentation\n\n\n\n\n\n\n\nSlides\nBoard I used\n\n\n\n\n\n\n\n\n\n6.3 Supervised Learning - Logistic Regression & Getting to code"
+  },
+  {
+    "objectID": "Course_Content/Week_6/2/home.html#objectives",
+    "href": "Course_Content/Week_6/2/home.html#objectives",
+    "title": "6.2 - Machine Learning - Key Concepts & Supervised ML : Linear Regression",
+    "section": "",
+    "text": "ML Terminology:\n\nLabels, Features, Examples, Models\nTraining, Inference/Testing,\n\nLinear Regression:\n\nEquation, Loss, Update weights based on Loss\nLASSO, RIDGE\n\nGradient Descent\n\nStochastic, Batch, Mini-batch stochastic\n\nLoss Functions :\n\nEsp MAE, MSE\n\nLearning rate\nOverfitting v/s Underfitting\nData -\n\nSplit as (Train, Val, test)\nK Cross validation\n\nRegularisation :\n\nReducing Model Complexity:\n\nL1/L2 Regularisation\nDropout\nEarly stopping\n\nData Augmentation"
+  },
+  {
+    "objectID": "Course_Content/Week_6/2/home.html#materials",
+    "href": "Course_Content/Week_6/2/home.html#materials",
+    "title": "6.2 - Machine Learning - Key Concepts & Supervised ML : Linear Regression",
+    "section": "",
+    "text": "Slides\nBoard I used"
+  },
+  {
+    "objectID": "Course_Content/Week_6/2/home.html#next-class",
+    "href": "Course_Content/Week_6/2/home.html#next-class",
+    "title": "6.2 - Machine Learning - Key Concepts & Supervised ML : Linear Regression",
+    "section": "",
+    "text": "6.3 Supervised Learning - Logistic Regression & Getting to code"
   }
 ]
