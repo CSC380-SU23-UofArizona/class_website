@@ -17,7 +17,7 @@ title: "Principles Of Data Science"
 
 - [ ] Github Setup due July 16th, 2023 | 5 pm.
 - [ ] Bonus Question - Dataset Suggestions | Due by July 19th, 2023 | 11:59 pm
-- [ ] Bonus Question - Data Viz | Due by July 16th, 2023 | 11:59 pm. 
+- [ ] Bonus Question - Data Viz | Due by July 22nd, 2023 | 11:59 pm. 
 - [ ] Weekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )
 
 ## Class Playlist
