@@ -1,0 +1,26 @@
+# 6.2 - Hands on Demo with Linear Regression
+
+######  Week 6 
+<br>
+
+## Objectives 
+
+* How to work through a data science problem?
+* Small discussions around Feature Selection, Statistical Tests etc ( We will come back to this later. Don't worry :))
+
+
+<br>
+
+## Materials
+
+* [Notebook](Notebook.ipynb)
+* [Dataset](https://www.kaggle.com/datasets/ashydv/advertising-dataset)
+
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Next Class 
+
+[7.1 Supervised Learning cont ...](../../Week_&/1/home.qmd)

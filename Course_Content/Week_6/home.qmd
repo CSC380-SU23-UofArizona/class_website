@@ -24,7 +24,10 @@
 ## Lectures
 
 [6.1 - Data Vizualisation and Introduction to Machine Learning](1/home.qmd)
+
 [6.2 - Machine Learning - Key Concepts & Supervised ML : Linear Regression](2/home.qmd)
+
+[6.3 - Hands on Demo](3/home.qmd)
 
 ## Activities
 
@@ -60,9 +63,9 @@ Weekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.
 
 - [x] [6.1 - Data Vizualisation and Introduction to Machine Learning](1/home.qmd)
 
-- [x][6.2 - Machine Learning - Key Concepts & Supervised ML : Linear Regression](2/home.qmd)
+- [x] [6.2 - Machine Learning - Key Concepts & Supervised ML : Linear Regression](2/home.qmd)
 
-- [] [6.3 - Logistic Regression and Coding](3/home.qmd) [ Will be released on July 17]
+- [x] [6.3 - Hands on Demo](3/home.qmd)
 
 ### 2. Homeworks
 
