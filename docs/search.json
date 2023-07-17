@@ -1902,5 +1902,40 @@
     "title": "Sales Prediction",
     "section": "Model Evaluation",
     "text": "Model Evaluation\n::: {.cell _uuid=‘0b64c5e3173c685b0715a93f0a77c759e90b2dff’ execution_count=32}\npredictions = model.predict(X_test.reshape(-1,1))\n:::\n::: {.cell _uuid=‘58863bc73dfa751e6bade66b3b71f80be51d9ca6’ execution_count=33}\nmean_squared_error(y_test, predictions)\n\n3.734113047761241\n\n:::\n\nChecking the R-squared on the test set\n::: {.cell _uuid=‘6ce19fc28741a4d2b558a377f2fd39c81abdb72e’ execution_count=34}\nr_squared = r2_score(y_test, predictions)\nr_squared\n\n0.8149944458734971\n\n:::\n\n\nVisualizing the fit on the test set\n::: {.cell _uuid=‘eb08ac34d4e148e3221adfe126072f108adbfa24’ execution_count=35}\nplt.scatter(X_test, y_test)\nplt.plot(X_test, (w1 * X_test )+ b, 'r')\nplt.show()\n\n\n\n:::"
+  },
+  {
+    "objectID": "Course_Content/Week_7/home.html",
+    "href": "Course_Content/Week_7/home.html",
+    "title": "Week 7 : Supervised and Unsupervised Learning",
+    "section": "",
+    "text": "Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nGain familiarity with machine learning algorithms and their practical applications.\nDevelop proficiency in using data science tools and programming languages.\nEngage in critical thinking and problem-solving through project-based assignments.\nExplore the ethical considerations associated with data-driven decision-making.\nStay informed about current trends and developments in data science and artificial intelligence.\n\n\n\n\n\nExplain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)\nConvert a raw data source into a version appropriate for downstream analysis using Python. | Week 4 & 5 .. cont to 7\nSelect the appropriate evaluation measure for the dataset and task being solved\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem | Week 6 .. cont to 7\nDemonstrate awareness of bias and ethics in data science.\n\n\n\n\n\n\n3 lectures scheduled\n\n\n\n\n\nHomework 4\n\n\n\n\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )\nWeekly Checkin for Week 7 opens\n\n\n\n\n\n\n\nStrikethrough text is changes in plan.\nGreen is new items added after planning.\nChecked boxes are completed items.\n\n\n\n\n\n\n\n3 lectures on\nSupervised methods:\n\ncont ..on Linear Regression\nLogistic Regression\n\nUnsupervised Methods:\n\nKnn\nK means\n\nNeural networks \n\nif possible - Model Assesment - Feature Selection\n\n\n\n\nHomework 4 release\nHomework 3 due\n\n\n\n\n\n(pending) Add Ethical question prompt to Week 6 Weekly Checkin\nCheck-in for week 7 opens ( Based on Lecture 7.1,7.2,7.3 )\n\n\n\n\n\nWeek 7 assigned reading discussion question to be released\n\n\n\n\n\nDataset Selection, exploration and viz\n\n\n\n\n\nBonus Question - Data Viz | Due by July 22nd, 2023 | 11:59 pm"
+  },
+  {
+    "objectID": "Course_Content/Week_7/home.html#objectives",
+    "href": "Course_Content/Week_7/home.html#objectives",
+    "title": "Week 7 : Supervised and Unsupervised Learning",
+    "section": "",
+    "text": "Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nGain familiarity with machine learning algorithms and their practical applications.\nDevelop proficiency in using data science tools and programming languages.\nEngage in critical thinking and problem-solving through project-based assignments.\nExplore the ethical considerations associated with data-driven decision-making.\nStay informed about current trends and developments in data science and artificial intelligence.\n\n\n\n\n\nExplain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)\nConvert a raw data source into a version appropriate for downstream analysis using Python. | Week 4 & 5 .. cont to 7\nSelect the appropriate evaluation measure for the dataset and task being solved\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem | Week 6 .. cont to 7\nDemonstrate awareness of bias and ethics in data science."
+  },
+  {
+    "objectID": "Course_Content/Week_7/home.html#activities",
+    "href": "Course_Content/Week_7/home.html#activities",
+    "title": "Week 7 : Supervised and Unsupervised Learning",
+    "section": "",
+    "text": "Homework 4\n\n\n\n\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )\nWeekly Checkin for Week 7 opens"
+  },
+  {
+    "objectID": "Course_Content/Week_7/home.html#summary-plan-versus-achievements",
+    "href": "Course_Content/Week_7/home.html#summary-plan-versus-achievements",
+    "title": "Week 7 : Supervised and Unsupervised Learning",
+    "section": "",
+    "text": "Strikethrough text is changes in plan.\nGreen is new items added after planning.\nChecked boxes are completed items.\n\n\n\n\n\n\n\n3 lectures on\nSupervised methods:\n\ncont ..on Linear Regression\nLogistic Regression\n\nUnsupervised Methods:\n\nKnn\nK means\n\nNeural networks \n\nif possible - Model Assesment - Feature Selection\n\n\n\n\nHomework 4 release\nHomework 3 due\n\n\n\n\n\n(pending) Add Ethical question prompt to Week 6 Weekly Checkin\nCheck-in for week 7 opens ( Based on Lecture 7.1,7.2,7.3 )\n\n\n\n\n\nWeek 7 assigned reading discussion question to be released\n\n\n\n\n\nDataset Selection, exploration and viz\n\n\n\n\n\nBonus Question - Data Viz | Due by July 22nd, 2023 | 11:59 pm"
+  },
+  {
+    "objectID": "Course_Content/Week_7/home.html#lectures",
+    "href": "Course_Content/Week_7/home.html#lectures",
+    "title": "Week 7 : Supervised and Unsupervised Learning",
+    "section": "",
+    "text": "3 lectures scheduled"
   }
 ]

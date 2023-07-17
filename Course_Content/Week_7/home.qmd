@@ -1,0 +1,90 @@
+# Week 7 : Supervised and Unsupervised Learning 
+#### Will attempt to also include Feature Selection, and Model Assessment 
+#### [ July 17 to July 21 ]
+
+## Objectives
+
+### Course Objectives:
+
+- [ ] Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.
+- [ ] Gain familiarity with machine learning algorithms and their practical applications.
+- [ ] Develop proficiency in using data science tools and programming languages.
+- [ ] Engage in critical thinking and problem-solving through project-based assignments.
+- [ ] Explore the ethical considerations associated with data-driven decision-making.
+- [ ] Stay informed about current trends and developments in data science and artificial intelligence.
+
+### Learning Outcomes:
+
+- [ ] Explain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)
+- [x] Convert a raw data source into a version appropriate for downstream analysis using Python. |  Week 4 & 5 .. cont to 7
+- [ ] Select the appropriate evaluation measure for the dataset and task being solved
+- [x] Articulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem | Week 6 .. cont to 7
+- [ ] Demonstrate awareness of bias and ethics in data science. 
+
+<br>
+
+## Lectures
+
+3 lectures scheduled
+
+
+## Activities
+
+
+
+### Homework
+
+[Homework 4]()
+
+### Weekly Checkin 
+
+- Weekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )
+- Weekly Checkin for Week 7 opens 
+
+<br>
+
+## Summary ( Plan versus Achievements):
+
+* Strikethrough text is changes in plan.
+* Green is new items added after planning.
+* Checked boxes are completed items.
+
+### Week 7 ( June 17 to 21 )
+
+### 1. Lectures
+
+- 3 lectures on 
+- Supervised methods:
+    - cont ..on Linear Regression
+    - Logistic Regression
+- Unsupervised Methods:
+    - Knn
+    - K means
+- Neural networks
+<br>
+
+_if possible_
+- Model Assesment
+- Feature Selection
+
+### 2. Homeworks
+
+- [ ] Homework 4 release
+-  [ ] Homework 3 due
+
+### 3. Weekly Check-in
+
+- [ ] _(pending)_ Add Ethical question prompt to Week 6 Weekly Checkin
+- [ ] Check-in for week 7 opens ( Based on Lecture 7.1,7.2,7.3 )
+
+### 4. Assigned Reading
+
+- [ ] Week 7 assigned reading discussion question to be released
+
+### 5. Honours
+
+- [ ] Dataset Selection, exploration and viz
+
+### 6. Others
+
+- [ ] Bonus Question - Data Viz | Due by July 22nd, 2023 | 11:59 pm
