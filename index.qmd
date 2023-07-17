@@ -6,6 +6,7 @@ title: "Principles Of Data Science"
 ## Recent
 
 - Latest Lecture - [Lecture 6.2 : Machine Learning - Key Concepts & Supervised ML : Linear Regression](Course_Content/Week_6/2/home.qmd).
+- [Homework 3](Homework/3/HW.qmd) released 
 - [Participation Activity - Github Setup Released](Participation_Activities/home.qmd)
 - [Bonus Question released](Bonus/home.qmd)
 
@@ -15,9 +16,9 @@ title: "Principles Of Data Science"
 
 ### Due Dates
 
-- [ ] Github Setup due July 16th, 2023 | 5 pm.
 - [ ] Bonus Question - Dataset Suggestions | Due by July 19th, 2023 | 11:59 pm
 - [ ] Bonus Question - Data Viz | Due by July 22nd, 2023 | 11:59 pm. 
+- [ ] Homework 3 | Due by July 23rd, 2023 | 11:59 pm
 - [ ] Weekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )
 
 ## Class Playlist

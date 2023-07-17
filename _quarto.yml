@@ -33,6 +33,9 @@ website:
 
           - text: "HW2: Data Collection"
             file: Homework/2/HW.qmd
+
+          - text: "HW3: Data Exploration, Viz and Supervised ML"
+            file: Homework/3/HW.qmd
             
       - section: "Ethics Discussions"
         contents:

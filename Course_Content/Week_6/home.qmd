@@ -37,7 +37,7 @@
 
 ### Homework
 
-[Homework 3] - released Sunday ( delayed on my part ). 7 days to work on it.
+[Homework 3](../../Homework/3/HW.qmd)
 
 ### Weekly Checkin 
 
@@ -54,7 +54,7 @@ Weekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.
 * Green is new items added after planning.
 * Checked boxes are completed items.
 
-### Week 6 ( June 9 to 15 )
+### Week 6 ( June 9 to 16 )
 
 ### 1. Lectures
 
@@ -62,17 +62,17 @@ Weekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.
 
 - [x][6.2 - Machine Learning - Key Concepts & Supervised ML : Linear Regression](2/home.qmd)
 
-- [] [6.3 - Logistic Regression and Coding](3/home.qmd)
+- [] [6.3 - Logistic Regression and Coding](3/home.qmd) [ Will be released on July 17]
 
 ### 2. Homeworks
 
-- [ ] Homework 3 released [delayed by 2 days]
+- [x] Homework 3 released [delayed by 2 days]
 - [x] Bonus Homeworks ( 3 total points )
 - [x] Participation Activity 
 
 ### 3. Weekly Check-in
 
-- [ ] Check-in for week 6 opens ( Based on Lecture 6.1,6.2,6.3 )
+- [x] Check-in for week 6 opens ( Based on Lecture 6.1,6.2,6.3 )
 
 ### 4. Assigned Reading
 
