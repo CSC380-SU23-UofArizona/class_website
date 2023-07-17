@@ -7,3 +7,4 @@
 ## Attachments
 
 * [Questions](Questions.pdf)
+* [Solutions PDF](Solutions.pdf)
