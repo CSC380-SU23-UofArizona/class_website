@@ -4,21 +4,21 @@
     "href": "index.html",
     "title": "Principles Of Data Science",
     "section": "",
-    "text": "Latest Lecture - Lecture 6.3 : Hands on Demo with Linear Regression.\nHomework 3 released\nParticipation Activity - Github Setup Released\nBonus Question released"
+    "text": "Latest Lecture - Lecture 6.3 : Hands on Demo with Linear Regression.\nHomework 4 released"
   },
   {
     "objectID": "index.html#recent",
     "href": "index.html#recent",
     "title": "Principles Of Data Science",
     "section": "",
-    "text": "Latest Lecture - Lecture 6.3 : Hands on Demo with Linear Regression.\nHomework 3 released\nParticipation Activity - Github Setup Released\nBonus Question released"
+    "text": "Latest Lecture - Lecture 6.3 : Hands on Demo with Linear Regression.\nHomework 4 released"
   },
   {
     "objectID": "index.html#checklist",
     "href": "index.html#checklist",
     "title": "Principles Of Data Science",
     "section": "CheckList",
-    "text": "CheckList\n\nDue Dates\n\nBonus Question - Dataset Suggestions | Due by July 19th, 2023 | 11:59 pm\nBonus Question - Data Viz | Due by July 22nd, 2023 | 11:59 pm.\nHomework 3 | Due by July 23rd, 2023 | 11:59 pm\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )"
+    "text": "CheckList\n\nDue Dates\n\nHomework 3 | Due by July 23rd, 2023 | 11:59 pm\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )"
   },
   {
     "objectID": "index.html#class-playlist",
@@ -1629,5 +1629,47 @@
     "title": "Homework 2",
     "section": "",
     "text": "Questions\nSolutions PDF"
+  },
+  {
+    "objectID": "Homework/4/home.html",
+    "href": "Homework/4/home.html",
+    "title": "Homework 4",
+    "section": "",
+    "text": "Convert a raw data source into a version appropriate for downstream analysis using Python.\nWrite appropriate visualizations for different sources and types of data\nExplain the different uses for training, validation, and testing datasets\nSelect the appropriate evaluation measure for the dataset and task being solved\n\n\n\n\n\nQuestions\nGithub Project URL TBD\nSheets linked in D2L in compliance with FERPA."
+  },
+  {
+    "objectID": "Homework/4/home.html#tested-learning-outcome",
+    "href": "Homework/4/home.html#tested-learning-outcome",
+    "title": "Homework 4",
+    "section": "",
+    "text": "Convert a raw data source into a version appropriate for downstream analysis using Python.\nWrite appropriate visualizations for different sources and types of data\nExplain the different uses for training, validation, and testing datasets\nSelect the appropriate evaluation measure for the dataset and task being solved"
+  },
+  {
+    "objectID": "Homework/4/home.html#attachments",
+    "href": "Homework/4/home.html#attachments",
+    "title": "Homework 4",
+    "section": "",
+    "text": "Questions\nGithub Project URL TBD\nSheets linked in D2L in compliance with FERPA."
+  },
+  {
+    "objectID": "Homework/4/HW.html",
+    "href": "Homework/4/HW.html",
+    "title": "Homework 4",
+    "section": "",
+    "text": "Convert a raw data source into a version appropriate for downstream analysis using Python.\nWrite appropriate visualizations for different sources and types of data\nExplain the different uses for training, validation, and testing datasets\nSelect the appropriate evaluation measure for the dataset and task being solved\n\n\n\n\n\nQuestions\nGithub Project URL TBD\nSheets linked in D2L in compliance with FERPA."
+  },
+  {
+    "objectID": "Homework/4/HW.html#tested-learning-outcome",
+    "href": "Homework/4/HW.html#tested-learning-outcome",
+    "title": "Homework 4",
+    "section": "",
+    "text": "Convert a raw data source into a version appropriate for downstream analysis using Python.\nWrite appropriate visualizations for different sources and types of data\nExplain the different uses for training, validation, and testing datasets\nSelect the appropriate evaluation measure for the dataset and task being solved"
+  },
+  {
+    "objectID": "Homework/4/HW.html#attachments",
+    "href": "Homework/4/HW.html#attachments",
+    "title": "Homework 4",
+    "section": "",
+    "text": "Questions\nGithub Project URL TBD\nSheets linked in D2L in compliance with FERPA."
   }
 ]

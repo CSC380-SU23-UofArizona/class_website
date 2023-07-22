@@ -1,0 +1,21 @@
+# Homework 4
+##### Due July 30 11:59 PM
+
+## Tested Learning Outcome 
+
+
+- [ ] Convert a raw data source into a version appropriate for downstream analysis using Python.
+
+- [ ] Write appropriate visualizations for different sources and types of data
+
+- [ ] Explain the different uses for training, validation, and testing datasets 
+
+- [ ] Select the appropriate evaluation measure for the dataset and task being solved
+
+## Attachments
+
+* [Questions](Questions.pdf)
+
+* Github Project URL TBD
+
+* Sheets linked in D2L in compliance with FERPA.
