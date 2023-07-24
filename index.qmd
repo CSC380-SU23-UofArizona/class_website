@@ -5,7 +5,7 @@ title: "Principles Of Data Science"
 :::{.callout-notice}
 ## Recent
 
-- Latest Lecture - [Lecture 6.3 : Hands on Demo with Linear Regression](Course_Content/Week_6/3/home.qmd).
+- Latest Lecture - [Lecture 7.1 : Data Preprocessing, Linear Regression, Naive Bayes and Kmeans](Course_Content/Week_7/1/home.qmd).
 - [Homework 4](Homework/4/HW.qmd) released 
 
 ::: 

@@ -1,0 +1,64 @@
+# 7.1 -Supervised Learning Continuation
+
+######  Week 7 
+<br>
+
+## Objectives 
+
+* Data Preprocessing:
+    * Why
+    * Common Tasks
+        * Cleaning:
+            * Missing Data : 
+                * Ignore
+                * Imputation
+            * Noisy Data : 
+                * Binning
+                * Regression
+                * Clustering
+        * Integration
+        * Transformation
+        * Reduction : 
+            * Feature Selection : 
+                * correlation analysis
+                * mutual information 
+                * principal component analysis (PCA)
+            * Feature Extraction
+            * Sampling
+            * Clustering
+            * Compression
+        * Discretization
+        * Normalization
+        * Encoding:
+            * Ordinal
+            * Nominal
+                * One hot encoding
+                * Label encoding
+* Curse of dimensionality 
+* Machine Learning Models : 
+    * Supervised : 
+        * Regression : Revision Linear Regression
+            * Regularisation for Feature Selection
+            * Best subset, and sequential subsets of features
+        * Classification : Naive Bayes
+    * Unsupervised : 
+        * Clustering:
+            * Definition
+            * Types
+            * Kmeans algorithm:
+                * Choosing k:
+                    * Elbow
+                    * Silhouette
+                * Kmeans++
+
+## Materials
+
+* [Slides](slides.pdf)
+* [Jupyter Notebook](Notebook.ipynb)
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Next Class 
+
