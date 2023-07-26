@@ -879,7 +879,7 @@
     "href": "Course_Content/Week_7/home.html",
     "title": "Week 7 : Supervised and Unsupervised Learning",
     "section": "",
-    "text": "Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nGain familiarity with machine learning algorithms and their practical applications.\nDevelop proficiency in using data science tools and programming languages.\nEngage in critical thinking and problem-solving through project-based assignments.\nExplore the ethical considerations associated with data-driven decision-making.\nStay informed about current trends and developments in data science and artificial intelligence.\n\n\n\n\n\nExplain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)\nConvert a raw data source into a version appropriate for downstream analysis using Python. | Week 4 & 5 .. cont to 7\nSelect the appropriate evaluation measure for the dataset and task being solved\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem | Week 6 .. cont to 7\nDemonstrate awareness of bias and ethics in data science.\n\n\n\n\n\n\n7.1 Data Preprocessing and ML ( Linear Regression, Naive Bayes and Kmeans)\n\n\n\n\n\nHomework 4\n\n\n\n\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )\nWeekly Checkin for Week 7 opens\n\n\n\n\n\n\n\nStrikethrough text is changes in plan.\nGreen is new items added after planning.\nChecked boxes are completed items.\n\n\n\n\n\n\n\n3 lectures on\nSupervised methods:\n\ncont ..on Linear Regression\nLogistic Regression\n\nUnsupervised Methods:\n\nKnn\nK means\n\nNeural networks \n\nif possible - Model Assesment - Feature Selection\n\n\n\n\nHomework 4 release\nHomework 3 due\n\n\n\n\n\nAdd Ethical question prompt to Week 6 Weekly Checkin\nCheck-in for week 7 opens ( Based on Lecture 7.1,7.2,7.3 )\n\n\n\n\n\nWeek 7 assigned reading discussion question to be released\n\n\n\n\n\nDataset Selection, exploration and viz\n\n\n\n\n\nBonus Question - Data Viz | Due by July 22nd, 2023 | 11:59 pm"
+    "text": "Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nGain familiarity with machine learning algorithms and their practical applications.\nDevelop proficiency in using data science tools and programming languages.\nEngage in critical thinking and problem-solving through project-based assignments.\nExplore the ethical considerations associated with data-driven decision-making.\nStay informed about current trends and developments in data science and artificial intelligence.\n\n\n\n\n\nExplain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)\nConvert a raw data source into a version appropriate for downstream analysis using Python. | Week 4 & 5 .. cont to 7\nSelect the appropriate evaluation measure for the dataset and task being solved\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem | Week 6 .. cont to 7\nDemonstrate awareness of bias and ethics in data science.\n\n\n\n\n\n\n7.1 Data Preprocessing and ML ( Linear Regression, Naive Bayes and Kmeans) Lecture 7.2 : Evaluation and cont Machine Learning.\n\n\n\n\n\nHomework 4\n\n\n\n\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )\nWeekly Checkin for Week 7 opens\n\n\n\n\n\n\n\nStrikethrough text is changes in plan.\nGreen is new items added after planning.\nChecked boxes are completed items.\n\n\n\n\n\n\n\n3 lectures on\nSupervised methods:\n\ncont ..on Linear Regression\nLogistic Regression\n\nUnsupervised Methods:\n\nKnn\nK means\n\nNeural networks \n\nif possible - Model Assesment - Feature Selection\n\n\n\n\nHomework 4 release\nHomework 3 due\n\n\n\n\n\nAdd Ethical question prompt to Week 6 Weekly Checkin\nCheck-in for week 7 opens ( Based on Lecture 7.1,7.2,7.3 )\n\n\n\n\n\nWeek 7 assigned reading discussion question to be released\n\n\n\n\n\nDataset Selection, exploration and viz\n\n\n\n\n\nBonus Question - Data Viz | Due by July 22nd, 2023 | 11:59 pm"
   },
   {
     "objectID": "Course_Content/Week_7/home.html#objectives",
@@ -893,7 +893,7 @@
     "href": "Course_Content/Week_7/home.html#lectures",
     "title": "Week 7 : Supervised and Unsupervised Learning",
     "section": "",
-    "text": "7.1 Data Preprocessing and ML ( Linear Regression, Naive Bayes and Kmeans)"
+    "text": "7.1 Data Preprocessing and ML ( Linear Regression, Naive Bayes and Kmeans) Lecture 7.2 : Evaluation and cont Machine Learning."
   },
   {
     "objectID": "Course_Content/Week_7/home.html#activities",
@@ -1656,7 +1656,7 @@
     "href": "Homework/4/HW.html",
     "title": "Homework 4",
     "section": "",
-    "text": "Convert a raw data source into a version appropriate for downstream analysis using Python.\nWrite appropriate visualizations for different sources and types of data\nExplain the different uses for training, validation, and testing datasets\nSelect the appropriate evaluation measure for the dataset and task being solved\n\n\n\n\n\nQuestions\nGithub Project URL TBD\nSheets linked in D2L in compliance with FERPA."
+    "text": "Convert a raw data source into a version appropriate for downstream analysis using Python.\nWrite appropriate visualizations for different sources and types of data\nExplain the different uses for training, validation, and testing datasets\nSelect the appropriate evaluation measure for the dataset and task being solved\n\n\n\n\n\nQuestions\nGithub Project URL\nSheets linked in D2L in compliance with FERPA."
   },
   {
     "objectID": "Homework/4/HW.html#tested-learning-outcome",
@@ -1670,7 +1670,7 @@
     "href": "Homework/4/HW.html#attachments",
     "title": "Homework 4",
     "section": "",
-    "text": "Questions\nGithub Project URL TBD\nSheets linked in D2L in compliance with FERPA."
+    "text": "Questions\nGithub Project URL\nSheets linked in D2L in compliance with FERPA."
   },
   {
     "objectID": "Course_Content/Week_7/1/home.html",

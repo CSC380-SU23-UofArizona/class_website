@@ -25,6 +25,7 @@
 ## Lectures
 
 [7.1 Data Preprocessing and ML ( Linear Regression, Naive Bayes and Kmeans)](1/home.qmd)
+[Lecture 7.2 : Evaluation and cont Machine Learning](2/home.qmd).
 
 ## Activities
 
