@@ -1,0 +1,36 @@
+# 7.2 Evaluation and ML  Algorithms Continutaion
+
+######  Week 7 
+<br>
+
+## Objectives 
+
+* Terminology:
+    * Linear v/s Non-Linear 
+    * Parametric v/s Non-paramteric
+    * Probabilistic v/s Non-probabilistic
+    * Generative v/s Discriminative
+* Evaluating models
+    * Accuracy
+    * Confusion matrix
+    * Precision
+    * Recall
+    * F1 score
+    * Precision-Recall or PR curve
+    * ROC (Receiver Operating Characteristics) curve
+* Decision Tree Classifier
+* Knn ( not to be confused with Kmeans from last lecture)
+* Logistic regression
+
+
+## Materials
+
+* [Slides](slides.pdf)
+* [K Nearest Neighbours](https://www.youtube.com/watch?v=UR2ag4lbBtc)
+* [Logistic Regression](https://www.youtube.com/watch?v=U1omz0B9FTw)
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4twtV8sYpJY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+

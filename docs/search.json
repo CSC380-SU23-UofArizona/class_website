@@ -4,21 +4,21 @@
     "href": "index.html",
     "title": "Principles Of Data Science",
     "section": "",
-    "text": "Latest Lecture - Lecture 7.1 : Data Preprocessing, Linear Regression, Naive Bayes and Kmeans.\nHomework 4 released"
+    "text": "Latest Lecture - Lecture 7.2 : Evaluation and cont Machine Learning.\nHomework 4 released"
   },
   {
     "objectID": "index.html#recent",
     "href": "index.html#recent",
     "title": "Principles Of Data Science",
     "section": "",
-    "text": "Latest Lecture - Lecture 7.1 : Data Preprocessing, Linear Regression, Naive Bayes and Kmeans.\nHomework 4 released"
+    "text": "Latest Lecture - Lecture 7.2 : Evaluation and cont Machine Learning.\nHomework 4 released"
   },
   {
     "objectID": "index.html#checklist",
     "href": "index.html#checklist",
     "title": "Principles Of Data Science",
     "section": "CheckList",
-    "text": "CheckList\n\nDue Dates\n\nHomework 3 | Due by July 23rd, 2023 | 11:59 pm\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )"
+    "text": "CheckList\n\nDue Dates\n\nHomework 4 | Due by July 30rd, 2023 | 11:59 pm\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )"
   },
   {
     "objectID": "index.html#class-playlist",
@@ -1706,5 +1706,47 @@
     "title": "7.1 -Supervised Learning Continuation",
     "section": "",
     "text": "Data Preprocessing:\n\nWhy\nCommon Tasks\n\nCleaning:\n\nMissing Data :\n\nIgnore\nImputation\n\nNoisy Data :\n\nBinning\nRegression\nClustering\n\n\nIntegration\nTransformation\nReduction :\n\nFeature Selection :\n\ncorrelation analysis\nmutual information\nprincipal component analysis (PCA)\n\nFeature Extraction\nSampling\nClustering\nCompression\n\nDiscretization\nNormalization\nEncoding:\n\nOrdinal\nNominal\n\nOne hot encoding\nLabel encoding\n\n\n\n\nCurse of dimensionality\nMachine Learning Models :\n\nSupervised :\n\nRegression : Revision Linear Regression\n\nRegularisation for Feature Selection\nBest subset, and sequential subsets of features\n\nClassification : Naive Bayes\n\nUnsupervised :\n\nClustering:\n\nDefinition\nTypes\nKmeans algorithm:\n\nChoosing k:\n\nElbow\nSilhouette\n\nKmeans++"
+  },
+  {
+    "objectID": "Course_Content/Week_7/3/home.html",
+    "href": "Course_Content/Week_7/3/home.html",
+    "title": "7.3 Non-Linear Models and Neural Networks",
+    "section": "",
+    "text": "Terminology:\n\nLinear v/s Non-Linear\nParametric v/s Non-paramteric\nProbabilistic v/s Non-probabilistic\nGenerative v/s Discriminative\n\nEvaluating models\n\nAccuracy\nConfusion matrix\nPrecision\nRecall\nF1 score\nPrecision-Recall or PR curve\nROC (Receiver Operating Characteristics) curve\n\nDecision Tree Classifier\nKnn ( not to be confused with Kmeans from last lecture)\nLogistic regression\n\n\n\n\n\nSlides\nK Nearest Neighbours\nLogistic Regression"
+  },
+  {
+    "objectID": "Course_Content/Week_7/3/home.html#objectives",
+    "href": "Course_Content/Week_7/3/home.html#objectives",
+    "title": "7.3 Non-Linear Models and Neural Networks",
+    "section": "",
+    "text": "Terminology:\n\nLinear v/s Non-Linear\nParametric v/s Non-paramteric\nProbabilistic v/s Non-probabilistic\nGenerative v/s Discriminative\n\nEvaluating models\n\nAccuracy\nConfusion matrix\nPrecision\nRecall\nF1 score\nPrecision-Recall or PR curve\nROC (Receiver Operating Characteristics) curve\n\nDecision Tree Classifier\nKnn ( not to be confused with Kmeans from last lecture)\nLogistic regression"
+  },
+  {
+    "objectID": "Course_Content/Week_7/3/home.html#materials",
+    "href": "Course_Content/Week_7/3/home.html#materials",
+    "title": "7.3 Non-Linear Models and Neural Networks",
+    "section": "",
+    "text": "Slides\nK Nearest Neighbours\nLogistic Regression"
+  },
+  {
+    "objectID": "Course_Content/Week_7/2/home.html",
+    "href": "Course_Content/Week_7/2/home.html",
+    "title": "7.2 Evaluation and ML Algorithms Continutaion",
+    "section": "",
+    "text": "Terminology:\n\nLinear v/s Non-Linear\nParametric v/s Non-paramteric\nProbabilistic v/s Non-probabilistic\nGenerative v/s Discriminative\n\nEvaluating models\n\nAccuracy\nConfusion matrix\nPrecision\nRecall\nF1 score\nPrecision-Recall or PR curve\nROC (Receiver Operating Characteristics) curve\n\nDecision Tree Classifier\nKnn ( not to be confused with Kmeans from last lecture)\nLogistic regression\n\n\n\n\n\nSlides\nK Nearest Neighbours\nLogistic Regression"
+  },
+  {
+    "objectID": "Course_Content/Week_7/2/home.html#objectives",
+    "href": "Course_Content/Week_7/2/home.html#objectives",
+    "title": "7.2 Evaluation and ML Algorithms Continutaion",
+    "section": "",
+    "text": "Terminology:\n\nLinear v/s Non-Linear\nParametric v/s Non-paramteric\nProbabilistic v/s Non-probabilistic\nGenerative v/s Discriminative\n\nEvaluating models\n\nAccuracy\nConfusion matrix\nPrecision\nRecall\nF1 score\nPrecision-Recall or PR curve\nROC (Receiver Operating Characteristics) curve\n\nDecision Tree Classifier\nKnn ( not to be confused with Kmeans from last lecture)\nLogistic regression"
+  },
+  {
+    "objectID": "Course_Content/Week_7/2/home.html#materials",
+    "href": "Course_Content/Week_7/2/home.html#materials",
+    "title": "7.2 Evaluation and ML Algorithms Continutaion",
+    "section": "",
+    "text": "Slides\nK Nearest Neighbours\nLogistic Regression"
   }
 ]
