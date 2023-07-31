@@ -1,0 +1,46 @@
+# Final Project 
+#### Due by Augyst 7th, 11:59 pm
+
+
+[Questions](Questions.pdf)
+
+## Objective
+
+Tests course objectives and expected learning outcomes.
+
+### Course Objective
+
+- Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.
+
+- Apply data analysis and visualization techniques to derive insights from diverse datasets on Week 6
+
+- Gain familiarity with machine learning algorithms and their practical applications.
+
+- Develop proficiency in using data science tools and programming languages.
+
+- Engage in critical thinking and problem-solving through project-based assignments.
+
+- Explore the ethical considerations associated with data-driven decision-making.
+
+- Stay informed about current trends and developments in data science and artificial intelligence.
+ 
+ 
+### Expected Learning Outcomes
+
+A student who successfully completes this course will be able to:
+
+- Explain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)
+
+- Convert a raw data source into a version appropriate for downstream analysis using Python. |  Week 4 & 5
+
+- Write appropriate visualizations for different sources and types of data |  Week 6
+
+- Explain why we seek to build machine learning models that generalize rather than memorize their input. | Week 6
+
+- Explain the different uses for training, validation, and testing datasets | Week 6
+
+- Select the appropriate evaluation measure for the dataset and task being solved
+
+- Articulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem | Week 6
+
+- Demonstrate awareness of bias and ethics in data science. 

@@ -5,8 +5,7 @@ title: "Principles Of Data Science"
 :::{.callout-notice}
 ## Recent
 
-- Latest Lecture - [Lecture 7.2 : Evaluation and cont Machine Learning](Course_Content/Week_7/2/home.qmd).
-- [Homework 4](Homework/4/HW.qmd) released 
+- [Finals Released](Finals/home.qmd) released 
 
 ::: 
 
@@ -14,8 +13,8 @@ title: "Principles Of Data Science"
 
 ### Due Dates
 
-- [ ] Homework 4 | Due by July 30rd, 2023 | 11:59 pm
-- [ ] Weekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )
+- [ ] Finals | Due by August 7th, 2023 | 11:59 pm
+- [ ] Weekly Checkins 7,8,9 | Due by August 6th,2023 | 11:59 pm
 
 ## Class Playlist
 
