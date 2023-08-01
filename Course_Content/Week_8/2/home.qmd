@@ -1,0 +1,22 @@
+# 8.2 Useful Continuous Distributions and MLE
+
+######  Week 8 
+<br>
+
+## Objectives 
+
+* Useful Continuous Distributions
+    * Uniform
+    * Exponential
+    * Gaussian
+    * Multivariate Gaussian
+* Likelihood Function & Maximum Likelihood Estimator (MLE)
+<br>
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLBUaEZCLOyZBebGYfgfjI7bP_iab2NN65" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Next Class 
+
+[8.3 Wrapping up Statistics and Probability](../3/home.qmd)

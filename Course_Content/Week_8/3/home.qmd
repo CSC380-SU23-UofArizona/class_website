@@ -1,0 +1,23 @@
+# 8.3 Wrapping up Statistics and Probability
+
+######  Week 8 
+<br>
+
+## Objectives 
+
+* Confidence Intervals
+    * Overview
+    * Bootstrap confidence intervals
+* Estimator Properties
+    * Estimator Bias 
+    * Estimator Variance
+    * Bias-Variance Tradeoff
+* Law of Large Numbers
+* Central Limit Theorem
+<br>
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLBUaEZCLOyZCoHvWI9dHAEuzoIst9JBcm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+

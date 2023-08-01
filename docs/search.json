@@ -613,7 +613,7 @@
     "href": "Course_Content/Week_6/1/home.html",
     "title": "6.1 - Data Vizualisation and Introduction to Machine Learning",
     "section": "",
-    "text": "Data Viz:\n\nWhat is?\nWhy?\nDifferent types - [ Bonus Activity worth 2 points here ]\nBad Viz\nPython Libraries\n\nMatplotlib\n\nAnatomy\nSingle plot on a figure\nMultiple charts on a figure\n\n\n\nIntroduction to ML:\n\nTypes:\n\nSupervised\nUnsupervised\nSemi-supervised\nReinforcement learning\n\n\n\n\n\n\n\n\nSlides\nJupyter Notebook\n\n\n\n\n\n\n\n\n\n6.2Machine Learning - Key Concepts & Supervised ML : Linear Regression"
+    "text": "Data Viz:\n\nWhat is?\nWhy?\nDifferent types - [ Bonus Activity worth 2 points here ]\nBad Viz\nPython Libraries\n\nMatplotlib\n\nAnatomy\nSingle plot on a figure\nMultiple charts on a figure\n\n\n\nIntroduction to ML:\n\nTypes:\n\nSupervised\nUnsupervised\nSemi-supervised\nReinforcement learning\n\n\n\n\n\n\n\n\nSlides\nJupyter Notebook\n\n\n\n\n\n\n\n\n\n6.2 Machine Learning - Key Concepts & Supervised ML : Linear Regression"
   },
   {
     "objectID": "Course_Content/Week_6/1/home.html#objectives",
@@ -634,7 +634,7 @@
     "href": "Course_Content/Week_6/1/home.html#next-class",
     "title": "6.1 - Data Vizualisation and Introduction to Machine Learning",
     "section": "",
-    "text": "6.2Machine Learning - Key Concepts & Supervised ML : Linear Regression"
+    "text": "6.2 Machine Learning - Key Concepts & Supervised ML : Linear Regression"
   },
   {
     "objectID": "Course_Content/Week_6/1/Notebook.html",
@@ -879,7 +879,7 @@
     "href": "Course_Content/Week_7/home.html",
     "title": "Week 7 : Supervised and Unsupervised Learning",
     "section": "",
-    "text": "Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nGain familiarity with machine learning algorithms and their practical applications.\nDevelop proficiency in using data science tools and programming languages.\nEngage in critical thinking and problem-solving through project-based assignments.\nExplore the ethical considerations associated with data-driven decision-making.\nStay informed about current trends and developments in data science and artificial intelligence.\n\n\n\n\n\nExplain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)\nConvert a raw data source into a version appropriate for downstream analysis using Python. | Week 4 & 5 .. cont to 7\nSelect the appropriate evaluation measure for the dataset and task being solved\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem | Week 6 .. cont to 7\nDemonstrate awareness of bias and ethics in data science.\n\n\n\n\n\n\n7.1 Data Preprocessing and ML ( Linear Regression, Naive Bayes and Kmeans) Lecture 7.2 : Evaluation and cont Machine Learning.\n\n\n\n\n\nHomework 4\n\n\n\n\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )\nWeekly Checkin for Week 7 opens\n\n\n\n\n\n\n\nStrikethrough text is changes in plan.\nGreen is new items added after planning.\nChecked boxes are completed items.\n\n\n\n\n\n\n\n3 lectures on\nSupervised methods:\n\ncont ..on Linear Regression\nLogistic Regression\n\nUnsupervised Methods:\n\nKnn\nK means\n\nNeural networks \n\nif possible - Model Assesment - Feature Selection\n\n\n\n\nHomework 4 release\nHomework 3 due\n\n\n\n\n\nAdd Ethical question prompt to Week 6 Weekly Checkin\nCheck-in for week 7 opens ( Based on Lecture 7.1,7.2,7.3 )\n\n\n\n\n\nWeek 7 assigned reading discussion question to be released\n\n\n\n\n\nDataset Selection, exploration and viz\n\n\n\n\n\nBonus Question - Data Viz | Due by July 22nd, 2023 | 11:59 pm"
+    "text": "Understand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nGain familiarity with machine learning algorithms and their practical applications.\nDevelop proficiency in using data science tools and programming languages.\nEngage in critical thinking and problem-solving through project-based assignments.\nExplore the ethical considerations associated with data-driven decision-making.\nStay informed about current trends and developments in data science and artificial intelligence.\n\n\n\n\n\nExplain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)\nConvert a raw data source into a version appropriate for downstream analysis using Python. | Week 4 & 5 .. cont to 7\nSelect the appropriate evaluation measure for the dataset and task being solved\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem | Week 6 .. cont to 7\nDemonstrate awareness of bias and ethics in data science.\n\n\n\n\n\n\n\n7.1 Data Preprocessing and ML ( Linear Regression, Naive Bayes and Kmeans)\nLecture 7.2 : Evaluation and cont Machine Learning.\n\n\n\n\n\n\nHomework 4\n\n\n\n\nWeekly Checkin for Week 6 | Due 5 pm , July 23, Sunday ( Based on Lecture 6.1,6.2,6.3 )\nWeekly Checkin for Week 7 opens"
   },
   {
     "objectID": "Course_Content/Week_7/home.html#objectives",
@@ -893,7 +893,7 @@
     "href": "Course_Content/Week_7/home.html#lectures",
     "title": "Week 7 : Supervised and Unsupervised Learning",
     "section": "",
-    "text": "7.1 Data Preprocessing and ML ( Linear Regression, Naive Bayes and Kmeans) Lecture 7.2 : Evaluation and cont Machine Learning."
+    "text": "7.1 Data Preprocessing and ML ( Linear Regression, Naive Bayes and Kmeans)\nLecture 7.2 : Evaluation and cont Machine Learning."
   },
   {
     "objectID": "Course_Content/Week_7/home.html#activities",
@@ -1825,5 +1825,82 @@
     "title": "Week 6 : AI in Autonomous Driving",
     "section": "",
     "text": "Did you try the activity listed? If not, give it a try. After that, answer the following question.\nWhat are your thoughts on moral/ethical decisions with respect to autonomous vehicles, especially in the case of who to save when getting into an accident. Do you think your opinion on this matter would be universal? It’s unlikely. In that case, who gets to decide what decision an autonomous vehicle should make?"
+  },
+  {
+    "objectID": "Course_Content/Week_8/home.html",
+    "href": "Course_Content/Week_8/home.html",
+    "title": "Week 8 : Continuation of Probability and Statistics",
+    "section": "",
+    "text": "8.1 - Useful Discrete Distributions\n8.2 Useful Continuous Distributions and MLE\n8.3 Wrapping up Statistics and Probability\n\n\n\n\n\n\nFinal\n\n\n\nDiscussion Prompt"
+  },
+  {
+    "objectID": "Course_Content/Week_8/home.html#lectures",
+    "href": "Course_Content/Week_8/home.html#lectures",
+    "title": "Week 8 : Continuation of Probability and Statistics",
+    "section": "",
+    "text": "8.1 - Useful Discrete Distributions\n8.2 Useful Continuous Distributions and MLE\n8.3 Wrapping up Statistics and Probability"
+  },
+  {
+    "objectID": "Course_Content/Week_8/home.html#activities",
+    "href": "Course_Content/Week_8/home.html#activities",
+    "title": "Week 8 : Continuation of Probability and Statistics",
+    "section": "",
+    "text": "Final\n\n\n\nDiscussion Prompt"
+  },
+  {
+    "objectID": "Course_Content/Week_8/1/home.html",
+    "href": "Course_Content/Week_8/1/home.html",
+    "title": "8.1 Useful Discrete Distributions",
+    "section": "",
+    "text": "Useful Discrete Distributions\n\nuniform distribution\n[Revise] Bernouilli\nGeometric\nCategorical\nMultinomial\nPoisson\n\n\n\n\n\n\n\n\n\n\n\n8.2 Useful Continuous Distributions and MLE"
+  },
+  {
+    "objectID": "Course_Content/Week_8/1/home.html#objectives",
+    "href": "Course_Content/Week_8/1/home.html#objectives",
+    "title": "8.1 Useful Discrete Distributions",
+    "section": "",
+    "text": "Useful Discrete Distributions\n\nuniform distribution\n[Revise] Bernouilli\nGeometric\nCategorical\nMultinomial\nPoisson"
+  },
+  {
+    "objectID": "Course_Content/Week_8/1/home.html#next-class",
+    "href": "Course_Content/Week_8/1/home.html#next-class",
+    "title": "8.1 Useful Discrete Distributions",
+    "section": "",
+    "text": "8.2 Useful Continuous Distributions and MLE"
+  },
+  {
+    "objectID": "Course_Content/Week_8/3/home.html",
+    "href": "Course_Content/Week_8/3/home.html",
+    "title": "8.3 Wrapping up Statistics and Probability",
+    "section": "",
+    "text": "Confidence Intervals\n\nOverview\nBootstrap confidence intervals\n\nEstimator Properties\n\nEstimator Bias\nEstimator Variance\nBias-Variance Tradeoff\n\nLaw of Large Numbers\nCentral Limit Theorem"
+  },
+  {
+    "objectID": "Course_Content/Week_8/3/home.html#objectives",
+    "href": "Course_Content/Week_8/3/home.html#objectives",
+    "title": "8.3 Wrapping up Statistics and Probability",
+    "section": "",
+    "text": "Confidence Intervals\n\nOverview\nBootstrap confidence intervals\n\nEstimator Properties\n\nEstimator Bias\nEstimator Variance\nBias-Variance Tradeoff\n\nLaw of Large Numbers\nCentral Limit Theorem"
+  },
+  {
+    "objectID": "Course_Content/Week_8/2/home.html",
+    "href": "Course_Content/Week_8/2/home.html",
+    "title": "8.2 Useful Continuous Distributions and MLE",
+    "section": "",
+    "text": "Useful Continuous Distributions\n\nUniform\nExponential\nGaussian\nMultivariate Gaussian\n\nLikelihood Function & Maximum Likelihood Estimator (MLE) \n\n\n\n\n\n\n\n\n\n8.3 Wrapping up Statistics and Probability"
+  },
+  {
+    "objectID": "Course_Content/Week_8/2/home.html#objectives",
+    "href": "Course_Content/Week_8/2/home.html#objectives",
+    "title": "8.2 Useful Continuous Distributions and MLE",
+    "section": "",
+    "text": "Useful Continuous Distributions\n\nUniform\nExponential\nGaussian\nMultivariate Gaussian\n\nLikelihood Function & Maximum Likelihood Estimator (MLE)"
+  },
+  {
+    "objectID": "Course_Content/Week_8/2/home.html#next-class",
+    "href": "Course_Content/Week_8/2/home.html#next-class",
+    "title": "8.2 Useful Continuous Distributions and MLE",
+    "section": "",
+    "text": "8.3 Wrapping up Statistics and Probability"
   }
 ]

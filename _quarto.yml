@@ -28,6 +28,9 @@ website:
           - text: "Week 7"
             file: Course_Content/Week_7/home.qmd
 
+          - text: "Week 8"
+            file: Course_Content/Week_8/home.qmd
+
       - section: "Homework"
         contents:
 

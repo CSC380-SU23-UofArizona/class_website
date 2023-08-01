@@ -1,0 +1,24 @@
+# 8.1 Useful Discrete Distributions
+
+######  Week 8 
+<br>
+
+## Objectives 
+
+* Useful Discrete Distributions
+    * uniform distribution
+    * [Revise] Bernouilli
+    * Geometric
+    * Categorical 
+    * Multinomial
+    * Poisson
+
+<br>
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLBUaEZCLOyZApqZAuUo1CmMGkMiutSA33" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Next Class 
+
+[8.2 Useful Continuous Distributions and MLE](../2/home.qmd)

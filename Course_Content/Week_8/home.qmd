@@ -1,0 +1,21 @@
+# Week 8 : Continuation of Probability and Statistics
+
+## Objectives
+
+
+## Lectures
+
+- [8.1 - Useful Discrete Distributions](1/home.qmd)
+- [8.2 Useful Continuous Distributions and MLE](2/home.qmd)
+- [8.3 Wrapping up Statistics and Probability](3/home.qmd)
+
+## Activities
+
+### Homework
+
+[Final](../../Finals/home.qmd)
+
+### Weekly Checkin
+
+[Discussion Prompt](../../Ethics/Week_8.qmd)
+

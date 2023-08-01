@@ -1,5 +1,4 @@
 # Week 7 : Supervised and Unsupervised Learning 
-#### Will attempt to also include Feature Selection, and Model Assessment 
 
 ## Objectives
 
@@ -24,8 +23,9 @@
 
 ## Lectures
 
-[7.1 Data Preprocessing and ML ( Linear Regression, Naive Bayes and Kmeans)](1/home.qmd)
-[Lecture 7.2 : Evaluation and cont Machine Learning](2/home.qmd).
+- [7.1 Data Preprocessing and ML ( Linear Regression, Naive Bayes and Kmeans)](1/home.qmd)
+
+- [Lecture 7.2 : Evaluation and cont Machine Learning](2/home.qmd).
 
 ## Activities
 
@@ -39,49 +39,3 @@
 - Weekly Checkin for Week 7 opens 
 
 <br>
-
-## Summary ( Plan versus Achievements):
-
-* Strikethrough text is changes in plan.
-* Green is new items added after planning.
-* Checked boxes are completed items.
-
-### Week 7 ( June 17 to 21 )
-
-### 1. Lectures
-
-- 3 lectures on 
-- Supervised methods:
-    - cont ..on Linear Regression
-    - Logistic Regression
-- Unsupervised Methods:
-    - Knn
-    - K means
-- Neural networks
-<br>
-
-_if possible_
-- Model Assesment
-- Feature Selection
-
-### 2. Homeworks
-
--  [x] Homework 4 release
--  [x] Homework 3 due
-
-### 3. Weekly Check-in
-
-- [x] Add Ethical question prompt to Week 6 Weekly Checkin
-- [ ] Check-in for week 7 opens ( Based on Lecture 7.1,7.2,7.3 )
-
-### 4. Assigned Reading
-
-- [ ] Week 7 assigned reading discussion question to be released
-
-### 5. Honours
-
-- [ ] Dataset Selection, exploration and viz
-
-### 6. Others
-
-- [x] Bonus Question - Data Viz | Due by July 22nd, 2023 | 11:59 pm

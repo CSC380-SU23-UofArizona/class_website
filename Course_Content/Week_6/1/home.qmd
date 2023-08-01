@@ -35,4 +35,4 @@
 
 ## Next Class 
 
-[6.2Machine Learning - Key Concepts & Supervised ML : Linear Regression](../../Week_6/2/home.qmd)
+[6.2 Machine Learning - Key Concepts & Supervised ML : Linear Regression](../../Week_6/2/home.qmd)

@@ -5,6 +5,7 @@ title: "Principles Of Data Science"
 :::{.callout-notice}
 ## Recent
 
+- Latest Lectures [Week 8](Course_Content/Week_8/home.qmd)
 - [Finals Released](Finals/home.qmd) released 
 
 ::: 
