@@ -1,10 +1,19 @@
-# Week 5 : AI for Recommendations
+# Week 6 : AI in Autonomous Driving
 
 ## Reading
 
-- [How Target Figured Out A Teen Girl Was Pregnant Before Her Father Did](https://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did)
+- [How do you teach an autonomous car when to hurt its passengers?](https://www.theverge.com/2016/6/23/12010476/social-dilemma-autonomous-vehicles-car-moral-machine-trolley-problem)
 
-<br>
+- [The racism of technology - and why driverless cars could be the most dangerous example yet](https://www.theguardian.com/technology/shortcuts/2019/mar/13/driverless-cars-racist)
 
-## Question for Discussion 
-TBD
+- [The folly of trolleys: Ethical challenges and autonomous vehicles](https://www.brookings.edu/articles/the-folly-of-trolleys-ethical-challenges-and-autonomous-vehicles/)
+
+## Activity
+
+[Moral Machine](https://www.moralmachine.net/)
+
+## Questions for Discussion 
+
+Did you try the activity listed? If not, give it a try. After that, answer the following question.
+
+What are your thoughts on moral/ethical decisions with respect to autonomous vehicles, especially in the case of who to save when getting into an accident. Do you think your opinion on this matter would be universal? It's unlikely. In that case, who gets to decide what decision an autonomous vehicle should make?

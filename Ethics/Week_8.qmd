@@ -4,3 +4,13 @@
 - [A Roomba recorded a woman on the toilet. How did screenshots end up on Facebook?](https://www.technologyreview.com/2022/12/19/1065306/roomba-irobot-robot-vacuums-artificial-intelligence-training-data-privacy/)
 
 - [Here’s What You’re Actually Agreeing To When You Accept a Privacy Policy](https://www.nytimes.com/wirecutter/blog/what-are-privacy-policies/)
+
+## Questions for discussion
+
+- Is it ethically acceptable for companies to present users with excessively long privacy policies, knowing that most users are unlikely to read and understand them fully?
+
+- What ethical responsibilities do companies have in ensuring that their privacy policies are concise, clear, and easily understandable for users, even if it means additional effort and resources?
+
+- Should there be legal regulations or industry standards mandating a maximum length for privacy policies to prevent companies from burdening users with overly complex and lengthy documents?
+
+Elaborate.

@@ -5,3 +5,9 @@
 
 - [A Case for Banning Facial Recognition](https://www.nytimes.com/2020/06/09/technology/facial-recognition-software.html)
 - [Clothing designer tricks AI-powered face recognition into thinking you’re an animal](https://nypost.com/2023/01/25/clothing-designer-tricks-ai-powered-face-recognition/)
+
+## Questions for Discussion
+
+- Is it ethical for governments and private entities to use facial recognition technology for surveillance without explicit consent from individuals?
+
+- Should facial recognition technology be used in law enforcement to identify and apprehend suspects, considering the potential for misidentification and its impact on innocent individuals?
