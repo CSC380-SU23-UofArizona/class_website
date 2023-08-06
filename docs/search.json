@@ -4,14 +4,14 @@
     "href": "index.html",
     "title": "Principles Of Data Science",
     "section": "",
-    "text": "Finals Released released"
+    "text": "Latest Lectures Week 9.1\nFinals Released released"
   },
   {
     "objectID": "index.html#recent",
     "href": "index.html#recent",
     "title": "Principles Of Data Science",
     "section": "",
-    "text": "Finals Released released"
+    "text": "Latest Lectures Week 9.1\nFinals Released released"
   },
   {
     "objectID": "index.html#checklist",
@@ -1902,5 +1902,47 @@
     "title": "8.2 Useful Continuous Distributions and MLE",
     "section": "",
     "text": "8.3 Wrapping up Statistics and Probability"
+  },
+  {
+    "objectID": "Course_Content/Week_9/1/home.html",
+    "href": "Course_Content/Week_9/1/home.html",
+    "title": "9.1 Neural Networks",
+    "section": "",
+    "text": "Introduction\nWhat is Deep Learning\nIntroduction to Neural Networks\nHow do Neural Networks LEARN?\nCore terminologies used in Deep Learning\nActivation Functions\nLoss Functions\nOptimizers\nParameters vs Hyperparameters\nEpochs, Batches & Iterations\nConclusion to Terminologies\nIntroduction to Learning\nUnsupervised Learning\nReinforcement Learning\nRegularization\nIntroduction to Neural Network Architectures\nFully-Connected Feedforward Neural Nets\nRecurrent Neural Nets\nConvolutional Neural Nets\n\n\n\n\n\n\n\n\n\n\nCourse Wrap-up"
+  },
+  {
+    "objectID": "Course_Content/Week_9/1/home.html#objectives",
+    "href": "Course_Content/Week_9/1/home.html#objectives",
+    "title": "9.1 Neural Networks",
+    "section": "",
+    "text": "Introduction\nWhat is Deep Learning\nIntroduction to Neural Networks\nHow do Neural Networks LEARN?\nCore terminologies used in Deep Learning\nActivation Functions\nLoss Functions\nOptimizers\nParameters vs Hyperparameters\nEpochs, Batches & Iterations\nConclusion to Terminologies\nIntroduction to Learning\nUnsupervised Learning\nReinforcement Learning\nRegularization\nIntroduction to Neural Network Architectures\nFully-Connected Feedforward Neural Nets\nRecurrent Neural Nets\nConvolutional Neural Nets"
+  },
+  {
+    "objectID": "Course_Content/Week_9/1/home.html#next-class",
+    "href": "Course_Content/Week_9/1/home.html#next-class",
+    "title": "9.1 Neural Networks",
+    "section": "",
+    "text": "Course Wrap-up"
+  },
+  {
+    "objectID": "Course_Content/Week_9/home.html",
+    "href": "Course_Content/Week_9/home.html",
+    "title": "Week 9 Neural Networks and Wrap-up",
+    "section": "",
+    "text": "9.1 - Neural Networks\n\n\n\n\nParticipation and Bonus Activities to be released.\n\n\nFinal"
+  },
+  {
+    "objectID": "Course_Content/Week_9/home.html#lectures",
+    "href": "Course_Content/Week_9/home.html#lectures",
+    "title": "Week 9 Neural Networks and Wrap-up",
+    "section": "",
+    "text": "9.1 - Neural Networks"
+  },
+  {
+    "objectID": "Course_Content/Week_9/home.html#activities",
+    "href": "Course_Content/Week_9/home.html#activities",
+    "title": "Week 9 Neural Networks and Wrap-up",
+    "section": "",
+    "text": "Participation and Bonus Activities to be released.\n\n\nFinal"
   }
 ]

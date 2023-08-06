@@ -1,0 +1,38 @@
+# 9.1 Neural Networks
+
+######  Week 8 
+<br>
+
+## Objectives 
+
+* Introduction
+* What is Deep Learning
+* Introduction to Neural Networks
+* How do Neural Networks LEARN?
+* Core terminologies used in Deep Learning
+* Activation Functions
+* Loss Functions
+* Optimizers
+* Parameters vs Hyperparameters
+* Epochs, Batches & Iterations
+* Conclusion to Terminologies
+* Introduction to Learning
+* Unsupervised Learning
+* Reinforcement Learning
+* Regularization
+* Introduction to Neural Network Architectures
+* Fully-Connected Feedforward Neural Nets
+* Recurrent Neural Nets
+* Convolutional Neural Nets
+
+
+<br>
+
+## Lecture
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VyWAvY2CF9c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Next Class 
+
+Course Wrap-up
+
