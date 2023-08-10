@@ -46,26 +46,26 @@ website:
       - section: "Ethics Discussions"
         contents:
 
-          - text: "W2: Political Content"
+          - text: "Political Content"
             file: Ethics/Week_2.qmd
 
-          - text: "W3: Creative Work"
+          - text: "Creative Work"
             file: Ethics/Week_3.qmd
 
-          - text: "W4: Mental Health Support"
+          - text: "Mental Health Support"
             file: Ethics/Week_4.qmd
 
-          - text: "W6: Recommendations"
+          - text: "Recommendations"
             file: Ethics/Week_6.qmd
 
-          - text: "W7: Autonomous Driving"
+          - text: "Autonomous Driving"
             file: Ethics/Week_7.qmd
 
-          - text: "W8: Housekeeping"
+          - text: "Housekeeping"
             file: Ethics/Week_8.qmd
             
 
-          - text: "W9: Facial Recognition"
+          - text: "Facial Recognition"
             file: Ethics/Week_9.qmd
             
       
