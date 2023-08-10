@@ -1,15 +1,11 @@
 # Participation Activities
 
-## Active Participation Activities:
+### 4 Activties worth total 5% of grade
 
-5. [Github Setup](github_setup.qmd)
+<br> 
 
-## Past
+1. Easter Egg in Syllabus :  Message to send favorite movie and a meme hidden in syllabus [ 1 point ]
+2. Jupyter Notebook Setup  Marked as Homework 0  [ 1 point ]  
+3. Github Setup [1  Point ]
 
-1. Easter Egg in Syllabus -1 : 
-    Message to send favorite movie hidden in syllabus
-2. aster Egg in Syllabus -1 : 
-    Message to send favorite meme hidden in syllabus
-3. Jupyter Notebook Setup
-    Marked as Homework 0:    
-4. Github Setup 
+4. Quiz on neural networks [ 4 points ]
