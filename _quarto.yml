@@ -75,11 +75,8 @@ website:
           - text: "Home"
             file: Bonus/home.qmd
 
-      - section: "Participation"
-        contents:
-
-          - text: "Home"
-            file: Participation_Activities/home.qmd
+      - text: "Participation"
+        file: Participation_Activities/home.qmd
 
       - section: "Honors"
         contents:
