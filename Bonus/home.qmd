@@ -1,10 +1,6 @@
 # Bonus Questions
 
-### Active
-
-[Dataset Suggestions](2.qmd) - 1 point
-[Summarise Viz Types](3.qmd) - 2 points
-
-### Past
-
-[Sonam's Dilema](1.qmd)
+1. [Sonam's Dilema](1.qmd) - 1 point
+2. [Dataset Suggestions](2.qmd) - 1 point
+3. [Summarise Viz Types](3.qmd) - 2 points
+4. Build a neural network as the third model for evaluation in the final project - 1 point
