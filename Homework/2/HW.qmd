@@ -8,8 +8,6 @@
 
 * [Questions](Questions.pdf)
 
-* [Solutions PDF](Solutions.pdf)
-
 * [Solutions IPYNB](Solutions.ipynb)
 
 * [Solutions Video](https://youtu.be/4jJB_8GY92k)
