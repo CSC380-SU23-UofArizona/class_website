@@ -34,7 +34,7 @@ website:
           - text: "Week 9"
             file: Course_Content/Week_9/home.qmd
 
-      - section: "Homework"
+      - section: "Homework & Final"
         contents:
 
           - text: "HW1: Probability"
@@ -46,6 +46,12 @@ website:
           - text: "HW3: Data Exploration, Viz and Supervised ML"
             file: Homework/3/HW.qmd
             
+          - text: "HW4: Midway Check to Course Project"
+            file: Homework/4/HW.qmd
+
+          - text: "FINAL: Course Project"
+            file: Finals/home.qmd
+
       - section: "Ethics Discussions"
         contents:
 
@@ -72,11 +78,8 @@ website:
             file: Ethics/Week_9.qmd
             
       
-      - section: "Bonus Questions"
-        contents:
-
-          - text: "Home"
-            file: Bonus/home.qmd
+      - text: "Bonus"
+        file: Bonus/home.qmd
 
       - text: "Participation"
         file: Participation_Activities/home.qmd
