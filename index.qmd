@@ -5,8 +5,7 @@ title: "Principles Of Data Science"
 :::{.callout-notice}
 ## Recent
 
-- Latest Lectures [Week 9.1 ](Course_Content/Week_9/home.qmd)
-- [Finals Released](Finals/home.qmd) released 
+- [ ] Final being Graded
 
 ::: 
 
@@ -14,12 +13,11 @@ title: "Principles Of Data Science"
 
 ### Due Dates
 
-- [ ] Finals | Due by August 7th, 2023 | 11:59 pm
-- [ ] Weekly Checkins 7,8,9 | Due by August 6th,2023 | 11:59 pm
+- [ ] Last date to request regrade | August 15th, 11:59 pm
 
 ## Class Playlist
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLWuxUsazy5CxXr1GJsDgm3ANenzefAtvp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Unavailable since class has ended.
 
 ## Staff 
 

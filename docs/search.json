@@ -4,28 +4,28 @@
     "href": "index.html",
     "title": "Principles Of Data Science",
     "section": "",
-    "text": "Latest Lectures Week 9.1\nFinals Released released"
+    "text": "Final being Graded"
   },
   {
     "objectID": "index.html#recent",
     "href": "index.html#recent",
     "title": "Principles Of Data Science",
     "section": "",
-    "text": "Latest Lectures Week 9.1\nFinals Released released"
+    "text": "Final being Graded"
   },
   {
     "objectID": "index.html#checklist",
     "href": "index.html#checklist",
     "title": "Principles Of Data Science",
     "section": "CheckList",
-    "text": "CheckList\n\nDue Dates\n\nFinals | Due by August 7th, 2023 | 11:59 pm\nWeekly Checkins 7,8,9 | Due by August 6th,2023 | 11:59 pm"
+    "text": "CheckList\n\nDue Dates\n\nLast date to request regrade | August 15th, 11:59 pm"
   },
   {
     "objectID": "index.html#class-playlist",
     "href": "index.html#class-playlist",
     "title": "Principles Of Data Science",
     "section": "Class Playlist",
-    "text": "Class Playlist"
+    "text": "Class Playlist\nUnavailable since class has ended."
   },
   {
     "objectID": "index.html#staff",
@@ -1831,7 +1831,7 @@
     "href": "Course_Content/Week_8/home.html",
     "title": "Week 8 : Continuation of Probability and Statistics",
     "section": "",
-    "text": "8.1 - Useful Discrete Distributions\n8.2 Useful Continuous Distributions and MLE\n8.3 Wrapping up Statistics and Probability\n\n\n\n\n\n\nFinal\n\n\n\nDiscussion Prompt"
+    "text": "Explain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)\nDemonstrate awareness of bias and ethics in data science.\n\n\n\n\n\n8.1 - Useful Discrete Distributions\n8.2 Useful Continuous Distributions and MLE\n8.3 Wrapping up Statistics and Probability\n\n\n\n\n\n\nFinal\n\n\n\nDiscussion Prompt"
   },
   {
     "objectID": "Course_Content/Week_8/home.html#lectures",
@@ -1908,7 +1908,7 @@
     "href": "Course_Content/Week_9/1/home.html",
     "title": "9.1 Neural Networks",
     "section": "",
-    "text": "Introduction\nWhat is Deep Learning\nIntroduction to Neural Networks\nHow do Neural Networks LEARN?\nCore terminologies used in Deep Learning\nActivation Functions\nLoss Functions\nOptimizers\nParameters vs Hyperparameters\nEpochs, Batches & Iterations\nConclusion to Terminologies\nIntroduction to Learning\nUnsupervised Learning\nReinforcement Learning\nRegularization\nIntroduction to Neural Network Architectures\nFully-Connected Feedforward Neural Nets\nRecurrent Neural Nets\nConvolutional Neural Nets\n\n\n\n\n\n\n\n\n\n\nCourse Wrap-up"
+    "text": "Introduction\nWhat is Deep Learning\nIntroduction to Neural Networks\nHow do Neural Networks LEARN?\nCore terminologies used in Deep Learning\nActivation Functions\nLoss Functions\nOptimizers\nParameters vs Hyperparameters\nEpochs, Batches & Iterations\nConclusion to Terminologies\nIntroduction to Learning\nUnsupervised Learning\nReinforcement Learning\nRegularization\nIntroduction to Neural Network Architectures\nFully-Connected Feedforward Neural Nets\nRecurrent Neural Nets\nConvolutional Neural Nets\n\n\n\n\n\n\n\n\n\n\nProject Meetings throughout the week."
   },
   {
     "objectID": "Course_Content/Week_9/1/home.html#objectives",
@@ -1922,14 +1922,14 @@
     "href": "Course_Content/Week_9/1/home.html#next-class",
     "title": "9.1 Neural Networks",
     "section": "",
-    "text": "Course Wrap-up"
+    "text": "Project Meetings throughout the week."
   },
   {
     "objectID": "Course_Content/Week_9/home.html",
     "href": "Course_Content/Week_9/home.html",
     "title": "Week 9 Neural Networks and Wrap-up",
     "section": "",
-    "text": "9.1 - Neural Networks\n\n\n\n\nParticipation and Bonus Activities to be released.\n\n\nFinal"
+    "text": "This course aims to introduce students to the principles and techniques of data science, enabling them to make effective decisions in their computer science careers. During this course, the student will,\n\nUnderstand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nApply data analysis and visualization techniques to derive insights from diverse datasets on Week 6\nGain familiarity with machine learning algorithms and their practical applications.\nDevelop proficiency in using data science tools and programming languages.\nEngage in critical thinking and problem-solving through project-based assignments.\nExplore the ethical considerations associated with data-driven decision-making.\nStay informed about current trends and developments in data science and artificial intelligence.\n\n\n\n\n\nA student who successfully completes this course will be able to:\n\nExplain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)\nConvert a raw data source into a version appropriate for downstream analysis using Python. | Week 4 & 5\nWrite appropriate visualizations for different sources and types of data | Week 6\nExplain why we seek to build machine learning models that generalize rather than memorize their input. | Week 6\nExplain the different uses for training, validation, and testing datasets | Week 6\nSelect the appropriate evaluation measure for the dataset and task being solved\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem | Week 6\nDemonstrate awareness of bias and ethics in data science.\n\n\n\n\n\n9.1 - Neural Networks\n\n\n\n\n\nWeekly Check-in\nQuiz on Neural Networks\nProject Meetings\n\n\n\nFinal"
   },
   {
     "objectID": "Course_Content/Week_9/home.html#lectures",
@@ -1943,7 +1943,7 @@
     "href": "Course_Content/Week_9/home.html#activities",
     "title": "Week 9 Neural Networks and Wrap-up",
     "section": "",
-    "text": "Participation and Bonus Activities to be released.\n\n\nFinal"
+    "text": "Weekly Check-in\nQuiz on Neural Networks\nProject Meetings\n\n\n\nFinal"
   },
   {
     "objectID": "Participation_Activities/home.html#activties-worth-total-5-of-grade",
@@ -1951,5 +1951,26 @@
     "title": "Participation Activities",
     "section": "",
     "text": "Easter Egg in Syllabus [ 1 point ] Message to send favorite movie and a meme hidden in syllabus\nJupyter Notebook Setup [ 1 point ] Marked as Homework 0\n\nGithub Setup [1 Point ]\nQuiz on neural networks [ 4 points ]"
+  },
+  {
+    "objectID": "Course_Content/Week_9/home.html#objectives",
+    "href": "Course_Content/Week_9/home.html#objectives",
+    "title": "Week 9 Neural Networks and Wrap-up",
+    "section": "",
+    "text": "This course aims to introduce students to the principles and techniques of data science, enabling them to make effective decisions in their computer science careers. During this course, the student will,\n\nUnderstand the fundamental concepts and principles of data science, including data collection, preprocessing, analysis, and interpretation.\nApply data analysis and visualization techniques to derive insights from diverse datasets on Week 6\nGain familiarity with machine learning algorithms and their practical applications.\nDevelop proficiency in using data science tools and programming languages.\nEngage in critical thinking and problem-solving through project-based assignments.\nExplore the ethical considerations associated with data-driven decision-making.\nStay informed about current trends and developments in data science and artificial intelligence."
+  },
+  {
+    "objectID": "Course_Content/Week_9/home.html#expected-learning-outcomes",
+    "href": "Course_Content/Week_9/home.html#expected-learning-outcomes",
+    "title": "Week 9 Neural Networks and Wrap-up",
+    "section": "",
+    "text": "A student who successfully completes this course will be able to:\n\nExplain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)\nConvert a raw data source into a version appropriate for downstream analysis using Python. | Week 4 & 5\nWrite appropriate visualizations for different sources and types of data | Week 6\nExplain why we seek to build machine learning models that generalize rather than memorize their input. | Week 6\nExplain the different uses for training, validation, and testing datasets | Week 6\nSelect the appropriate evaluation measure for the dataset and task being solved\nArticulate the difference between supervised and unsupervised machine learning, as well as select the appropriate methodology for a given problem | Week 6\nDemonstrate awareness of bias and ethics in data science."
+  },
+  {
+    "objectID": "Course_Content/Week_8/home.html#expected-learning-outcomes",
+    "href": "Course_Content/Week_8/home.html#expected-learning-outcomes",
+    "title": "Week 8 : Continuation of Probability and Statistics",
+    "section": "",
+    "text": "Explain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)\nDemonstrate awareness of bias and ethics in data science."
   }
 ]

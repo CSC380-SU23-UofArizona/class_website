@@ -2,6 +2,16 @@
 
 ## Objectives
 
+## Objectives
+
+ 
+## Expected Learning Outcomes
+
+
+- [x] Explain the difference between different measures of centrality and variability (means vs. medians, variance vs. interquartile range, etc.)
+
+- [x] Demonstrate awareness of bias and ethics in data science. 
+
 
 ## Lectures
 
