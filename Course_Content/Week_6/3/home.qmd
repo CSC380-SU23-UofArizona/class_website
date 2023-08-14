@@ -23,4 +23,4 @@
 
 ## Next Class 
 
-[7.1 Supervised Learning cont ...](../../Week_&/1/home.qmd)
+[7.1 Supervised Learning cont ...](../../Week_7/1/home.qmd)

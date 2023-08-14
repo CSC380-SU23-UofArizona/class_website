@@ -29,4 +29,4 @@
 
 ## Next Class 
 
-[6.1 Data Visualisation](../../Week_5/home.qmd)
+[6.1 Data Visualisation](../../Week_6/home.qmd)

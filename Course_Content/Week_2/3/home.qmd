@@ -20,4 +20,4 @@
 
 ## Next Class 
 
-[Week 3 - Data Collection and Data Processing, Exploratory Analysis  ](../Week_3/home.qmd)
+[Week 3 - Data Collection and Data Processing, Exploratory Analysis  ](../../Week_3/home.qmd)
